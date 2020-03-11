@@ -40,7 +40,7 @@ blank ([ \t\r])|(\/\*([^(\*\/)]*)\*\/)
 
 {blank}+            loc.step ();
 \n+                 loc.lines (yyleng); loc.step ();
-\/\/.*\n            loc.lines (); loc.step ();
+\/\/.*\n            loc.lines (1); loc.step();
 
 "-"                 return yy::parser::make_MINUS                (loc);
 "+"                 return yy::parser::make_PLUS                 (loc);
