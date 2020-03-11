@@ -1,0 +1,8 @@
+/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Library/Developer/CommandLineTools/usr/bin/make -DCMAKE_C_COMPILER=/Library/Developer/CommandLineTools/usr/bin/cc -DCMAKE_CXX_COMPILER=/Library/Developer/CommandLineTools/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /Users/iskandersagitov/Desktop/MiniJavaCompiler
+-- Found Bison keg installed by Homebrew at /usr/local/opt/bison
+-- Found Flex keg installed by Homebrew at /usr/local/opt/flex
+-- Found Bison keg installed by Homebrew at /usr/local/opt/bison
+-- Found Flex keg installed by Homebrew at /usr/local/opt/flex
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug

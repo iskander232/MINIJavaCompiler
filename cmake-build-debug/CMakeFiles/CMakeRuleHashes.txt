@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+bccf37ab931ef5345fe55d0456416cc9 ../AST-interpriter/parser.cpp
+08edfad2475c466a1691195a763d15d5 ../AST-interpriter/scanner.cpp
+2acb8fbfc16d98e45d6ab6c108418c17 ../naive-interpreter/parser.cpp
+6b8f9ad02aa81b7276ed6a594e9931fe ../naive-interpreter/scanner.cpp
