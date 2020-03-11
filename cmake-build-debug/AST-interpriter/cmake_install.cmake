@@ -1,4 +1,4 @@
-# Install script for directory: /Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter
+# Install script for directory: /Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -43,10 +43,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/MiniJavaCompiler
+CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include naive-interpreter/CMakeFiles/NativeInterpreter.dir/depend.make
@@ -58,68 +58,68 @@ include naive-interpreter/CMakeFiles/NativeInterpreter.dir/progress.make
 include naive-interpreter/CMakeFiles/NativeInterpreter.dir/flags.make
 
 ../naive-interpreter/parser.cpp: ../naive-interpreter/parser.y
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[BISON][NativeInterpreterParser] Building parser with bison 3.5.2"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter && /usr/local/opt/bison/bin/bison --defines=/Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/parser.hh -o /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/parser.cpp parser.y
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[BISON][NativeInterpreterParser] Building parser with bison 3.5.2"
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter && /usr/local/opt/bison/bin/bison --defines=/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.hh -o /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.cpp parser.y
 
 ../naive-interpreter/parser.hh: ../naive-interpreter/parser.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate ../naive-interpreter/parser.hh
 
 ../naive-interpreter/scanner.cpp: ../naive-interpreter/scanner.l
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "[FLEX][NativeInterpreterScanner] Building scanner with flex 2.6.4"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter && /usr/local/opt/flex/bin/flex -o/Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/scanner.cpp scanner.l
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "[FLEX][NativeInterpreterScanner] Building scanner with flex 2.6.4"
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter && /usr/local/opt/flex/bin/flex -o/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/scanner.cpp scanner.l
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.o: naive-interpreter/CMakeFiles/NativeInterpreter.dir/flags.make
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.o: ../naive-interpreter/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.o"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/main.cpp.o -c /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.o"
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/main.cpp.o -c /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/main.cpp
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NativeInterpreter.dir/main.cpp.i"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/main.cpp > CMakeFiles/NativeInterpreter.dir/main.cpp.i
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/main.cpp > CMakeFiles/NativeInterpreter.dir/main.cpp.i
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NativeInterpreter.dir/main.cpp.s"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/main.cpp -o CMakeFiles/NativeInterpreter.dir/main.cpp.s
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/main.cpp -o CMakeFiles/NativeInterpreter.dir/main.cpp.s
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.o: naive-interpreter/CMakeFiles/NativeInterpreter.dir/flags.make
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.o: ../naive-interpreter/driver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.o"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/driver.cpp.o -c /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.o"
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/driver.cpp.o -c /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/driver.cpp
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NativeInterpreter.dir/driver.cpp.i"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/driver.cpp > CMakeFiles/NativeInterpreter.dir/driver.cpp.i
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/driver.cpp > CMakeFiles/NativeInterpreter.dir/driver.cpp.i
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NativeInterpreter.dir/driver.cpp.s"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/driver.cpp -o CMakeFiles/NativeInterpreter.dir/driver.cpp.s
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/driver.cpp -o CMakeFiles/NativeInterpreter.dir/driver.cpp.s
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.o: naive-interpreter/CMakeFiles/NativeInterpreter.dir/flags.make
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.o: ../naive-interpreter/parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.o"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/parser.cpp.o -c /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.o"
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/parser.cpp.o -c /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.cpp
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NativeInterpreter.dir/parser.cpp.i"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/parser.cpp > CMakeFiles/NativeInterpreter.dir/parser.cpp.i
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.cpp > CMakeFiles/NativeInterpreter.dir/parser.cpp.i
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NativeInterpreter.dir/parser.cpp.s"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/parser.cpp -o CMakeFiles/NativeInterpreter.dir/parser.cpp.s
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.cpp -o CMakeFiles/NativeInterpreter.dir/parser.cpp.s
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o: naive-interpreter/CMakeFiles/NativeInterpreter.dir/flags.make
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o: ../naive-interpreter/scanner.cpp
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o: ../naive-interpreter/parser.hh
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/scanner.cpp.o -c /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/scanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o"
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NativeInterpreter.dir/scanner.cpp.o -c /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/scanner.cpp
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NativeInterpreter.dir/scanner.cpp.i"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/scanner.cpp > CMakeFiles/NativeInterpreter.dir/scanner.cpp.i
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/scanner.cpp > CMakeFiles/NativeInterpreter.dir/scanner.cpp.i
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NativeInterpreter.dir/scanner.cpp.s"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter/scanner.cpp -o CMakeFiles/NativeInterpreter.dir/scanner.cpp.s
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/scanner.cpp -o CMakeFiles/NativeInterpreter.dir/scanner.cpp.s
 
 # Object files for target NativeInterpreter
 NativeInterpreter_OBJECTS = \
@@ -137,8 +137,8 @@ NativeInterpreter_EXTERNAL_OBJECTS =
 ../bin/NativeInterpreter: naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o
 ../bin/NativeInterpreter: naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make
 ../bin/NativeInterpreter: naive-interpreter/CMakeFiles/NativeInterpreter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/NativeInterpreter"
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NativeInterpreter.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/NativeInterpreter"
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NativeInterpreter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/build: ../bin/NativeInterpreter
@@ -146,12 +146,12 @@ naive-interpreter/CMakeFiles/NativeInterpreter.dir/build: ../bin/NativeInterpret
 .PHONY : naive-interpreter/CMakeFiles/NativeInterpreter.dir/build
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/clean:
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter && $(CMAKE_COMMAND) -P CMakeFiles/NativeInterpreter.dir/cmake_clean.cmake
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter && $(CMAKE_COMMAND) -P CMakeFiles/NativeInterpreter.dir/cmake_clean.cmake
 .PHONY : naive-interpreter/CMakeFiles/NativeInterpreter.dir/clean
 
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/depend: ../naive-interpreter/parser.cpp
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/depend: ../naive-interpreter/parser.hh
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/depend: ../naive-interpreter/scanner.cpp
-	cd /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/iskandersagitov/Desktop/MiniJavaCompiler /Users/iskandersagitov/Desktop/MiniJavaCompiler/naive-interpreter /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter/CMakeFiles/NativeInterpreter.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/iskandersagitov/Desktop/MINIJavaCompiler /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/CMakeFiles/NativeInterpreter.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : naive-interpreter/CMakeFiles/NativeInterpreter.dir/depend
 

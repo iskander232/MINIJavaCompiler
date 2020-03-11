@@ -59,10 +59,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/MiniJavaCompiler
+CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for directory naive-interpreter
@@ -89,7 +89,7 @@ naive-interpreter/preinstall:
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/all:
 	$(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/depend
 	$(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target NativeInterpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target NativeInterpreter"
 .PHONY : naive-interpreter/CMakeFiles/NativeInterpreter.dir/all
 
 # Include target in all.
@@ -99,9 +99,9 @@ all: naive-interpreter/CMakeFiles/NativeInterpreter.dir/all
 
 # Build rule for subdir invocation for target.
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/CMakeFiles/NativeInterpreter.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
 .PHONY : naive-interpreter/CMakeFiles/NativeInterpreter.dir/rule
 
 # Convenience name for target.
@@ -144,7 +144,7 @@ AST-interpriter/preinstall:
 AST-interpriter/CMakeFiles/Interpreter.dir/all:
 	$(MAKE) -f AST-interpriter/CMakeFiles/Interpreter.dir/build.make AST-interpriter/CMakeFiles/Interpreter.dir/depend
 	$(MAKE) -f AST-interpriter/CMakeFiles/Interpreter.dir/build.make AST-interpriter/CMakeFiles/Interpreter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Interpreter"
 .PHONY : AST-interpriter/CMakeFiles/Interpreter.dir/all
 
 # Include target in all.
@@ -154,9 +154,9 @@ all: AST-interpriter/CMakeFiles/Interpreter.dir/all
 
 # Build rule for subdir invocation for target.
 AST-interpriter/CMakeFiles/Interpreter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 AST-interpriter/CMakeFiles/Interpreter.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
 .PHONY : AST-interpriter/CMakeFiles/Interpreter.dir/rule
 
 # Convenience name for target.

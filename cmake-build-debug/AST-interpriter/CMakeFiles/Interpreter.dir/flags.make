@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/opt/flex/include -I/Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter 
+CXX_INCLUDES = -I/usr/local/opt/flex/include -I/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter 
 

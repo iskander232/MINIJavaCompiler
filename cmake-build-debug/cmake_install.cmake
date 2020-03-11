@@ -1,4 +1,4 @@
-# Install script for directory: /Users/iskandersagitov/Desktop/MiniJavaCompiler
+# Install script for directory: /Users/iskandersagitov/Desktop/MINIJavaCompiler
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/naive-interpreter/cmake_install.cmake")
-  include("/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/AST-interpriter/cmake_install.cmake")
+  include("/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/cmake_install.cmake")
+  include("/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/AST-interpriter/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +47,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/iskandersagitov/Desktop/MiniJavaCompiler/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
