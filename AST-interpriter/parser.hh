@@ -1,4 +1,4 @@
-// A Bison parser, made by GNU Bison 3.5.2.
+// A Bison parser, made by GNU Bison 3.5.3.
 
 // Skeleton interface for Bison LALR(1) parsers in C++
 
@@ -32,7 +32,7 @@
 
 
 /**
- ** \file /Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter/parser.hh
+ ** \file /Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter/parser.hh
  ** Define the yy::parser class.
  */
 
@@ -50,7 +50,7 @@
     class Scanner;
     class Driver;
 
-#line 54 "/Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter/parser.hh"
+#line 54 "/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter/parser.hh"
 
 # include <cassert>
 # include <cstdlib> // std::abort
@@ -184,7 +184,7 @@
 #endif
 
 namespace yy {
-#line 188 "/Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter/parser.hh"
+#line 188 "/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter/parser.hh"
 
 
 
@@ -1730,7 +1730,7 @@ switch (yytype)
   }
 
 } // yy
-#line 1734 "/Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter/parser.hh"
+#line 1734 "/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter/parser.hh"
 
 
 

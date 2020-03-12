@@ -1,4 +1,4 @@
-// A Bison parser, made by GNU Bison 3.5.2.
+// A Bison parser, made by GNU Bison 3.5.3.
 
 // Locations for Bison parsers in C++
 
@@ -31,7 +31,7 @@
 // version 2.2 of Bison.
 
 /**
- ** \file /Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter/location.hh
+ ** \file /Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter/location.hh
  ** Define the yy::location class.
  */
 
@@ -54,7 +54,7 @@
 # endif
 
 namespace yy {
-#line 58 "/Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter/location.hh"
+#line 58 "/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter/location.hh"
 
   /// A point in a source file.
   class position
@@ -327,6 +327,6 @@ namespace yy {
   }
 
 } // yy
-#line 331 "/Users/iskandersagitov/Desktop/MiniJavaCompiler/AST-interpriter/location.hh"
+#line 331 "/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-interpriter/location.hh"
 
 #endif // !YY_YY_USERS_ISKANDERSAGITOV_DESKTOP_MINIJAVACOMPILER_AST_INTERPRITER_LOCATION_HH_INCLUDED

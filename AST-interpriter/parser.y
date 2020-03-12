@@ -110,6 +110,7 @@ statement:
 
 %left "+" "-";
 %left "*" "/";
+%precedence NEG
 
 exp:
     "number"
@@ -119,7 +120,7 @@ exp:
     | exp "*" exp {$$ = $1 * $3; }
     | exp "/" exp {$$ = $1 / $3; }
     | "(" exp ")" {$$ = $2; };
-    | "-" exp {$$ = -$2; };
+    | "-" exp %prec NEG{$$ = -$2; };
     | exp "%" exp {$$ = $1 % $3; }
 
 bool_exp:
