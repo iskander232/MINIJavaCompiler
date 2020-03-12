@@ -94,7 +94,7 @@ statements:
 
 statement:
     "int" "identifier" "=" exp ";" {driver.variables[$2] = $4; }
-    |"identifier" "=" exp ";" { driver.variables[$1] = $3; }
+    |"identifier" "=" exp ";" {driver.variables[$1] = $3; }
     | "boolean" "identifier" "=" bool_exp ";" {driver.variables[$2] = $4; }
     | "identifier" "=" bool_exp ";" {driver.variables[$1] = $3; }
     | "out" "(" exp ")" ";" {
@@ -102,7 +102,7 @@ statement:
     }
     | "assert" "(" bool_exp ")" ";" {
         if ($3 == 0){
-            throw std::runtime_error("assert is false");
+            throw yy::parser::syntax_error(driver.location, "assert false");
 
         }
     };
@@ -110,6 +110,7 @@ statement:
 
 %left "+" "-";
 %left "*" "/";
+%precedence NEG
 
 exp:
     "number"
@@ -119,11 +120,13 @@ exp:
     | exp "*" exp {$$ = $1 * $3; }
     | exp "/" exp {$$ = $1 / $3; }
     | "(" exp ")" {$$ = $2; };
-    | "-" exp {$$ = -$2; };
+    | "-" exp %prec NEG{$$ = -$2; };
     | exp "%" exp {$$ = $1 % $3; }
 
 bool_exp:
-    exp  {$$ = $1 & 1;}
+    "number"
+    | "identifier" { $$ = driver.variables[$1] & 1; }
+    |  exp  {$$ = $1 & 1;}
     | bool_exp "&&" bool_exp {$$ = $1 & $3; }
     | bool_exp "||" bool_exp {$$ = $1 | $3; }
     | "!" bool_exp {$$ = 1 - $2; }
@@ -131,6 +134,7 @@ bool_exp:
     | exp ">" exp {$$ = $1 > $3 ? 1 : 0; }
     | exp "==" exp {$$ = $1 == $3 ? 1 : 0; }
 
+assert:
 
 
 %%
