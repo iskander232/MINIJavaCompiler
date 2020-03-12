@@ -76,36 +76,86 @@
 
 %%
 %start program;
-program: clases {};
+program:
+    main_class classes {$$ = new Program($1, $2); driver.program($$); }
 
-clases:
-    %empty {}
-    | clases class {};
+classes:
+    %empty {$$ = new Classes(); }
+    | class classes { $$ = new Classes($1, $2); }
 
-class:
-    "class" "identifier" "{" main_class "}"
 main_class:
-     "public" "static" "void" "main" "(" ")" "{" statements "}" {};
+    class "identifier" "{" "public" "static" "void" "main" "(" ")" "{" statements "}"   "}" {$$ = new Main($2, $11); }
 
-statements:
-    %empty {}
-    | statements statement {};
+classes:
+    class "identifier" "{" declarations "}" {$$ = new Class($2, $4); }
 
+declaration:
+    variable_declaration {$$ = new VarDecl($1); }
+    | method_declaration {$$ = new MethodDecl($1); }
+
+method_declaration:
+    "public" type "identifier" "(" argument arguments ")" "{" statements "}" {$$ = new MethodDecl($2, $3, $5, $6, $9); }
+    | "public" type "identifier" "(" ")" "{" statements "}" {$$ = new MethodDecl($2, $3, $7); }
+
+arguments:
+    %empty {$$ = new Arguments(); }
+    | "," variable_decl arguments {$$ = new Arguments($2, $3); }
+
+argument:
+    type "identifier" {$$ = new Argument($1, $2); }
+
+variable_declaration:
+    type "identifier" ";" {$$ = new VarDecl($1, $2); }
+
+type:
+    simple_type {$$ = new SimpleType($1); }
+    | array_type {$$ = new ArrayType($1); }
+
+simple_type:
+    "int" {$$ = new SimpleType($1); }
+    | "boolean" {$$ = new SimpleType($1); }
+    | "void" {$$ = new SimpleType($1); }
+    | "identifier" {$$ = new SimpleType($1); }
+
+array_type: simple_type> "[" "]" {$$ = ArrayType($1); }
 
 statement:
-    "int" "identifier" "=" exp ";" {driver.variables[$2] = $4; }
-    |"identifier" "=" exp ";" {driver.variables[$1] = $3; }
-    | "boolean" "identifier" "=" bool_exp ";" {driver.variables[$2] = $4; }
-    | "identifier" "=" bool_exp ";" {driver.variables[$1] = $3; }
-    | "out" "(" exp ")" ";" {
-        std::cout << $3 << std::endl;
-    }
-    | "assert" "(" bool_exp ")" ";" {
-        if ($3 == 0){
-            throw yy::parser::syntax_error(driver.location, "assert false");
+    "assert" "(" expr ")"  {$$ = new AssertStatement($3); }
+    | variable_decl {$$ = new VarDeclStatement($1); }
+    | "{" statements "}" {$$ = new StatementsDeclStatement($2); }
+    | "if"  "(" expr ")" "{" statement "}" {$$ = new IfStatement($3, $6); }
+    | "if"  "(" expr ")" "{" statement "}" "else" "{" statement "}" {$$ = new IfElseStatement($3, $5, $7); }
+    | "while"  "(" expr ")" "{" statement "}" {$$ = new WhileStatement($3, $6); }
+    |"System.out.println" "(" expr ")" ";" {$$ = new OutStatement($3); }
+    | lvalue "=" expr ";" {$$ = new AssignStatement($1, $3); }
+    | return expr ";" {$$ = new ReturnStatement($2); }
+    | method_invocation ";" {$$ = new MethodInvokeStatement($1); }
 
-        }
-    };
+method_invocation:
+    expr "." "identifier" "(" expr exprs ")" {$$ = new MethodInvoke($1, $3, $5, $6); }
+    | expr "." "identifier" "("  ")" {$$ = new MethodInvoke($1, $3); }
+
+lvalue:
+    "identifier" {$$ = new SimpleLValue($1); }
+    | "identifier" "[" expr "]" {$$ = new ArrayLvalue($1, $3); }
+
+expr:
+    expr binary_operator expr
+    | <expr> "[" <expr> "]"
+    | <expr> "." length
+    | new <simple type> "[" <expr> "]"
+    | new <type identifier> "(" ")"
+    | "!" <expr>
+    | "(" <expr> ")"
+    | <identifier>
+    | <integer literal>
+    | this
+    | true
+    | false
+    | method_invocation
+
+
+<binary operator> ::=	"&&"   |  "||"   |  "<"   | ">"   |  "=="   | "+"   |  "-"   | "*"  | "/"  | "%"
 
 
 %left "+" "-";
