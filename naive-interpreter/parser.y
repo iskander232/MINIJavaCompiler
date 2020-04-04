@@ -74,6 +74,11 @@
 %nterm <int> exp
 %nterm <int> bool_exp
 
+%left "+" "-";
+%left "*" "/";
+%precedence NEG
+
+
 %%
 %start program;
 program: clases {};
@@ -108,9 +113,6 @@ statement:
     };
 
 
-%left "+" "-";
-%left "*" "/";
-%precedence NEG
 
 exp:
     "number"

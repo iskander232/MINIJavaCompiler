@@ -1,0 +1,8 @@
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/CMakeFiles/rebuild_cache.dir
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/CMakeFiles/edit_cache.dir
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/CMakeFiles/NativeInterpreter.dir
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/AST-and-Visitors/CMakeFiles/rebuild_cache.dir
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/AST-and-Visitors/CMakeFiles/edit_cache.dir
+/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir
