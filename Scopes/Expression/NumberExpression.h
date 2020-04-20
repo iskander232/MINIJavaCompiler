@@ -1,13 +1,13 @@
 #pragma once
 
 #include "Expression.h"
+#include "Types/BasicObject.h"
 
 class NumberExpression: public Expression{
  public:
-  NumberExpression(int num);
-  int GetNumber();
-//  int Eval() override ;
+  explicit NumberExpression(int num);
+  BasicObject* GetNumber();
   void Accept(Visitor* visitor) override ;
  private:
-  int number_;
+  BasicObject* number_;
 };

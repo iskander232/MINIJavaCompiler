@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/opt/flex/include -I/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-and-Visitors 
+CXX_INCLUDES = -I/usr/local/opt/flex/include -I/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/AST-and-Visitors 
 

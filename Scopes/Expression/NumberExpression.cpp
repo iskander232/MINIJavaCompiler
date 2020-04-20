@@ -1,14 +1,10 @@
 #include "NumberExpression.h"
 
-NumberExpression::NumberExpression(int num): number_(num) {};
+NumberExpression::NumberExpression(int num) : number_(new BasicObject(BasicType::Integer, num)) {};
 
-int NumberExpression::GetNumber() {
+BasicObject* NumberExpression::GetNumber() {
   return number_;
 }
-
-//int NumberExpression::Eval() {
-//  return number_;
-//}
 
 void NumberExpression::Accept(Visitor *visitor) {
   visitor->Visit(this);

@@ -1,4 +1,4 @@
-project(ParserExampleWithAst)
+project(Scopes)
 
 set(
     HEADERS
@@ -9,20 +9,20 @@ set(
 BISON_TARGET(
     MyParserWithAst
     parser.y
-    ${ParserExampleWithAst_SOURCE_DIR}/parser.cpp
-    DEFINES_FILE ${ParserExampleWithAst_SOURCE_DIR}/parser.hh
+    ${Scopes_SOURCE_DIR}/parser.cpp
+    DEFINES_FILE ${Scopes_SOURCE_DIR}/parser.hh
 )
 
 FLEX_TARGET(
     MyScannerWithAst
     scanner.l
-    ${ParserExampleWithAst_SOURCE_DIR}/scanner.cpp
+    ${Scopes_SOURCE_DIR}/scanner.cpp
 )
 
 ADD_FLEX_BISON_DEPENDENCY(MyScannerWithAst MyParserWithAst)
 
 add_executable(
-    ParserExampleWithAst
+    Scopes
     main.cpp
     driver.cpp
     ${BISON_MyParserWithAst_OUTPUTS}
@@ -58,13 +58,28 @@ add_executable(
 
     Statements/AssertStatement.cpp
     Statements/AssignStatement.cpp
+    Statements/IfElseStatement.cpp
+    Statements/IfStatement.cpp
     Statements/OutStatement.cpp
+    Statements/ScopeDeclStatement.cpp
     Statements/StatementsList.cpp
+    Statements/WhileStatement.cpp
+
+    SymbolTable/ScopeLayer.cpp
+    SymbolTable/ScopeLayerTree.cpp
+    SymbolTable/Symbol.cpp
 
     Visitors/Interpreter.cpp
     Visitors/PrintVisitor.cpp
+    Visitors/TemplateVisitor.cpp
+    Visitors/TreeBuilder.cpp
+
+    Types/Object.cpp
+    Types/ArrayObject.cpp
+    Types/BasicObject.cpp
+    Types/IdentObject.cpp
 )
 
 target_include_directories(
-    ParserExampleWithAst PRIVATE ${ParserExampleWithAst_SOURCE_DIR}
+    Scopes PRIVATE ${Scopes_SOURCE_DIR}
 )

@@ -2,6 +2,6 @@
 
 #include "BaseElement/BaseElement.h"
 
-class Expression: public BaseElement{
-//  virtual int Eval() = 0;
+#include "Types/Object.h"
+class Expression : public BaseElement {
 };

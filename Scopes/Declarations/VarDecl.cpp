@@ -8,4 +8,8 @@ std::string VarDecl::GetName() {
   return name_;
 }
 
-VarDecl::VarDecl(std::string name) : name_(name) {}
+Object* VarDecl::GetType() {
+  return type_;
+}
+
+VarDecl::VarDecl(Object *object, std::string name) : type_(object), name_(name) {}

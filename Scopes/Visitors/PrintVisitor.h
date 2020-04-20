@@ -31,8 +31,12 @@ class PrintVisitor : public Visitor {
   void Visit(Program *program) override;
   void Visit(AssertStatement *assert_statement) override;
   void Visit(AssignStatement *assign_statement) override;
+  void Visit(IfElseStatement *if_else_statement) override;
+  void Visit(IfStatement *if_statement) override;
   void Visit(OutStatement *out_statement) override;
+  void Visit(ScopeDeclStatement *scope_decl_statement) override;
   void Visit(StatementsList *statements_list) override;
+  void Visit(WhileStatement *while_statement) override;
 
  private:
   void Print();

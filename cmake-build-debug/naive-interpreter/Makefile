@@ -48,10 +48,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler
+CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/CMakeFiles/progress.marks
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/CMakeFiles /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/CMakeFiles/progress.marks
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/clean
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/preinstall
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/preinstall
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 naive-interpreter/CMakeFiles/NativeInterpreter.dir/rule:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/CMakeFiles/NativeInterpreter.dir/rule
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 naive-interpreter/CMakeFiles/NativeInterpreter.dir/rule
 .PHONY : naive-interpreter/CMakeFiles/NativeInterpreter.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ NativeInterpreter: naive-interpreter/CMakeFiles/NativeInterpreter.dir/rule
 
 # fast build rule for target.
 NativeInterpreter/fast:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/build
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/build
 .PHONY : NativeInterpreter/fast
 
 driver.o: driver.cpp.o
@@ -131,7 +131,7 @@ driver.o: driver.cpp.o
 
 # target to build an object file
 driver.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.o
 .PHONY : driver.cpp.o
 
 driver.i: driver.cpp.i
@@ -140,7 +140,7 @@ driver.i: driver.cpp.i
 
 # target to preprocess a source file
 driver.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.i
 .PHONY : driver.cpp.i
 
 driver.s: driver.cpp.s
@@ -149,7 +149,7 @@ driver.s: driver.cpp.s
 
 # target to generate assembly for a file
 driver.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/driver.cpp.s
 .PHONY : driver.cpp.s
 
 main.o: main.cpp.o
@@ -158,7 +158,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -167,7 +167,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -176,7 +176,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 parser.o: parser.cpp.o
@@ -185,7 +185,7 @@ parser.o: parser.cpp.o
 
 # target to build an object file
 parser.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.o
 .PHONY : parser.cpp.o
 
 parser.i: parser.cpp.i
@@ -194,7 +194,7 @@ parser.i: parser.cpp.i
 
 # target to preprocess a source file
 parser.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.i
 .PHONY : parser.cpp.i
 
 parser.s: parser.cpp.s
@@ -203,7 +203,7 @@ parser.s: parser.cpp.s
 
 # target to generate assembly for a file
 parser.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
 scanner.o: scanner.cpp.o
@@ -212,7 +212,7 @@ scanner.o: scanner.cpp.o
 
 # target to build an object file
 scanner.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.o
 .PHONY : scanner.cpp.o
 
 scanner.i: scanner.cpp.i
@@ -221,7 +221,7 @@ scanner.i: scanner.cpp.i
 
 # target to preprocess a source file
 scanner.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.i
 .PHONY : scanner.cpp.i
 
 scanner.s: scanner.cpp.s
@@ -230,7 +230,7 @@ scanner.s: scanner.cpp.s
 
 # target to generate assembly for a file
 scanner.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f naive-interpreter/CMakeFiles/NativeInterpreter.dir/build.make naive-interpreter/CMakeFiles/NativeInterpreter.dir/scanner.cpp.s
 .PHONY : scanner.cpp.s
 
 # Help Target
@@ -265,6 +265,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

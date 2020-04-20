@@ -27,6 +27,10 @@ class Visitor {
   virtual void Visit(Program *program) = 0;
   virtual void Visit(AssertStatement *assert_statement) = 0;
   virtual void Visit(AssignStatement *assign_statement) = 0;
+  virtual void Visit(IfElseStatement *if_else_statement) = 0;
+  virtual void Visit(IfStatement *if_statement) = 0;
   virtual void Visit(OutStatement *out_statement) = 0;
+  virtual void Visit(ScopeDeclStatement *scope_decl_statement) = 0;
   virtual void Visit(StatementsList *statements_list) = 0;
+  virtual void Visit(WhileStatement *while_statement) = 0;
 };

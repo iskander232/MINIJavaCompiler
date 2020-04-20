@@ -1,7 +1,9 @@
 #include "DivOperator.h"
+#include "Types/BasicObject.h"
 
-int DivOperator::eval(int a, int b) const {
-  return a / b;
+BasicObject DivOperator::eval(BasicObject a, BasicObject b) const {
+  return BasicObject(BasicType::Integer,
+                     a.Get(BasicType::Integer) / b.Get(BasicType::Integer));
 }
 
 void DivOperator::Accept(Visitor *visitor) {

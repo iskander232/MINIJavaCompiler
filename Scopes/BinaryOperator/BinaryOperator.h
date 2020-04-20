@@ -1,8 +1,9 @@
 #pragma once
 
 #include "BaseElement/BaseElement.h"
+#include "Types/BasicObject.h"
 
-class BinaryOperator: public BaseElement{
+class BinaryOperator : public BaseElement {
  public:
-  virtual int eval(int a, int b) const = 0;
+  virtual BasicObject eval(BasicObject a, BasicObject b) const = 0;
 };

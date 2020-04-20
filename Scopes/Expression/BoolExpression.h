@@ -1,13 +1,14 @@
 #pragma once
 
 #include "Expression.h"
+#include "Types/BasicObject.h"
 
 class BoolExpression: public Expression{
  public:
   BoolExpression(bool value);
-  int GetValue();
+  BasicObject* GetValue();
   void Accept(Visitor* visitor) override ;
 //  int Eval() override ;
  private:
-  int value_;
+  BasicObject* value_;
 };

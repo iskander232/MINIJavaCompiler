@@ -4,6 +4,6 @@
 
 class AndOperator : public BinaryOperator {
  public:
-  int eval(int a, int b) const override;
+  BasicObject eval(BasicObject a, BasicObject b) const override;
   void Accept(Visitor *visitor) override;
 };

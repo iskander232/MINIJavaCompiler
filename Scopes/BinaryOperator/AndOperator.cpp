@@ -1,9 +1,10 @@
 #include "AndOperator.h"
 
-int AndOperator::eval(int a, int b) const {
-  return a && b;
+BasicObject AndOperator::eval(BasicObject a, BasicObject b) const {
+  return BasicObject(BasicType::Bool,
+                     a.Get(BasicType::Bool) && b.Get(BasicType::Bool));
 }
 
-void AndOperator::Accept(Visitor* visitor) {
+void AndOperator::Accept(Visitor *visitor) {
   visitor->Visit(this);
 }

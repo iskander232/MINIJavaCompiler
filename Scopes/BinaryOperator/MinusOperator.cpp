@@ -1,7 +1,9 @@
 #include "MinusOperator.h"
+#include "Types/BasicObject.h"
 
-int MinusOperator::eval(int a, int b) const {
-  return a - b;
+BasicObject MinusOperator::eval(BasicObject a, BasicObject b) const {
+  return BasicObject(BasicType::Integer,
+                     a.Get(BasicType::Integer) - b.Get(BasicType::Integer));
 }
 
 void MinusOperator::Accept(Visitor *visitor) {

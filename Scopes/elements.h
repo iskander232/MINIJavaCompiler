@@ -30,5 +30,14 @@
 
 #include "Statements/AssertStatement.h"
 #include "Statements/AssignStatement.h"
+#include "Statements/IfElseStatement.h"
+#include "Statements/IfStatement.h"
 #include "Statements/OutStatement.h"
+#include "Statements/ScopeDeclStatement.h"
 #include "Statements/StatementsList.h"
+#include "Statements/WhileStatement.h"
+
+#include "Types/ArrayObject.h"
+#include "Types/BasicObject.h"
+#include "Types/IdentObject.h"
+#include "Types/SimpleObject.h"

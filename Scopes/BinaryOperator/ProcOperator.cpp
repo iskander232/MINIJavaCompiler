@@ -1,7 +1,9 @@
 #include "ProcOperator.h"
+#include "Types/BasicObject.h"
 
-int ProcOperator::eval(int a, int b) const {
-  return a % b;
+BasicObject ProcOperator::eval(BasicObject a, BasicObject b) const {
+  return BasicObject(BasicType::Integer,
+                     a.Get(BasicType::Integer) % b.Get(BasicType::Integer));
 }
 
 void ProcOperator::Accept(Visitor *visitor) {

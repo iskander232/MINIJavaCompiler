@@ -67,7 +67,12 @@
     OUT "out"
     INT "int"
     BOOL "boolean"
+    TRUE "true"
+    FALSE "false"
     ASSERT "assert"
+    IF "if"
+    ELSE "else"
+    WHILE "while"
 ;
 
 %token <std::string> IDENTIFIER "identifier"
@@ -85,8 +90,7 @@
 %nterm <Statement*> statement
 %nterm <Lvalue*> lvalue
 %nterm <Main*> main_class
-
-%nterm <int> type
+%nterm <BasicObject*> type
 
 
 %precedence NEG
@@ -105,34 +109,46 @@
 program:  main_class classes {$$ = new Program($1, $2); driver.program = $$; };
 
 classes:
-    %empty {$$ = new ClassesList(); };
+    %empty {$$ = new ClassesList(); }
+    ;
 
 main_class:
-    "class" "identifier" "{" "public" "static" "void" "main" "(" ")" "{" statements "}"   "}"   {$$ = new Main($2, $11); };
+    "class" "identifier" "{" "public" "static" "void" "main" "(" ")" "{" statements "}"   "}"   {$$ = new Main($2, $11); }
+    ;
 
 declaration:
-    variable_declaration        {$$ = $1; };
+    variable_declaration        {$$ = $1; }
+    ;
 
 variable_declaration:
-    type "identifier"   {$$ = new VarDecl($2); };
+    type "identifier"   {$$ = new VarDecl($1, $2); }
+    ;
 
 type:
-    "int" {$$ = 1;}
-    | "boolean" {$$ = 2;};
+    "int" {$$ = new BasicObject(BasicType::Integer);}
+    | "boolean" {$$ = new BasicObject(BasicType::Bool);}
+    ;
 
 statements:
     %empty                          {$$ = new StatementsList(); }
-    | statements  statement ";"     {$1->AddStatement($2); $$ = $1; };
+    | statements  statement         {$1->AddStatement($2); $$ = $1; }
+    ;
 
 statement:
-    "assert" "(" expr ")"                                               {$$ = new AssertStatement($3); }
-    | declaration                                                       {$$ = $1; }
-    | "out" "(" expr ")"                                                {$$ = new OutStatement($3); }
-    | lvalue "=" expr                                                   {$$ = new AssignStatement($1, $3); };
+    "assert" "(" expr ")" ";"                                              {$$ = new AssertStatement($3); }
+    | declaration ";"                                                       {$$ = $1; }
+    | "out" "(" expr ")" ";"                                                {$$ = new OutStatement($3); }
+    | lvalue "=" expr ";"                                                  {$$ = new AssignStatement($1, $3); }
+    | "{" statements "}"                                                {$$ = new ScopeDeclStatement($2); }
+    | "if"  "(" expr ")" "{" statements "}"                              {$$ = new IfStatement($3, $6); }
+    | "if"  "(" expr ")" "{" statements "}" "else" "{" statements "}"     {$$ = new IfElseStatement($3, $6, $10); }
+    | "while"  "(" expr ")" "{" statements "}"                           {$$ = new WhileStatement($3, $6); }
+    ;
 
 lvalue:
-    type "identifier" {$$ = new SimpleLvalue($2); }
-    | "identifier"                    {$$ = new SimpleLvalue($1); };
+    type "identifier" {$$ = new SimpleLvalue($1, $2); }
+    | "identifier"                    {$$ = new SimpleLvalue($1); }
+    ;
 
 expr:
     expr binary_operator expr               {$$ = new BinaryCallExpression($1, $2, $3); }
@@ -142,7 +158,8 @@ expr:
     | "!" expr                              {$$ = new NotExpression($2); }
     | "(" expr ")"                          {$$ = $2; }
     | "true"                                {$$ = new BoolExpression(true); }
-    | "false"                               {$$ = new BoolExpression(false); };
+    | "false"                               {$$ = new BoolExpression(false); }
+    ;
 
 binary_operator:
     "&&"    {$$ = new AndOperator(); }
@@ -154,7 +171,8 @@ binary_operator:
     | "-"   {$$ = new MinusOperator(); }
     | "*"   {$$ = new MulOperator(); }
     | "/"   {$$ = new DivOperator(); }
-    | "%"   {$$ = new ProcOperator(); };
+    | "%"   {$$ = new ProcOperator(); }
+    ;
 
 
 %%

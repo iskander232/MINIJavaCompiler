@@ -39,6 +39,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CMake.app/Contents/share/cmake-3.14/Modules/ProcessorCount.cmake"
   "../AST-and-Visitors/CMakeLists.txt"
   "../CMakeLists.txt"
+  "../Scopes/CMakeLists.txt"
   "CMakeFiles/3.14.0-rc2/CMakeCCompiler.cmake"
   "CMakeFiles/3.14.0-rc2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.14.0-rc2/CMakeSystem.cmake"
@@ -56,10 +57,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "naive-interpreter/CMakeFiles/CMakeDirectoryInformation.cmake"
   "AST-and-Visitors/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Scopes/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "naive-interpreter/CMakeFiles/NativeInterpreter.dir/DependInfo.cmake"
   "AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/DependInfo.cmake"
+  "Scopes/CMakeFiles/Scopes.dir/DependInfo.cmake"
   )

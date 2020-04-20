@@ -1,7 +1,9 @@
 #include "OrOperator.h"
+#include "Types/BasicObject.h"
 
-int OrOperator::eval(int a, int b) const {
-  return a || b;
+BasicObject OrOperator::eval(BasicObject a, BasicObject b) const {
+  return BasicObject(BasicType::Bool,
+                     a.Get(BasicType::Bool) || b.Get(BasicType::Bool));
 }
 
 void OrOperator::Accept(Visitor *visitor) {

@@ -3,12 +3,15 @@
 #include "Statements/Statement.h"
 
 #include <string>
+#include "Types/Object.h"
 
-class VarDecl: public Statement{
+class VarDecl : public Statement {
  public:
-  VarDecl(std::string name);
+  VarDecl(Object *object, std::string name);
   std::string GetName();
-  void Accept(Visitor* visitor) override ;
+  Object *GetType();
+  void Accept(Visitor *visitor) override;
  private:
+  Object *type_;
   std::string name_;
 };

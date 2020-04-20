@@ -3,6 +3,11 @@
 #include "elements.h"
 
 #include <iostream>
+#include <stdexcept>
+
+Interpreter::Interpreter(ScopeLayer *root) : current_layer_(root), tos_value_(BasicType::Void) {
+  offset_.push(0);
+}
 
 void Interpreter::Visit(AndOperator *and_operator) {}
 
@@ -26,83 +31,166 @@ void Interpreter::Visit(ProcOperator *proc_operator) {}
 
 void Interpreter::Visit(ClassesList *classes_list) {}
 
-void Interpreter::Visit(VarDecl *var_decl) {
-  variables_[var_decl->GetName()] = 0;
-}
+void Interpreter::Visit(VarDecl *var_decl) {}
 
 void Interpreter::Visit(BinaryCallExpression *binary_call_expression) {
   binary_call_expression->GetFirst()->Accept(this);
-  int first = GetTosValue();
+  BasicObject first = GetTosValue();
 
   binary_call_expression->GetSecond()->Accept(this);
-  int second = GetTosValue();
+  BasicObject second = GetTosValue();
 
   SetTosValue(binary_call_expression->GetOperator()->eval(first, second));
+
 }
 
 void Interpreter::Visit(BoolExpression *bool_expression) {
-  SetTosValue(bool_expression->GetValue());
+  SetTosValue(*bool_expression->GetValue());
 }
 
 void Interpreter::Visit(IdentExpression *ident_expression) {
-  SetTosValue(variables_[ident_expression->GetName()]);
+  SetTosValue(*current_layer_->Get(Symbol(ident_expression->GetName())));
 }
 
 void Interpreter::Visit(NotExpression *not_expression) {
   not_expression->GetExpression()->Accept(this);
-  SetTosValue(!GetTosValue());
+  SetTosValue(
+      BasicObject(BasicType::Bool,
+                  !GetTosValue().Get(BasicType::Bool))
+  );
 }
 
 void Interpreter::Visit(NumberExpression *number_expression) {
-  SetTosValue(number_expression->GetNumber());
+  SetTosValue(
+      BasicObject(BasicType::Integer,
+                  number_expression->GetNumber()->Get(BasicType::Integer))
+  );
 }
 
 void Interpreter::Visit(UnarMinusExpression *unar_minus_expression) {
   unar_minus_expression->GetExpression()->Accept(this);
-  SetTosValue(-GetTosValue());
+  SetTosValue(
+      BasicObject(BasicType::Integer,
+                  -GetTosValue().Get(BasicType::Integer))
+  );
 }
 
 void Interpreter::Visit(Lvalue *lvalue) {}
 
 void Interpreter::Visit(Main *main) {
+  current_layer_ = current_layer_->GetChild(offset_.top());
+  offset_.push(0);
   main->GetStatementsList()->Accept(this);
+
+  current_layer_ = current_layer_->GetParent();
+  offset_.pop();
+
+  size_t index = offset_.top();
+  offset_.pop();
+  offset_.push(index + 1);
 }
 
 void Interpreter::Visit(Program *program) {
-  program->GetMain()->Accept(this);
   program->GetClassesList()->Accept(this);
+  program->GetMain()->Accept(this);
 }
 
 void Interpreter::Visit(AssertStatement *assert_statement) {
   assert_statement->GetExpression()->Accept(this);
-  if (!GetTosValue()){
+  if (!GetTosValue().Get(BasicType::Bool)) {
     throw std::runtime_error("assert is false");
   }
 }
 
 void Interpreter::Visit(AssignStatement *assign_statement) {
   assign_statement->GetExpression()->Accept(this);
+  BasicObject new_value = GetTosValue();
+  if (assign_statement->GetLvalue()->GetType()->GetType() == BasicType::Void) {
+    auto last_value = current_layer_->Get(assign_statement->GetLvalue()->GetName());
+    if (new_value.GetType() != last_value->GetType()) {
+      throw std::runtime_error("different types");
+    }
+  }
+  current_layer_->Put(assign_statement->GetLvalue()->GetName(), std::make_shared<BasicObject>(new_value));
+}
 
-  variables_[assign_statement->GetLvalue()->GetName()] = GetTosValue();
+void Interpreter::Visit(IfElseStatement *if_else_statement) {
+  StatementsList *statements_list;
+  int ind;
+  if_else_statement->GetExpression()->Accept(this);
+  if (GetTosValue().Get(BasicType::Bool)) {
+    statements_list = if_else_statement->GetIfStatements();
+    ind = 0;
+  } else {
+    statements_list = if_else_statement->GetElseStatements();
+    ind = 1;
+  }
+  current_layer_ = current_layer_->GetChild(offset_.top())->GetChild(ind);
+  offset_.push(0);
+  statements_list->Accept(this);
+  offset_.pop();
+  current_layer_ = current_layer_->GetParent()->GetParent();
+  size_t index = offset_.top();
+  offset_.pop();
+  offset_.push(index + 1);
+}
+
+void Interpreter::Visit(IfStatement *if_statement) {
+  if_statement->GetExpression()->Accept(this);
+  if (GetTosValue().Get(BasicType::Bool)) {
+    current_layer_ = current_layer_->GetChild(offset_.top());
+    offset_.push(0);
+
+    if_statement->GetStatements()->Accept(this);
+    offset_.pop();
+    size_t index = offset_.top();
+    offset_.pop();
+    offset_.push(index + 1);
+  }
 }
 
 void Interpreter::Visit(OutStatement *out_statement) {
   out_statement->GetExpression()->Accept(this);
-  std::cout << GetTosValue() << std::endl;
+  std::cout << GetTosValue().Get(BasicType::Integer) << std::endl;
+}
+
+void Interpreter::Visit(ScopeDeclStatement *scope_decl_statement) {
+  current_layer_ = current_layer_->GetChild(offset_.top());
+  offset_.push(0);
+  scope_decl_statement->GetStatementsList()->Accept(this);
+  offset_.pop();
+  size_t index = offset_.top();
+  offset_.pop();
+  offset_.push(index + 1);
 }
 
 void Interpreter::Visit(StatementsList *statements_list) {
-  for (int i = 0; i < statements_list->GetSize(); ++i){
+  for (int i = 0; i < statements_list->GetSize(); ++i) {
     statements_list->GetIth(i)->Accept(this);
   }
 }
 
-int Interpreter::GetTosValue() {
+void Interpreter::Visit(WhileStatement *while_statement) {
+  int index = offset_.top();
+  while (1) {
+    while_statement->GetExpression()->Accept(this);
+    if (!GetTosValue().Get(BasicType::Bool)) break;
+    current_layer_ = current_layer_->GetChild(offset_.top());
+    offset_.push(0);
+    while_statement->GetStatementsList()->Accept(this);
+    offset_.pop();
+    current_layer_ = current_layer_->GetParent();
+  }
+  offset_.pop();
+  offset_.push(index + 1);
+}
+
+BasicObject Interpreter::GetTosValue() {
   return tos_value_;
 }
 
-void Interpreter::SetTosValue(int value) {
-  tos_value_ = value;
+void Interpreter::SetTosValue(BasicObject object) {
+  tos_value_ = std::move(object);
 }
 
 void Interpreter::GetResult(Program *program) {

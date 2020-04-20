@@ -1,4 +1,4 @@
-# Install script for directory: /Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-and-Visitors
+# Install script for directory: /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/AST-and-Visitors
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

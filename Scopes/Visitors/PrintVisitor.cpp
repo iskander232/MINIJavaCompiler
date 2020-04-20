@@ -92,14 +92,14 @@ void PrintVisitor::Visit(BinaryCallExpression *binary_call_expression) {
 void PrintVisitor::Visit(BoolExpression *bool_expression) {
   Print();
   stream_ << " bool expression value is:";
-  if (bool_expression->GetValue()) {
+  if (bool_expression->GetValue()->Get(BasicType::Bool)) {
     stream_ << "true" << std::endl;
   } else {
     stream_ << "false" << std::endl;
   }
 }
 
-void PrintVisitor::Visit(IdentExpression* ident_expression){
+void PrintVisitor::Visit(IdentExpression *ident_expression) {
   Print();
   stream_ << "Variable name is: " << ident_expression->GetName() << std::endl;
 }
@@ -170,6 +170,9 @@ void PrintVisitor::Visit(AssignStatement *assign_statement) {
   --num_tabs_;
 }
 
+void PrintVisitor::Visit(IfElseStatement *if_else_statement) {}
+void PrintVisitor::Visit(IfStatement *if_statement) {}
+
 void PrintVisitor::Visit(OutStatement *out_statement) {
   Print();
   stream_ << "cout" << std::endl;
@@ -178,6 +181,8 @@ void PrintVisitor::Visit(OutStatement *out_statement) {
   out_statement->GetExpression()->Accept(this);
   --num_tabs_;
 }
+
+void PrintVisitor::Visit(ScopeDeclStatement *scope_decl_statement) {}
 
 void PrintVisitor::Visit(StatementsList *statements_list) {
   Print();
@@ -189,6 +194,8 @@ void PrintVisitor::Visit(StatementsList *statements_list) {
   }
   --num_tabs_;
 }
+
+void PrintVisitor::Visit(WhileStatement *while_statement) {}
 
 PrintVisitor::~PrintVisitor() {
   stream_.close();

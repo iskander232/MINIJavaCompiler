@@ -1,7 +1,9 @@
 #include "LessOperator.h"
+#include "Types/BasicObject.h"
 
-int LessOperator::eval(int a, int b) const {
-  return a < b;
+BasicObject LessOperator::eval(BasicObject a, BasicObject b) const {
+  return BasicObject(BasicType::Bool,
+                     a.Get(BasicType::Integer) < b.Get(BasicType::Integer));
 }
 
 void LessOperator::Accept(Visitor *visitor) {

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter
+# Install script for directory: /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

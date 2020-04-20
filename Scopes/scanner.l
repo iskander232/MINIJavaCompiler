@@ -71,8 +71,13 @@ blank ([ \t\r])|(\/\*([^(\*\/)]*)\*\/)
 "System.out.println"  return yy::parser::make_OUT                  (loc);
 "int"               return yy::parser::make_INT                  (loc);
 "boolean"           return yy::parser::make_BOOL                 (loc);
+"true"              return yy::parser::make_TRUE                 (loc);
+"false"             return yy::parser::make_FALSE                (loc);
 "void"              return yy::parser::make_VOID                 (loc);
 "assert"            return yy::parser::make_ASSERT               (loc);
+"if"                return yy::parser::make_IF                   (loc);
+"else"              return yy::parser::make_ELSE                 (loc);
+"while"             return yy::parser::make_WHILE                (loc);
 
 {int}               return make_NUMBER(yytext, loc);
 {id}                return yy::parser::make_IDENTIFIER(yytext, loc);

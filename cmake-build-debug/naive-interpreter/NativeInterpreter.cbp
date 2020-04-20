@@ -5,27 +5,27 @@
 		<Option title="NativeInterpreter"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\naive-interpreter\;CMake Files\AST-and-Visitors\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\naive-interpreter\;CMake Files\AST-and-Visitors\;CMake Files\Scopes\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter"/>
+				<Option working_dir="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NativeInterpreter">
-				<Option output="/Users/iskandersagitov/Desktop/MINIJavaCompiler/bin/NativeInterpreter" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/iskandersagitov/Desktop/MINIJavaCompiler/bin"/>
+				<Option output="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/bin/NativeInterpreter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/opt/flex/include"/>
-					<Add directory="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter"/>
+					<Add directory="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
@@ -35,21 +35,21 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 NativeInterpreter"/>
-					<CompileFile command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 NativeInterpreter"/>
+					<CompileFile command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NativeInterpreter/fast">
-				<Option output="/Users/iskandersagitov/Desktop/MINIJavaCompiler/bin/NativeInterpreter" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/iskandersagitov/Desktop/MINIJavaCompiler/bin"/>
+				<Option output="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/bin/NativeInterpreter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/opt/flex/include"/>
-					<Add directory="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter"/>
+					<Add directory="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
@@ -59,48 +59,51 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 NativeInterpreter/fast"/>
-					<CompileFile command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 NativeInterpreter/fast"/>
+					<CompileFile command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/Library/Developer/CommandLineTools/usr/bin/make -j4 -f &quot;/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/naive-interpreter/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/driver.cpp">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/driver.cpp">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/driver.hh">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/driver.hh">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/main.cpp">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/main.cpp">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.cpp">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/parser.cpp">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.cpp.rule">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/parser.cpp.rule">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/parser.hh">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/parser.hh">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/scanner.cpp">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/scanner.cpp">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/scanner.cpp.rule">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/scanner.cpp.rule">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/scanner.h">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/scanner.h">
 			<Option target="NativeInterpreter"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/CMakeLists.txt">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/naive-interpreter/CMakeLists.txt">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/naive-interpreter/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\naive-interpreter\"/>
 		</Unit>
-		<Unit filename="/Users/iskandersagitov/Desktop/MINIJavaCompiler/AST-and-Visitors/CMakeLists.txt">
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/AST-and-Visitors/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\AST-and-Visitors\"/>
+		</Unit>
+		<Unit filename="/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Scopes/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Scopes\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

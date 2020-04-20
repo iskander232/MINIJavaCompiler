@@ -48,10 +48,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler
+CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/AST-and-Visitors/CMakeFiles/progress.marks
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/CMakeFiles /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/AST-and-Visitors/CMakeFiles/progress.marks
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/clean
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/preinstall
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/preinstall
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/rule:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/rule
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/rule
 .PHONY : AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ ParserExampleWithAst: AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/rule
 
 # fast build rule for target.
 ParserExampleWithAst/fast:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build
 .PHONY : ParserExampleWithAst/fast
 
 BinaryOperator/AndOperator.o: BinaryOperator/AndOperator.cpp.o
@@ -131,7 +131,7 @@ BinaryOperator/AndOperator.o: BinaryOperator/AndOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/AndOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/AndOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/AndOperator.cpp.o
 .PHONY : BinaryOperator/AndOperator.cpp.o
 
 BinaryOperator/AndOperator.i: BinaryOperator/AndOperator.cpp.i
@@ -140,7 +140,7 @@ BinaryOperator/AndOperator.i: BinaryOperator/AndOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/AndOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/AndOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/AndOperator.cpp.i
 .PHONY : BinaryOperator/AndOperator.cpp.i
 
 BinaryOperator/AndOperator.s: BinaryOperator/AndOperator.cpp.s
@@ -149,7 +149,7 @@ BinaryOperator/AndOperator.s: BinaryOperator/AndOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/AndOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/AndOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/AndOperator.cpp.s
 .PHONY : BinaryOperator/AndOperator.cpp.s
 
 BinaryOperator/DivOperator.o: BinaryOperator/DivOperator.cpp.o
@@ -158,7 +158,7 @@ BinaryOperator/DivOperator.o: BinaryOperator/DivOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/DivOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/DivOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/DivOperator.cpp.o
 .PHONY : BinaryOperator/DivOperator.cpp.o
 
 BinaryOperator/DivOperator.i: BinaryOperator/DivOperator.cpp.i
@@ -167,7 +167,7 @@ BinaryOperator/DivOperator.i: BinaryOperator/DivOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/DivOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/DivOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/DivOperator.cpp.i
 .PHONY : BinaryOperator/DivOperator.cpp.i
 
 BinaryOperator/DivOperator.s: BinaryOperator/DivOperator.cpp.s
@@ -176,7 +176,7 @@ BinaryOperator/DivOperator.s: BinaryOperator/DivOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/DivOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/DivOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/DivOperator.cpp.s
 .PHONY : BinaryOperator/DivOperator.cpp.s
 
 BinaryOperator/EqualOperator.o: BinaryOperator/EqualOperator.cpp.o
@@ -185,7 +185,7 @@ BinaryOperator/EqualOperator.o: BinaryOperator/EqualOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/EqualOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/EqualOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/EqualOperator.cpp.o
 .PHONY : BinaryOperator/EqualOperator.cpp.o
 
 BinaryOperator/EqualOperator.i: BinaryOperator/EqualOperator.cpp.i
@@ -194,7 +194,7 @@ BinaryOperator/EqualOperator.i: BinaryOperator/EqualOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/EqualOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/EqualOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/EqualOperator.cpp.i
 .PHONY : BinaryOperator/EqualOperator.cpp.i
 
 BinaryOperator/EqualOperator.s: BinaryOperator/EqualOperator.cpp.s
@@ -203,7 +203,7 @@ BinaryOperator/EqualOperator.s: BinaryOperator/EqualOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/EqualOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/EqualOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/EqualOperator.cpp.s
 .PHONY : BinaryOperator/EqualOperator.cpp.s
 
 BinaryOperator/LessOperator.o: BinaryOperator/LessOperator.cpp.o
@@ -212,7 +212,7 @@ BinaryOperator/LessOperator.o: BinaryOperator/LessOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/LessOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/LessOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/LessOperator.cpp.o
 .PHONY : BinaryOperator/LessOperator.cpp.o
 
 BinaryOperator/LessOperator.i: BinaryOperator/LessOperator.cpp.i
@@ -221,7 +221,7 @@ BinaryOperator/LessOperator.i: BinaryOperator/LessOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/LessOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/LessOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/LessOperator.cpp.i
 .PHONY : BinaryOperator/LessOperator.cpp.i
 
 BinaryOperator/LessOperator.s: BinaryOperator/LessOperator.cpp.s
@@ -230,7 +230,7 @@ BinaryOperator/LessOperator.s: BinaryOperator/LessOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/LessOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/LessOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/LessOperator.cpp.s
 .PHONY : BinaryOperator/LessOperator.cpp.s
 
 BinaryOperator/MinusOperator.o: BinaryOperator/MinusOperator.cpp.o
@@ -239,7 +239,7 @@ BinaryOperator/MinusOperator.o: BinaryOperator/MinusOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/MinusOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MinusOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MinusOperator.cpp.o
 .PHONY : BinaryOperator/MinusOperator.cpp.o
 
 BinaryOperator/MinusOperator.i: BinaryOperator/MinusOperator.cpp.i
@@ -248,7 +248,7 @@ BinaryOperator/MinusOperator.i: BinaryOperator/MinusOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/MinusOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MinusOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MinusOperator.cpp.i
 .PHONY : BinaryOperator/MinusOperator.cpp.i
 
 BinaryOperator/MinusOperator.s: BinaryOperator/MinusOperator.cpp.s
@@ -257,7 +257,7 @@ BinaryOperator/MinusOperator.s: BinaryOperator/MinusOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/MinusOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MinusOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MinusOperator.cpp.s
 .PHONY : BinaryOperator/MinusOperator.cpp.s
 
 BinaryOperator/MoreOperator.o: BinaryOperator/MoreOperator.cpp.o
@@ -266,7 +266,7 @@ BinaryOperator/MoreOperator.o: BinaryOperator/MoreOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/MoreOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MoreOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MoreOperator.cpp.o
 .PHONY : BinaryOperator/MoreOperator.cpp.o
 
 BinaryOperator/MoreOperator.i: BinaryOperator/MoreOperator.cpp.i
@@ -275,7 +275,7 @@ BinaryOperator/MoreOperator.i: BinaryOperator/MoreOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/MoreOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MoreOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MoreOperator.cpp.i
 .PHONY : BinaryOperator/MoreOperator.cpp.i
 
 BinaryOperator/MoreOperator.s: BinaryOperator/MoreOperator.cpp.s
@@ -284,7 +284,7 @@ BinaryOperator/MoreOperator.s: BinaryOperator/MoreOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/MoreOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MoreOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MoreOperator.cpp.s
 .PHONY : BinaryOperator/MoreOperator.cpp.s
 
 BinaryOperator/MulOperator.o: BinaryOperator/MulOperator.cpp.o
@@ -293,7 +293,7 @@ BinaryOperator/MulOperator.o: BinaryOperator/MulOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/MulOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MulOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MulOperator.cpp.o
 .PHONY : BinaryOperator/MulOperator.cpp.o
 
 BinaryOperator/MulOperator.i: BinaryOperator/MulOperator.cpp.i
@@ -302,7 +302,7 @@ BinaryOperator/MulOperator.i: BinaryOperator/MulOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/MulOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MulOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MulOperator.cpp.i
 .PHONY : BinaryOperator/MulOperator.cpp.i
 
 BinaryOperator/MulOperator.s: BinaryOperator/MulOperator.cpp.s
@@ -311,7 +311,7 @@ BinaryOperator/MulOperator.s: BinaryOperator/MulOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/MulOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MulOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/MulOperator.cpp.s
 .PHONY : BinaryOperator/MulOperator.cpp.s
 
 BinaryOperator/OrOperator.o: BinaryOperator/OrOperator.cpp.o
@@ -320,7 +320,7 @@ BinaryOperator/OrOperator.o: BinaryOperator/OrOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/OrOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/OrOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/OrOperator.cpp.o
 .PHONY : BinaryOperator/OrOperator.cpp.o
 
 BinaryOperator/OrOperator.i: BinaryOperator/OrOperator.cpp.i
@@ -329,7 +329,7 @@ BinaryOperator/OrOperator.i: BinaryOperator/OrOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/OrOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/OrOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/OrOperator.cpp.i
 .PHONY : BinaryOperator/OrOperator.cpp.i
 
 BinaryOperator/OrOperator.s: BinaryOperator/OrOperator.cpp.s
@@ -338,7 +338,7 @@ BinaryOperator/OrOperator.s: BinaryOperator/OrOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/OrOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/OrOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/OrOperator.cpp.s
 .PHONY : BinaryOperator/OrOperator.cpp.s
 
 BinaryOperator/PlusOperator.o: BinaryOperator/PlusOperator.cpp.o
@@ -347,7 +347,7 @@ BinaryOperator/PlusOperator.o: BinaryOperator/PlusOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/PlusOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/PlusOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/PlusOperator.cpp.o
 .PHONY : BinaryOperator/PlusOperator.cpp.o
 
 BinaryOperator/PlusOperator.i: BinaryOperator/PlusOperator.cpp.i
@@ -356,7 +356,7 @@ BinaryOperator/PlusOperator.i: BinaryOperator/PlusOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/PlusOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/PlusOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/PlusOperator.cpp.i
 .PHONY : BinaryOperator/PlusOperator.cpp.i
 
 BinaryOperator/PlusOperator.s: BinaryOperator/PlusOperator.cpp.s
@@ -365,7 +365,7 @@ BinaryOperator/PlusOperator.s: BinaryOperator/PlusOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/PlusOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/PlusOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/PlusOperator.cpp.s
 .PHONY : BinaryOperator/PlusOperator.cpp.s
 
 BinaryOperator/ProcOperator.o: BinaryOperator/ProcOperator.cpp.o
@@ -374,7 +374,7 @@ BinaryOperator/ProcOperator.o: BinaryOperator/ProcOperator.cpp.o
 
 # target to build an object file
 BinaryOperator/ProcOperator.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/ProcOperator.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/ProcOperator.cpp.o
 .PHONY : BinaryOperator/ProcOperator.cpp.o
 
 BinaryOperator/ProcOperator.i: BinaryOperator/ProcOperator.cpp.i
@@ -383,7 +383,7 @@ BinaryOperator/ProcOperator.i: BinaryOperator/ProcOperator.cpp.i
 
 # target to preprocess a source file
 BinaryOperator/ProcOperator.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/ProcOperator.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/ProcOperator.cpp.i
 .PHONY : BinaryOperator/ProcOperator.cpp.i
 
 BinaryOperator/ProcOperator.s: BinaryOperator/ProcOperator.cpp.s
@@ -392,7 +392,7 @@ BinaryOperator/ProcOperator.s: BinaryOperator/ProcOperator.cpp.s
 
 # target to generate assembly for a file
 BinaryOperator/ProcOperator.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/ProcOperator.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/BinaryOperator/ProcOperator.cpp.s
 .PHONY : BinaryOperator/ProcOperator.cpp.s
 
 Classes/ClassesList.o: Classes/ClassesList.cpp.o
@@ -401,7 +401,7 @@ Classes/ClassesList.o: Classes/ClassesList.cpp.o
 
 # target to build an object file
 Classes/ClassesList.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Classes/ClassesList.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Classes/ClassesList.cpp.o
 .PHONY : Classes/ClassesList.cpp.o
 
 Classes/ClassesList.i: Classes/ClassesList.cpp.i
@@ -410,7 +410,7 @@ Classes/ClassesList.i: Classes/ClassesList.cpp.i
 
 # target to preprocess a source file
 Classes/ClassesList.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Classes/ClassesList.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Classes/ClassesList.cpp.i
 .PHONY : Classes/ClassesList.cpp.i
 
 Classes/ClassesList.s: Classes/ClassesList.cpp.s
@@ -419,7 +419,7 @@ Classes/ClassesList.s: Classes/ClassesList.cpp.s
 
 # target to generate assembly for a file
 Classes/ClassesList.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Classes/ClassesList.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Classes/ClassesList.cpp.s
 .PHONY : Classes/ClassesList.cpp.s
 
 Declarations/VarDecl.o: Declarations/VarDecl.cpp.o
@@ -428,7 +428,7 @@ Declarations/VarDecl.o: Declarations/VarDecl.cpp.o
 
 # target to build an object file
 Declarations/VarDecl.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Declarations/VarDecl.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Declarations/VarDecl.cpp.o
 .PHONY : Declarations/VarDecl.cpp.o
 
 Declarations/VarDecl.i: Declarations/VarDecl.cpp.i
@@ -437,7 +437,7 @@ Declarations/VarDecl.i: Declarations/VarDecl.cpp.i
 
 # target to preprocess a source file
 Declarations/VarDecl.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Declarations/VarDecl.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Declarations/VarDecl.cpp.i
 .PHONY : Declarations/VarDecl.cpp.i
 
 Declarations/VarDecl.s: Declarations/VarDecl.cpp.s
@@ -446,7 +446,7 @@ Declarations/VarDecl.s: Declarations/VarDecl.cpp.s
 
 # target to generate assembly for a file
 Declarations/VarDecl.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Declarations/VarDecl.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Declarations/VarDecl.cpp.s
 .PHONY : Declarations/VarDecl.cpp.s
 
 Expression/BinaryCallExpression.o: Expression/BinaryCallExpression.cpp.o
@@ -455,7 +455,7 @@ Expression/BinaryCallExpression.o: Expression/BinaryCallExpression.cpp.o
 
 # target to build an object file
 Expression/BinaryCallExpression.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BinaryCallExpression.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BinaryCallExpression.cpp.o
 .PHONY : Expression/BinaryCallExpression.cpp.o
 
 Expression/BinaryCallExpression.i: Expression/BinaryCallExpression.cpp.i
@@ -464,7 +464,7 @@ Expression/BinaryCallExpression.i: Expression/BinaryCallExpression.cpp.i
 
 # target to preprocess a source file
 Expression/BinaryCallExpression.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BinaryCallExpression.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BinaryCallExpression.cpp.i
 .PHONY : Expression/BinaryCallExpression.cpp.i
 
 Expression/BinaryCallExpression.s: Expression/BinaryCallExpression.cpp.s
@@ -473,7 +473,7 @@ Expression/BinaryCallExpression.s: Expression/BinaryCallExpression.cpp.s
 
 # target to generate assembly for a file
 Expression/BinaryCallExpression.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BinaryCallExpression.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BinaryCallExpression.cpp.s
 .PHONY : Expression/BinaryCallExpression.cpp.s
 
 Expression/BoolExpression.o: Expression/BoolExpression.cpp.o
@@ -482,7 +482,7 @@ Expression/BoolExpression.o: Expression/BoolExpression.cpp.o
 
 # target to build an object file
 Expression/BoolExpression.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BoolExpression.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BoolExpression.cpp.o
 .PHONY : Expression/BoolExpression.cpp.o
 
 Expression/BoolExpression.i: Expression/BoolExpression.cpp.i
@@ -491,7 +491,7 @@ Expression/BoolExpression.i: Expression/BoolExpression.cpp.i
 
 # target to preprocess a source file
 Expression/BoolExpression.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BoolExpression.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BoolExpression.cpp.i
 .PHONY : Expression/BoolExpression.cpp.i
 
 Expression/BoolExpression.s: Expression/BoolExpression.cpp.s
@@ -500,7 +500,7 @@ Expression/BoolExpression.s: Expression/BoolExpression.cpp.s
 
 # target to generate assembly for a file
 Expression/BoolExpression.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BoolExpression.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/BoolExpression.cpp.s
 .PHONY : Expression/BoolExpression.cpp.s
 
 Expression/IdentExpression.o: Expression/IdentExpression.cpp.o
@@ -509,7 +509,7 @@ Expression/IdentExpression.o: Expression/IdentExpression.cpp.o
 
 # target to build an object file
 Expression/IdentExpression.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/IdentExpression.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/IdentExpression.cpp.o
 .PHONY : Expression/IdentExpression.cpp.o
 
 Expression/IdentExpression.i: Expression/IdentExpression.cpp.i
@@ -518,7 +518,7 @@ Expression/IdentExpression.i: Expression/IdentExpression.cpp.i
 
 # target to preprocess a source file
 Expression/IdentExpression.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/IdentExpression.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/IdentExpression.cpp.i
 .PHONY : Expression/IdentExpression.cpp.i
 
 Expression/IdentExpression.s: Expression/IdentExpression.cpp.s
@@ -527,7 +527,7 @@ Expression/IdentExpression.s: Expression/IdentExpression.cpp.s
 
 # target to generate assembly for a file
 Expression/IdentExpression.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/IdentExpression.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/IdentExpression.cpp.s
 .PHONY : Expression/IdentExpression.cpp.s
 
 Expression/NotExpression.o: Expression/NotExpression.cpp.o
@@ -536,7 +536,7 @@ Expression/NotExpression.o: Expression/NotExpression.cpp.o
 
 # target to build an object file
 Expression/NotExpression.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NotExpression.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NotExpression.cpp.o
 .PHONY : Expression/NotExpression.cpp.o
 
 Expression/NotExpression.i: Expression/NotExpression.cpp.i
@@ -545,7 +545,7 @@ Expression/NotExpression.i: Expression/NotExpression.cpp.i
 
 # target to preprocess a source file
 Expression/NotExpression.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NotExpression.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NotExpression.cpp.i
 .PHONY : Expression/NotExpression.cpp.i
 
 Expression/NotExpression.s: Expression/NotExpression.cpp.s
@@ -554,7 +554,7 @@ Expression/NotExpression.s: Expression/NotExpression.cpp.s
 
 # target to generate assembly for a file
 Expression/NotExpression.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NotExpression.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NotExpression.cpp.s
 .PHONY : Expression/NotExpression.cpp.s
 
 Expression/NumberExpression.o: Expression/NumberExpression.cpp.o
@@ -563,7 +563,7 @@ Expression/NumberExpression.o: Expression/NumberExpression.cpp.o
 
 # target to build an object file
 Expression/NumberExpression.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NumberExpression.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NumberExpression.cpp.o
 .PHONY : Expression/NumberExpression.cpp.o
 
 Expression/NumberExpression.i: Expression/NumberExpression.cpp.i
@@ -572,7 +572,7 @@ Expression/NumberExpression.i: Expression/NumberExpression.cpp.i
 
 # target to preprocess a source file
 Expression/NumberExpression.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NumberExpression.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NumberExpression.cpp.i
 .PHONY : Expression/NumberExpression.cpp.i
 
 Expression/NumberExpression.s: Expression/NumberExpression.cpp.s
@@ -581,7 +581,7 @@ Expression/NumberExpression.s: Expression/NumberExpression.cpp.s
 
 # target to generate assembly for a file
 Expression/NumberExpression.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NumberExpression.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/NumberExpression.cpp.s
 .PHONY : Expression/NumberExpression.cpp.s
 
 Expression/UnarMinusExpression.o: Expression/UnarMinusExpression.cpp.o
@@ -590,7 +590,7 @@ Expression/UnarMinusExpression.o: Expression/UnarMinusExpression.cpp.o
 
 # target to build an object file
 Expression/UnarMinusExpression.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/UnarMinusExpression.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/UnarMinusExpression.cpp.o
 .PHONY : Expression/UnarMinusExpression.cpp.o
 
 Expression/UnarMinusExpression.i: Expression/UnarMinusExpression.cpp.i
@@ -599,7 +599,7 @@ Expression/UnarMinusExpression.i: Expression/UnarMinusExpression.cpp.i
 
 # target to preprocess a source file
 Expression/UnarMinusExpression.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/UnarMinusExpression.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/UnarMinusExpression.cpp.i
 .PHONY : Expression/UnarMinusExpression.cpp.i
 
 Expression/UnarMinusExpression.s: Expression/UnarMinusExpression.cpp.s
@@ -608,7 +608,7 @@ Expression/UnarMinusExpression.s: Expression/UnarMinusExpression.cpp.s
 
 # target to generate assembly for a file
 Expression/UnarMinusExpression.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/UnarMinusExpression.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Expression/UnarMinusExpression.cpp.s
 .PHONY : Expression/UnarMinusExpression.cpp.s
 
 Lvalue/SimpleLvalue.o: Lvalue/SimpleLvalue.cpp.o
@@ -617,7 +617,7 @@ Lvalue/SimpleLvalue.o: Lvalue/SimpleLvalue.cpp.o
 
 # target to build an object file
 Lvalue/SimpleLvalue.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Lvalue/SimpleLvalue.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Lvalue/SimpleLvalue.cpp.o
 .PHONY : Lvalue/SimpleLvalue.cpp.o
 
 Lvalue/SimpleLvalue.i: Lvalue/SimpleLvalue.cpp.i
@@ -626,7 +626,7 @@ Lvalue/SimpleLvalue.i: Lvalue/SimpleLvalue.cpp.i
 
 # target to preprocess a source file
 Lvalue/SimpleLvalue.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Lvalue/SimpleLvalue.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Lvalue/SimpleLvalue.cpp.i
 .PHONY : Lvalue/SimpleLvalue.cpp.i
 
 Lvalue/SimpleLvalue.s: Lvalue/SimpleLvalue.cpp.s
@@ -635,7 +635,7 @@ Lvalue/SimpleLvalue.s: Lvalue/SimpleLvalue.cpp.s
 
 # target to generate assembly for a file
 Lvalue/SimpleLvalue.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Lvalue/SimpleLvalue.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Lvalue/SimpleLvalue.cpp.s
 .PHONY : Lvalue/SimpleLvalue.cpp.s
 
 Main/Main.o: Main/Main.cpp.o
@@ -644,7 +644,7 @@ Main/Main.o: Main/Main.cpp.o
 
 # target to build an object file
 Main/Main.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Main/Main.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Main/Main.cpp.o
 .PHONY : Main/Main.cpp.o
 
 Main/Main.i: Main/Main.cpp.i
@@ -653,7 +653,7 @@ Main/Main.i: Main/Main.cpp.i
 
 # target to preprocess a source file
 Main/Main.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Main/Main.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Main/Main.cpp.i
 .PHONY : Main/Main.cpp.i
 
 Main/Main.s: Main/Main.cpp.s
@@ -662,7 +662,7 @@ Main/Main.s: Main/Main.cpp.s
 
 # target to generate assembly for a file
 Main/Main.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Main/Main.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Main/Main.cpp.s
 .PHONY : Main/Main.cpp.s
 
 Program/Program.o: Program/Program.cpp.o
@@ -671,7 +671,7 @@ Program/Program.o: Program/Program.cpp.o
 
 # target to build an object file
 Program/Program.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Program/Program.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Program/Program.cpp.o
 .PHONY : Program/Program.cpp.o
 
 Program/Program.i: Program/Program.cpp.i
@@ -680,7 +680,7 @@ Program/Program.i: Program/Program.cpp.i
 
 # target to preprocess a source file
 Program/Program.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Program/Program.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Program/Program.cpp.i
 .PHONY : Program/Program.cpp.i
 
 Program/Program.s: Program/Program.cpp.s
@@ -689,7 +689,7 @@ Program/Program.s: Program/Program.cpp.s
 
 # target to generate assembly for a file
 Program/Program.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Program/Program.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Program/Program.cpp.s
 .PHONY : Program/Program.cpp.s
 
 Statements/AssertStatement.o: Statements/AssertStatement.cpp.o
@@ -698,7 +698,7 @@ Statements/AssertStatement.o: Statements/AssertStatement.cpp.o
 
 # target to build an object file
 Statements/AssertStatement.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssertStatement.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssertStatement.cpp.o
 .PHONY : Statements/AssertStatement.cpp.o
 
 Statements/AssertStatement.i: Statements/AssertStatement.cpp.i
@@ -707,7 +707,7 @@ Statements/AssertStatement.i: Statements/AssertStatement.cpp.i
 
 # target to preprocess a source file
 Statements/AssertStatement.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssertStatement.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssertStatement.cpp.i
 .PHONY : Statements/AssertStatement.cpp.i
 
 Statements/AssertStatement.s: Statements/AssertStatement.cpp.s
@@ -716,7 +716,7 @@ Statements/AssertStatement.s: Statements/AssertStatement.cpp.s
 
 # target to generate assembly for a file
 Statements/AssertStatement.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssertStatement.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssertStatement.cpp.s
 .PHONY : Statements/AssertStatement.cpp.s
 
 Statements/AssignStatement.o: Statements/AssignStatement.cpp.o
@@ -725,7 +725,7 @@ Statements/AssignStatement.o: Statements/AssignStatement.cpp.o
 
 # target to build an object file
 Statements/AssignStatement.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssignStatement.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssignStatement.cpp.o
 .PHONY : Statements/AssignStatement.cpp.o
 
 Statements/AssignStatement.i: Statements/AssignStatement.cpp.i
@@ -734,7 +734,7 @@ Statements/AssignStatement.i: Statements/AssignStatement.cpp.i
 
 # target to preprocess a source file
 Statements/AssignStatement.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssignStatement.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssignStatement.cpp.i
 .PHONY : Statements/AssignStatement.cpp.i
 
 Statements/AssignStatement.s: Statements/AssignStatement.cpp.s
@@ -743,7 +743,7 @@ Statements/AssignStatement.s: Statements/AssignStatement.cpp.s
 
 # target to generate assembly for a file
 Statements/AssignStatement.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssignStatement.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/AssignStatement.cpp.s
 .PHONY : Statements/AssignStatement.cpp.s
 
 Statements/OutStatement.o: Statements/OutStatement.cpp.o
@@ -752,7 +752,7 @@ Statements/OutStatement.o: Statements/OutStatement.cpp.o
 
 # target to build an object file
 Statements/OutStatement.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/OutStatement.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/OutStatement.cpp.o
 .PHONY : Statements/OutStatement.cpp.o
 
 Statements/OutStatement.i: Statements/OutStatement.cpp.i
@@ -761,7 +761,7 @@ Statements/OutStatement.i: Statements/OutStatement.cpp.i
 
 # target to preprocess a source file
 Statements/OutStatement.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/OutStatement.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/OutStatement.cpp.i
 .PHONY : Statements/OutStatement.cpp.i
 
 Statements/OutStatement.s: Statements/OutStatement.cpp.s
@@ -770,7 +770,7 @@ Statements/OutStatement.s: Statements/OutStatement.cpp.s
 
 # target to generate assembly for a file
 Statements/OutStatement.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/OutStatement.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/OutStatement.cpp.s
 .PHONY : Statements/OutStatement.cpp.s
 
 Statements/StatementsList.o: Statements/StatementsList.cpp.o
@@ -779,7 +779,7 @@ Statements/StatementsList.o: Statements/StatementsList.cpp.o
 
 # target to build an object file
 Statements/StatementsList.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/StatementsList.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/StatementsList.cpp.o
 .PHONY : Statements/StatementsList.cpp.o
 
 Statements/StatementsList.i: Statements/StatementsList.cpp.i
@@ -788,7 +788,7 @@ Statements/StatementsList.i: Statements/StatementsList.cpp.i
 
 # target to preprocess a source file
 Statements/StatementsList.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/StatementsList.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/StatementsList.cpp.i
 .PHONY : Statements/StatementsList.cpp.i
 
 Statements/StatementsList.s: Statements/StatementsList.cpp.s
@@ -797,7 +797,7 @@ Statements/StatementsList.s: Statements/StatementsList.cpp.s
 
 # target to generate assembly for a file
 Statements/StatementsList.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/StatementsList.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Statements/StatementsList.cpp.s
 .PHONY : Statements/StatementsList.cpp.s
 
 Visitors/Interpreter.o: Visitors/Interpreter.cpp.o
@@ -806,7 +806,7 @@ Visitors/Interpreter.o: Visitors/Interpreter.cpp.o
 
 # target to build an object file
 Visitors/Interpreter.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/Interpreter.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/Interpreter.cpp.o
 .PHONY : Visitors/Interpreter.cpp.o
 
 Visitors/Interpreter.i: Visitors/Interpreter.cpp.i
@@ -815,7 +815,7 @@ Visitors/Interpreter.i: Visitors/Interpreter.cpp.i
 
 # target to preprocess a source file
 Visitors/Interpreter.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/Interpreter.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/Interpreter.cpp.i
 .PHONY : Visitors/Interpreter.cpp.i
 
 Visitors/Interpreter.s: Visitors/Interpreter.cpp.s
@@ -824,7 +824,7 @@ Visitors/Interpreter.s: Visitors/Interpreter.cpp.s
 
 # target to generate assembly for a file
 Visitors/Interpreter.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/Interpreter.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/Interpreter.cpp.s
 .PHONY : Visitors/Interpreter.cpp.s
 
 Visitors/PrintVisitor.o: Visitors/PrintVisitor.cpp.o
@@ -833,7 +833,7 @@ Visitors/PrintVisitor.o: Visitors/PrintVisitor.cpp.o
 
 # target to build an object file
 Visitors/PrintVisitor.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/PrintVisitor.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/PrintVisitor.cpp.o
 .PHONY : Visitors/PrintVisitor.cpp.o
 
 Visitors/PrintVisitor.i: Visitors/PrintVisitor.cpp.i
@@ -842,7 +842,7 @@ Visitors/PrintVisitor.i: Visitors/PrintVisitor.cpp.i
 
 # target to preprocess a source file
 Visitors/PrintVisitor.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/PrintVisitor.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/PrintVisitor.cpp.i
 .PHONY : Visitors/PrintVisitor.cpp.i
 
 Visitors/PrintVisitor.s: Visitors/PrintVisitor.cpp.s
@@ -851,7 +851,7 @@ Visitors/PrintVisitor.s: Visitors/PrintVisitor.cpp.s
 
 # target to generate assembly for a file
 Visitors/PrintVisitor.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/PrintVisitor.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/Visitors/PrintVisitor.cpp.s
 .PHONY : Visitors/PrintVisitor.cpp.s
 
 driver.o: driver.cpp.o
@@ -860,7 +860,7 @@ driver.o: driver.cpp.o
 
 # target to build an object file
 driver.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/driver.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/driver.cpp.o
 .PHONY : driver.cpp.o
 
 driver.i: driver.cpp.i
@@ -869,7 +869,7 @@ driver.i: driver.cpp.i
 
 # target to preprocess a source file
 driver.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/driver.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/driver.cpp.i
 .PHONY : driver.cpp.i
 
 driver.s: driver.cpp.s
@@ -878,7 +878,7 @@ driver.s: driver.cpp.s
 
 # target to generate assembly for a file
 driver.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/driver.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/driver.cpp.s
 .PHONY : driver.cpp.s
 
 main.o: main.cpp.o
@@ -887,7 +887,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/main.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -896,7 +896,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/main.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -905,7 +905,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/main.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 parser.o: parser.cpp.o
@@ -914,7 +914,7 @@ parser.o: parser.cpp.o
 
 # target to build an object file
 parser.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/parser.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/parser.cpp.o
 .PHONY : parser.cpp.o
 
 parser.i: parser.cpp.i
@@ -923,7 +923,7 @@ parser.i: parser.cpp.i
 
 # target to preprocess a source file
 parser.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/parser.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/parser.cpp.i
 .PHONY : parser.cpp.i
 
 parser.s: parser.cpp.s
@@ -932,7 +932,7 @@ parser.s: parser.cpp.s
 
 # target to generate assembly for a file
 parser.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/parser.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
 scanner.o: scanner.cpp.o
@@ -941,7 +941,7 @@ scanner.o: scanner.cpp.o
 
 # target to build an object file
 scanner.cpp.o:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/scanner.cpp.o
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/scanner.cpp.o
 .PHONY : scanner.cpp.o
 
 scanner.i: scanner.cpp.i
@@ -950,7 +950,7 @@ scanner.i: scanner.cpp.i
 
 # target to preprocess a source file
 scanner.cpp.i:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/scanner.cpp.i
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/scanner.cpp.i
 .PHONY : scanner.cpp.i
 
 scanner.s: scanner.cpp.s
@@ -959,7 +959,7 @@ scanner.s: scanner.cpp.s
 
 # target to generate assembly for a file
 scanner.cpp.s:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/scanner.cpp.s
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/scanner.cpp.s
 .PHONY : scanner.cpp.s
 
 # Help Target
@@ -1075,6 +1075,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

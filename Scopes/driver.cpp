@@ -3,6 +3,7 @@
 
 #include "Visitors/PrintVisitor.h"
 #include "Visitors/Interpreter.h"
+#include "Visitors/TreeBuilder.h"
 
 Driver::Driver() :
     trace_parsing(false),
@@ -20,7 +21,10 @@ int Driver::parse(const std::string &f) {
 }
 
 void Driver::Evaluate() {
-  Interpreter interpreter;
+  TreeBuilder tree_builder;
+  tree_builder.Visit(program);
+  ScopeLayer* root = tree_builder.GetRoot();
+  Interpreter interpreter(root);
   interpreter.Visit(program);
 }
 

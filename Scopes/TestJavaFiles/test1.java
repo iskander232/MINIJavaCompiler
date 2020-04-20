@@ -1,12 +1,19 @@
 class test1 {
     public static void main() {
-        boolean x;
-        int y;
-        int z = 12;
-        x = (!(true || false) && false); // x is false
-        assert(x)
-        System.out.println(x);
-        y = (13 % z) + 2;               // y is 1
-        System.out.println(y);
+       int x;
+       x = 12;
+       int y = 0;
+       while(x > 0){
+           x = x / 2;
+           boolean y = true;
+           assert(y);
+       }
+       if (x == 0){
+         y = 12;
+       } else{
+         y = 14;
+       }
+       assert(y == 12);
+       x = true; //exception int <- boolean
     }
 }

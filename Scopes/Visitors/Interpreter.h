@@ -1,11 +1,14 @@
-#include "Visitor.h"
+#include "TemplateVisitor.h"
+#include "Types/BasicObject.h"
+#include "SymbolTable/ScopeLayer.h"
 
 #include <string>
 #include <map>
+#include <stack>
 
 class Interpreter : public Visitor {
  public:
-
+  explicit Interpreter(ScopeLayer *root);
   void Visit(AndOperator *and_operator) override;
   void Visit(DivOperator *div_operator) override;
   void Visit(EqualOperator *equal_operator) override;
@@ -29,13 +32,18 @@ class Interpreter : public Visitor {
   void Visit(Program *program) override;
   void Visit(AssertStatement *assert_statement) override;
   void Visit(AssignStatement *assign_statement) override;
+  void Visit(IfElseStatement *if_else_statement) override;
+  void Visit(IfStatement *if_statement) override;
   void Visit(OutStatement *out_statement) override;
+  void Visit(ScopeDeclStatement *scope_decl_statement) override;
   void Visit(StatementsList *statements_list) override;
+  void Visit(WhileStatement *while_statement) override;
 
-  void GetResult(Program* program);
+  void GetResult(Program *program);
  private:
-  std::map<std::string, int> variables_;
-  int tos_value_;
-  void SetTosValue(int value);
-  int GetTosValue();
+  BasicObject GetTosValue();
+  void SetTosValue(BasicObject object);
+  BasicObject tos_value_;
+  ScopeLayer *current_layer_;
+  std::stack<size_t> offset_;
 };

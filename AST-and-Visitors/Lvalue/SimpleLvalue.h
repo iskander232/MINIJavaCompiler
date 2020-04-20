@@ -6,7 +6,7 @@
 
 class SimpleLvalue: public Lvalue{
  public:
-  SimpleLvalue(std::string name);
+  SimpleLvalue(std::string name)  ;
   std::string GetName() override ;
   void Accept(Visitor* visitor) override;
  private:

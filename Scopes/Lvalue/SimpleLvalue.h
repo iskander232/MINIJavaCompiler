@@ -6,9 +6,14 @@
 
 class SimpleLvalue: public Lvalue{
  public:
-  SimpleLvalue(std::string name);
+
+  explicit SimpleLvalue(std::string name);
+  SimpleLvalue(BasicObject* object, std::string name);
+
+  BasicObject* GetType() override ;
   std::string GetName() override ;
-  void Accept(Visitor* visitor) override;
+  void Accept(Visitor* visitor) override ;
  private:
   std::string name_;
+  BasicObject* type_;
 };

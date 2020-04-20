@@ -48,10 +48,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler
+CMAKE_SOURCE_DIR = /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/CMakeFiles /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -136,6 +136,19 @@ ParserExampleWithAst/fast:
 	$(MAKE) -f AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build.make AST-and-Visitors/CMakeFiles/ParserExampleWithAst.dir/build
 .PHONY : ParserExampleWithAst/fast
 
+#=============================================================================
+# Target rules for targets named Scopes
+
+# Build rule for target.
+Scopes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Scopes
+.PHONY : Scopes
+
+# fast build rule for target.
+Scopes/fast:
+	$(MAKE) -f Scopes/CMakeFiles/Scopes.dir/build.make Scopes/CMakeFiles/Scopes.dir/build
+.PHONY : Scopes/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,6 +159,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... NativeInterpreter"
 	@echo "... ParserExampleWithAst"
+	@echo "... Scopes"
 .PHONY : help
 
 

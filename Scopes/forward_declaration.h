@@ -36,5 +36,15 @@ class Program;
 class Statement;
 class AssertStatement;
 class AssignStatement;
+class IfElseStatement;
+class IfStatement;
 class OutStatement;
+class ScopeDeclStatement;
 class StatementsList;
+class WhileStatement;
+
+class Object;
+class ArrayObject;
+class BasicObject;
+class IdentObject;
+class SimpleObject;

@@ -35,3 +35,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${Compilers_SOURCE_DIR}/bin)
 
 add_subdirectory(naive-interpreter)
 add_subdirectory(AST-and-Visitors)
+add_subdirectory(Scopes)
