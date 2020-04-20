@@ -38,3 +38,7 @@ build/
 *.exe
 *.out
 *.app
+
+# makefiles
+
+*cmake-build-debug/
