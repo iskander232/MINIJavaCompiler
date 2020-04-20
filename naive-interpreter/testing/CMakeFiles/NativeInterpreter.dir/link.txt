@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/NativeInterpreter.dir/main.o CMakeFiles/NativeInterpreter.dir/driver.o CMakeFiles/NativeInterpreter.dir/parser.o CMakeFiles/NativeInterpreter.dir/scanner.o  -o NativeInterpreter 
