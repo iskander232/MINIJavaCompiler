@@ -1,7 +1,7 @@
 #include "TreeBuilder.h"
 #include "elements.h"
 
-TreeBuilder::TreeBuilder() : tree_(new ScopeLayer()), current_layer_(tree_.root_) {}
+TreeBuilder::TreeBuilder() : tree_(new ScopeLayer()) {}
 
 void TreeBuilder::Visit(AndOperator *and_operator) {}
 void TreeBuilder::Visit(DivOperator *div_operator) {}
@@ -28,17 +28,18 @@ void TreeBuilder::Visit(ClassesList *classes_list) {}
 
 void TreeBuilder::Visit(AssignStatement *assign_statement) {
   if (assign_statement->GetLvalue()->GetType()->GetType() != BasicType::Void) {
-    current_layer_->DeclareVariable(Symbol(assign_statement->GetLvalue()->GetName()));
+    tree_.GetCurrentLayer()->DeclareVariable(Symbol(assign_statement->GetLvalue()->GetName()));
   }
 }
 void TreeBuilder::Visit(VarDecl *var_decl) {
-  current_layer_->DeclareVariable(Symbol(var_decl->GetName()));
+  tree_.GetCurrentLayer()->DeclareVariable(Symbol(var_decl->GetName()));
 }
 
 void TreeBuilder::Visit(Main *main) {
-  auto new_layer = new ScopeLayer(current_layer_);
-  current_layer_ = new_layer;
+  tree_.AddChildAndGoThere();
   main->GetStatementsList()->Accept(this);
+  tree_.GoUp();
+  tree_.GoNext();
 }
 
 void TreeBuilder::Visit(Program *program) {
@@ -47,34 +48,33 @@ void TreeBuilder::Visit(Program *program) {
 }
 
 void TreeBuilder::Visit(IfElseStatement *if_else_statement) {
-  auto if_else_layer = new ScopeLayer(current_layer_);
-  current_layer_ = if_else_layer;
+  tree_.AddChildAndGoThere();
 
-  auto if_layer = new ScopeLayer(current_layer_);
-  current_layer_ = if_layer;
+  tree_.AddChildAndGoThere();
   if_else_statement->GetIfStatements()->Accept(this);
-  current_layer_ = current_layer_->GetParent();
+  tree_.GoUp();
+  tree_.GoNext();
 
-  auto else_layer = new ScopeLayer(current_layer_);
-  current_layer_ = else_layer;
+  tree_.AddChildAndGoThere();
   if_else_statement->GetElseStatements()->Accept(this);
-  current_layer_ = current_layer_->GetParent();
 
-  current_layer_ = current_layer_->GetParent();
+  tree_.GoUp();
+  tree_.GoUp();
+  tree_.GoNext();
 }
 
 void TreeBuilder::Visit(IfStatement *if_statement) {
-  auto if_layer = new ScopeLayer(current_layer_);
-  current_layer_ = if_layer;
+  tree_.AddChildAndGoThere();
   if_statement->GetStatements()->Accept(this);
-  current_layer_ = current_layer_->GetParent();
+  tree_.GoUp();
+  tree_.GoNext();
 }
 
 void TreeBuilder::Visit(ScopeDeclStatement *scope_decl_statement) {
-  auto new_scope_layer = new ScopeLayer(current_layer_);
-  current_layer_ = new_scope_layer;
+  tree_.AddChildAndGoThere();
   scope_decl_statement->GetStatementsList()->Accept(this);
-  current_layer_ = current_layer_->GetParent();
+  tree_.GoUp();
+  tree_.GoNext();
 }
 
 void TreeBuilder::Visit(StatementsList *statements_list) {
@@ -84,12 +84,12 @@ void TreeBuilder::Visit(StatementsList *statements_list) {
 }
 
 void TreeBuilder::Visit(WhileStatement *while_statement) {
-  auto while_layer = new ScopeLayer(current_layer_);
-  current_layer_ = while_layer;
+  tree_.AddChildAndGoThere();
   while_statement->GetStatementsList()->Accept(this);
-  current_layer_ = current_layer_->GetParent();
+  tree_.GoUp();
+  tree_.GoNext();
 }
 
-ScopeLayer *TreeBuilder::GetRoot() {
-  return tree_.root_;
+ScopeLayerTree *TreeBuilder::GetTree() {
+  return &tree_;
 }

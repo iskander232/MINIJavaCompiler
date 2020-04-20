@@ -23,8 +23,9 @@ int Driver::parse(const std::string &f) {
 void Driver::Evaluate() {
   TreeBuilder tree_builder;
   tree_builder.Visit(program);
-  ScopeLayer* root = tree_builder.GetRoot();
-  Interpreter interpreter(root);
+  ScopeLayerTree* tree = tree_builder.GetTree();
+  tree->ResetVisit();
+  Interpreter interpreter(tree);
   interpreter.Visit(program);
 }
 

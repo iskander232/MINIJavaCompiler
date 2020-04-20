@@ -5,7 +5,7 @@
 #include <iostream>
 #include <stdexcept>
 
-Interpreter::Interpreter(ScopeLayer *root) : current_layer_(root), tos_value_(BasicType::Void) {
+Interpreter::Interpreter(ScopeLayerTree *tree) : tree_(tree), tos_value_(BasicType::Void) {
   offset_.push(0);
 }
 
@@ -49,7 +49,7 @@ void Interpreter::Visit(BoolExpression *bool_expression) {
 }
 
 void Interpreter::Visit(IdentExpression *ident_expression) {
-  SetTosValue(*current_layer_->Get(Symbol(ident_expression->GetName())));
+  SetTosValue(*tree_->GetCurrentLayer()->Get(Symbol(ident_expression->GetName())));
 }
 
 void Interpreter::Visit(NotExpression *not_expression) {
@@ -78,16 +78,10 @@ void Interpreter::Visit(UnarMinusExpression *unar_minus_expression) {
 void Interpreter::Visit(Lvalue *lvalue) {}
 
 void Interpreter::Visit(Main *main) {
-  current_layer_ = current_layer_->GetChild(offset_.top());
-  offset_.push(0);
+  tree_->GoDown();
   main->GetStatementsList()->Accept(this);
-
-  current_layer_ = current_layer_->GetParent();
-  offset_.pop();
-
-  size_t index = offset_.top();
-  offset_.pop();
-  offset_.push(index + 1);
+  tree_->GoUp();
+  tree_->GoNext();
 }
 
 void Interpreter::Visit(Program *program) {
@@ -106,46 +100,44 @@ void Interpreter::Visit(AssignStatement *assign_statement) {
   assign_statement->GetExpression()->Accept(this);
   BasicObject new_value = GetTosValue();
   if (assign_statement->GetLvalue()->GetType()->GetType() == BasicType::Void) {
-    auto last_value = current_layer_->Get(assign_statement->GetLvalue()->GetName());
+    auto last_value = tree_->GetCurrentLayer()->Get(assign_statement->GetLvalue()->GetName());
     if (new_value.GetType() != last_value->GetType()) {
       throw std::runtime_error("different types");
     }
   }
-  current_layer_->Put(assign_statement->GetLvalue()->GetName(), std::make_shared<BasicObject>(new_value));
+  tree_->GetCurrentLayer()->Put(assign_statement->GetLvalue()->GetName(), std::make_shared<BasicObject>(new_value));
 }
 
 void Interpreter::Visit(IfElseStatement *if_else_statement) {
   StatementsList *statements_list;
-  int ind;
+  tree_->GoDown();
+
   if_else_statement->GetExpression()->Accept(this);
+
   if (GetTosValue().Get(BasicType::Bool)) {
     statements_list = if_else_statement->GetIfStatements();
-    ind = 0;
   } else {
     statements_list = if_else_statement->GetElseStatements();
-    ind = 1;
+    tree_->GoNext();
   }
-  current_layer_ = current_layer_->GetChild(offset_.top())->GetChild(ind);
-  offset_.push(0);
+
+  tree_->GoDown();
+
   statements_list->Accept(this);
-  offset_.pop();
-  current_layer_ = current_layer_->GetParent()->GetParent();
-  size_t index = offset_.top();
-  offset_.pop();
-  offset_.push(index + 1);
+
+  tree_->GoUp();
+  tree_->GoUp();
+  tree_->GoNext();
 }
 
 void Interpreter::Visit(IfStatement *if_statement) {
   if_statement->GetExpression()->Accept(this);
   if (GetTosValue().Get(BasicType::Bool)) {
-    current_layer_ = current_layer_->GetChild(offset_.top());
-    offset_.push(0);
+    tree_->GoDown();
 
     if_statement->GetStatements()->Accept(this);
-    offset_.pop();
-    size_t index = offset_.top();
-    offset_.pop();
-    offset_.push(index + 1);
+    tree_->GoUp();
+    tree_->GoNext();
   }
 }
 
@@ -155,13 +147,10 @@ void Interpreter::Visit(OutStatement *out_statement) {
 }
 
 void Interpreter::Visit(ScopeDeclStatement *scope_decl_statement) {
-  current_layer_ = current_layer_->GetChild(offset_.top());
-  offset_.push(0);
+  tree_->GoDown();
   scope_decl_statement->GetStatementsList()->Accept(this);
-  offset_.pop();
-  size_t index = offset_.top();
-  offset_.pop();
-  offset_.push(index + 1);
+  tree_->GoUp();
+  tree_->GoNext();
 }
 
 void Interpreter::Visit(StatementsList *statements_list) {
@@ -171,18 +160,16 @@ void Interpreter::Visit(StatementsList *statements_list) {
 }
 
 void Interpreter::Visit(WhileStatement *while_statement) {
-  int index = offset_.top();
   while (1) {
     while_statement->GetExpression()->Accept(this);
     if (!GetTosValue().Get(BasicType::Bool)) break;
-    current_layer_ = current_layer_->GetChild(offset_.top());
+    tree_->GoDown();
     offset_.push(0);
     while_statement->GetStatementsList()->Accept(this);
     offset_.pop();
-    current_layer_ = current_layer_->GetParent();
+    tree_->GoUp();
   }
-  offset_.pop();
-  offset_.push(index + 1);
+  tree_->GoNext();
 }
 
 BasicObject Interpreter::GetTosValue() {

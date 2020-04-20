@@ -15,8 +15,6 @@ int main(int argc, char **argv) {
 
       driver.Evaluate();
 
-      driver.PrintTree(argv[i + 1]);
-      ++i;
     }
   }
 

@@ -36,8 +36,7 @@ class TreeBuilder: public Visitor{
   void Visit(StatementsList *statements_list) override;
   void Visit(WhileStatement *while_statement) override;
 
-  ScopeLayer* GetRoot();
+  ScopeLayerTree* GetTree();
  private:
   ScopeLayerTree tree_;
-  ScopeLayer* current_layer_;
 };

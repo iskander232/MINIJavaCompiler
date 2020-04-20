@@ -1,6 +1,6 @@
 #include "TemplateVisitor.h"
 #include "Types/BasicObject.h"
-#include "SymbolTable/ScopeLayer.h"
+#include "SymbolTable/ScopeLayerTree.h"
 
 #include <string>
 #include <map>
@@ -8,7 +8,7 @@
 
 class Interpreter : public Visitor {
  public:
-  explicit Interpreter(ScopeLayer *root);
+  explicit Interpreter(ScopeLayerTree *tree);
   void Visit(AndOperator *and_operator) override;
   void Visit(DivOperator *div_operator) override;
   void Visit(EqualOperator *equal_operator) override;
@@ -44,6 +44,6 @@ class Interpreter : public Visitor {
   BasicObject GetTosValue();
   void SetTosValue(BasicObject object);
   BasicObject tos_value_;
-  ScopeLayer *current_layer_;
+  ScopeLayerTree* tree_;
   std::stack<size_t> offset_;
 };
