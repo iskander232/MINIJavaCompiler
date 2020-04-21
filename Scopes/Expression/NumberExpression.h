@@ -1,13 +1,14 @@
 #pragma once
 
 #include "Expression.h"
-#include "Types/BasicObject.h"
+
+#include <memory>
 
 class NumberExpression: public Expression{
  public:
   explicit NumberExpression(int num);
-  BasicObject* GetNumber();
+  std::shared_ptr<Object> GetNumber();
   void Accept(Visitor* visitor) override ;
  private:
-  BasicObject* number_;
+  std::shared_ptr<IntegerObject> number_;
 };

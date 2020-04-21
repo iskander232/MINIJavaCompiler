@@ -9,7 +9,6 @@ class ArrayObject : public Object {
   ArrayObject(SimpleObject object, Expression *length);
   explicit ArrayObject(SimpleObject object);
 
-  bool IsInit() override;
 
   Expression *GetLength();
 
@@ -18,5 +17,4 @@ class ArrayObject : public Object {
  private:
   Expression *length_;
   SimpleObject simple_object_;
-  bool is_init_;
 };

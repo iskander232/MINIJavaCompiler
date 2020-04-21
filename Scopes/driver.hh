@@ -15,7 +15,6 @@ class Driver {
   int result;
   int parse(const std::string &f);
   void Evaluate();
-  void PrintTree(std::string filename);
   std::string file;
   bool trace_parsing;
 

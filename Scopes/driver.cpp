@@ -28,10 +28,6 @@ void Driver::Evaluate() {
   interpreter.Visit(program);
 }
 
-void Driver::PrintTree(std::string filename) {
-  PrintVisitor visitor(filename);
-  visitor.Visit(program);
-}
 
 void Driver::scan_begin() {
   scanner.set_debug(trace_scanning);

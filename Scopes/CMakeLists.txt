@@ -50,6 +50,7 @@ add_executable(
     Expression/NumberExpression.cpp
     Expression/UnarMinusExpression.cpp
 
+    Lvalue/ArrayLvalue.cpp
     Lvalue/SimpleLvalue.cpp
 
     Main/Main.cpp
@@ -70,14 +71,13 @@ add_executable(
     SymbolTable/Symbol.cpp
 
     Visitors/Interpreter.cpp
-    Visitors/PrintVisitor.cpp
     Visitors/TemplateVisitor.cpp
     Visitors/TreeBuilder.cpp
 
-    Types/Object.cpp
     Types/ArrayObject.cpp
-    Types/BasicObject.cpp
+    Types/Bool.cpp
     Types/IdentObject.cpp
+    Types/Integer.cpp
 )
 
 target_include_directories(

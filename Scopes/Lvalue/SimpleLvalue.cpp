@@ -1,18 +1,24 @@
-#include <Types/BasicObject.h>
+#include "Types/SimpleObject.h"
+#include "Types/UninitObject.h"
+
 #include "SimpleLvalue.h"
 
+#include <stdexcept>
 
-SimpleLvalue::SimpleLvalue(std::string name) : name_(name), type_(new BasicObject(BasicType::Void)) {}
+SimpleLvalue::SimpleLvalue(std::string name)
+    : name_(name), type_(dynamic_cast<Object *>(new UninitObject())) {}
 
-SimpleLvalue::SimpleLvalue(BasicObject* object, std::string name) : type_(object), name_(name) {}
+SimpleLvalue::SimpleLvalue(SimpleObject *object, std::string name)
+    : type_(object), name_(name) {}
 
 std::string SimpleLvalue::GetName() {
   return name_;
 }
 
-BasicObject* SimpleLvalue::GetType() {
-  return type_;
+Object *SimpleLvalue::GetType() {
+  return dynamic_cast<Object *>(type_);
 }
+
 void SimpleLvalue::Accept(Visitor *visitor) {
   visitor->Visit(this);
 }

@@ -4,16 +4,16 @@ class test1 {
        x = 12;
        int y = 0;
        while(x > 0){
-           x = x / 2;
-           boolean y = true;
-           assert(y);
+          x = x / 2;
+          boolean y = true;
+          assert(y);
        }
-       if (x == 0){
+       if (x > 0){
          y = 12;
        } else{
-         y = 14;
-       }
-       assert(y == 12);
+          y = 14;
+        }
+       assert(y == 14);
        x = true; //exception int <- boolean
     }
 }

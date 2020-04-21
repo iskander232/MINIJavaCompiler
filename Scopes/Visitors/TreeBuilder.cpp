@@ -27,7 +27,8 @@ void TreeBuilder::Visit(ClassesList *classes_list) {}
 
 
 void TreeBuilder::Visit(AssignStatement *assign_statement) {
-  if (assign_statement->GetLvalue()->GetType()->GetType() != BasicType::Void) {
+  Object *type = assign_statement->GetLvalue()->GetType();
+  if (!dynamic_cast<UninitObject *>(type)) {
     tree_.GetCurrentLayer()->DeclareVariable(Symbol(assign_statement->GetLvalue()->GetName()));
   }
 }

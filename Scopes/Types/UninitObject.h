@@ -2,5 +2,5 @@
 
 #include "Object.h"
 
-class SimpleObject : public Object {
+class UninitObject : public Object {
 };

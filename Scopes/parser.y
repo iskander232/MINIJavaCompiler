@@ -90,7 +90,7 @@
 %nterm <Statement*> statement
 %nterm <Lvalue*> lvalue
 %nterm <Main*> main_class
-%nterm <BasicObject*> type
+%nterm <Object*> type
 
 
 %precedence NEG
@@ -125,13 +125,13 @@ variable_declaration:
     ;
 
 type:
-    "int" {$$ = new BasicObject(BasicType::Integer);}
-    | "boolean" {$$ = new BasicObject(BasicType::Bool);}
+    "int" {$$ = dynamic_cast<Object*>(new IntegerObject(0));}
+    | "boolean" {$$ = dynamic_cast<Object*>(new BoolObject(0));}
     ;
 
 statements:
     %empty                          {$$ = new StatementsList(); }
-    | statements  statement         {$1->AddStatement($2); $$ = $1; }
+    | statements statement         {$1->AddStatement($2); $$ = $1; }
     ;
 
 statement:
@@ -146,7 +146,7 @@ statement:
     ;
 
 lvalue:
-    type "identifier" {$$ = new SimpleLvalue($1, $2); }
+    type "identifier" {$$ = new SimpleLvalue(dynamic_cast<SimpleObject*>($1), $2); }
     | "identifier"                    {$$ = new SimpleLvalue($1); }
     ;
 

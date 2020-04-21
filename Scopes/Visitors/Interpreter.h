@@ -1,5 +1,5 @@
 #include "TemplateVisitor.h"
-#include "Types/BasicObject.h"
+#include "Types/Object.h"
 #include "SymbolTable/ScopeLayerTree.h"
 
 #include <string>
@@ -41,9 +41,9 @@ class Interpreter : public Visitor {
 
   void GetResult(Program *program);
  private:
-  BasicObject GetTosValue();
-  void SetTosValue(BasicObject object);
-  BasicObject tos_value_;
+  std::shared_ptr<Object> GetTosValue();
+  void SetTosValue(std::shared_ptr<Object> object);
+  std::shared_ptr<Object> tos_value_;
   ScopeLayerTree* tree_;
   std::stack<size_t> offset_;
 };

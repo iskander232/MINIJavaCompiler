@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "Types/UninitObject.h"
+
 ScopeLayer::ScopeLayer(ScopeLayer *parent) : parent_(parent) {
   parent_->AddChild(this);
 }
@@ -13,12 +15,12 @@ void ScopeLayer::DeclareVariable(Symbol symbol) {
     throw std::runtime_error("Variable has declared");
   }
 
-  values_[symbol] = std::make_shared<BasicObject>(BasicObject(BasicType::Void));
+  values_[symbol] = std::shared_ptr<Object>(dynamic_cast<Object *>(new UninitObject()));
   offsets_[symbol] = symbols_.size();
   symbols_.push_back(symbol);
 }
 
-void ScopeLayer::Put(Symbol symbol, std::shared_ptr<BasicObject> value) {
+void ScopeLayer::Put(Symbol symbol, std::shared_ptr<Object> value) {
 
   ScopeLayer *current_layer = this;
 
@@ -36,7 +38,7 @@ bool ScopeLayer::Has(Symbol symbol) {
   return values_.find(symbol) != values_.end();
 }
 
-std::shared_ptr<BasicObject> ScopeLayer::Get(Symbol symbol) {
+std::shared_ptr<Object> ScopeLayer::Get(Symbol symbol) {
   ScopeLayer *current_layer = this;
 
   while (!current_layer->Has(symbol) && current_layer->parent_ != nullptr) {

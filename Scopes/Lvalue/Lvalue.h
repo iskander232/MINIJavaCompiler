@@ -8,5 +8,5 @@
 class Lvalue: public BaseElement{
  public:
   virtual std::string GetName() = 0;
-  virtual BasicObject* GetType() = 0;
+  virtual Object* GetType() = 0;
 };

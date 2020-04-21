@@ -4,6 +4,6 @@
 
 class MinusOperator: public BinaryOperator{
  public:
-  BasicObject eval(BasicObject a, BasicObject b) const override ;
+  std::shared_ptr<Object> eval(std::shared_ptr<Object> a, std::shared_ptr<Object> b) const override ;
   void Accept(Visitor* visitor) override ;
 };

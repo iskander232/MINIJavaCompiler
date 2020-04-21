@@ -1,5 +1,6 @@
 #pragma once
 
-class Object{
-  virtual bool IsInit();
+class Object {
+ public:
+  virtual ~Object() = default;
 };

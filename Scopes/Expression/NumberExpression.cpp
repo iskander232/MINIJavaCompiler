@@ -1,9 +1,11 @@
 #include "NumberExpression.h"
 
-NumberExpression::NumberExpression(int num) : number_(new BasicObject(BasicType::Integer, num)) {};
+#include "Types/Integer.h"
 
-BasicObject* NumberExpression::GetNumber() {
-  return number_;
+NumberExpression::NumberExpression(int num) : number_(new IntegerObject(num)) {};
+
+std::shared_ptr<Object> NumberExpression::GetNumber() {
+  return std::dynamic_pointer_cast<Object>(number_);
 }
 
 void NumberExpression::Accept(Visitor *visitor) {

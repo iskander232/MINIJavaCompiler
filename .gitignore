@@ -42,3 +42,4 @@ build/
 # makefiles
 
 *cmake-build-debug/
+*.idea/

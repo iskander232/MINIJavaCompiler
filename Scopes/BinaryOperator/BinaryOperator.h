@@ -1,9 +1,10 @@
 #pragma once
 
 #include "BaseElement/BaseElement.h"
-#include "Types/BasicObject.h"
 
+#include "Types/Object.h"
+#include <memory>
 class BinaryOperator : public BaseElement {
  public:
-  virtual BasicObject eval(BasicObject a, BasicObject b) const = 0;
+  virtual std::shared_ptr<Object> eval(std::shared_ptr<Object> a, std::shared_ptr<Object> b) const = 0;
 };

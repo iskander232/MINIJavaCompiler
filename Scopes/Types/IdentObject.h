@@ -12,9 +12,7 @@ class IdentObject : public SimpleObject {
 
   void SetValue(Class* value);
 
-  bool IsInit() override;
  private:
-  bool is_init_;
   Class *value_;
   std::string name_;
 };

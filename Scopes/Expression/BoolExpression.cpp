@@ -1,9 +1,10 @@
 #include "BoolExpression.h"
 
-BoolExpression::BoolExpression(bool value) : value_(new BasicObject(BasicType::Bool, value)) {};
+#include "Types/Bool.h"
+BoolExpression::BoolExpression(bool value) : value_(new BoolObject(value)) {};
 
-BasicObject *BoolExpression::GetValue() {
-  return value_;
+std::shared_ptr<Object> BoolExpression::GetValue() {
+  return std::dynamic_pointer_cast<Object>(value_);
 }
 
 void BoolExpression::Accept(Visitor *visitor) {

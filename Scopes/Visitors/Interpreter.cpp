@@ -5,74 +5,78 @@
 #include <iostream>
 #include <stdexcept>
 
-Interpreter::Interpreter(ScopeLayerTree *tree) : tree_(tree), tos_value_(BasicType::Void) {
+Interpreter::Interpreter(ScopeLayerTree *tree)
+    : tree_(tree), tos_value_(std::shared_ptr<Object>(new UninitObject())) {
   offset_.push(0);
 }
 
+std::shared_ptr<Object> Interpreter::GetTosValue() {
+  return tos_value_;
+}
+
+void Interpreter::SetTosValue(std::shared_ptr<Object> object) {
+  tos_value_ = object;
+}
+
+////////////////////////////////////////////////////////////////////////
+
 void Interpreter::Visit(AndOperator *and_operator) {}
-
 void Interpreter::Visit(DivOperator *div_operator) {}
-
 void Interpreter::Visit(EqualOperator *equal_operator) {}
-
 void Interpreter::Visit(LessOperator *less_operator) {}
-
 void Interpreter::Visit(MinusOperator *minus_operator) {}
-
 void Interpreter::Visit(MoreOperator *more_operator) {}
-
 void Interpreter::Visit(MulOperator *mul_opearator) {}
-
 void Interpreter::Visit(OrOperator *or_operator) {}
-
 void Interpreter::Visit(PlusOperator *plus_operator) {}
-
 void Interpreter::Visit(ProcOperator *proc_operator) {}
-
 void Interpreter::Visit(ClassesList *classes_list) {}
-
 void Interpreter::Visit(VarDecl *var_decl) {}
+
+////////////////////////////////////////////////////////////////////////
 
 void Interpreter::Visit(BinaryCallExpression *binary_call_expression) {
   binary_call_expression->GetFirst()->Accept(this);
-  BasicObject first = GetTosValue();
+  auto first = GetTosValue();
 
   binary_call_expression->GetSecond()->Accept(this);
-  BasicObject second = GetTosValue();
+  auto second = GetTosValue();
 
   SetTosValue(binary_call_expression->GetOperator()->eval(first, second));
 
 }
 
 void Interpreter::Visit(BoolExpression *bool_expression) {
-  SetTosValue(*bool_expression->GetValue());
+  SetTosValue(bool_expression->GetValue());
 }
 
 void Interpreter::Visit(IdentExpression *ident_expression) {
-  SetTosValue(*tree_->GetCurrentLayer()->Get(Symbol(ident_expression->GetName())));
+  SetTosValue(tree_->GetCurrentLayer()->Get(Symbol(ident_expression->GetName())));
 }
 
 void Interpreter::Visit(NotExpression *not_expression) {
   not_expression->GetExpression()->Accept(this);
-  SetTosValue(
-      BasicObject(BasicType::Bool,
-                  !GetTosValue().Get(BasicType::Bool))
-  );
+
+  auto object = std::dynamic_pointer_cast<BoolObject>(GetTosValue());
+  if (object == nullptr) {
+    throw std::runtime_error("Condition is not boolean type");
+  }
+
+  SetTosValue(std::dynamic_pointer_cast<Object>(std::make_shared<BoolObject>(BoolObject(!object->GetValue()))));
 }
 
 void Interpreter::Visit(NumberExpression *number_expression) {
-  SetTosValue(
-      BasicObject(BasicType::Integer,
-                  number_expression->GetNumber()->Get(BasicType::Integer))
-  );
+  SetTosValue(number_expression->GetNumber());
 }
 
 void Interpreter::Visit(UnarMinusExpression *unar_minus_expression) {
   unar_minus_expression->GetExpression()->Accept(this);
-  SetTosValue(
-      BasicObject(BasicType::Integer,
-                  -GetTosValue().Get(BasicType::Integer))
-  );
+
+  auto object = std::dynamic_pointer_cast<IntegerObject>(GetTosValue());
+  if (object == nullptr) {
+    throw std::runtime_error("minus from non int");
+  }
+  SetTosValue(std::dynamic_pointer_cast<Object>(std::make_shared<IntegerObject>(IntegerObject(-object->GetValue()))));
 }
 
 void Interpreter::Visit(Lvalue *lvalue) {}
@@ -91,21 +95,27 @@ void Interpreter::Visit(Program *program) {
 
 void Interpreter::Visit(AssertStatement *assert_statement) {
   assert_statement->GetExpression()->Accept(this);
-  if (!GetTosValue().Get(BasicType::Bool)) {
+
+  auto object = std::dynamic_pointer_cast<BoolObject>(GetTosValue());
+  if (object == nullptr) {
+    throw std::runtime_error("Condition is not boolean type");
+  }
+
+  if (!object->GetValue()) {
     throw std::runtime_error("assert is false");
   }
 }
 
 void Interpreter::Visit(AssignStatement *assign_statement) {
   assign_statement->GetExpression()->Accept(this);
-  BasicObject new_value = GetTosValue();
-  if (assign_statement->GetLvalue()->GetType()->GetType() == BasicType::Void) {
-    auto last_value = tree_->GetCurrentLayer()->Get(assign_statement->GetLvalue()->GetName());
-    if (new_value.GetType() != last_value->GetType()) {
+  auto new_value = GetTosValue();
+  auto last_value = tree_->GetCurrentLayer()->Get(Symbol(assign_statement->GetLvalue()->GetName()));
+  if (!std::dynamic_pointer_cast<UninitObject>(last_value)) {
+    if (typeid(*new_value) != typeid(*last_value)) {
       throw std::runtime_error("different types");
     }
   }
-  tree_->GetCurrentLayer()->Put(assign_statement->GetLvalue()->GetName(), std::make_shared<BasicObject>(new_value));
+  tree_->GetCurrentLayer()->Put(Symbol(assign_statement->GetLvalue()->GetName()), new_value);
 }
 
 void Interpreter::Visit(IfElseStatement *if_else_statement) {
@@ -114,7 +124,12 @@ void Interpreter::Visit(IfElseStatement *if_else_statement) {
 
   if_else_statement->GetExpression()->Accept(this);
 
-  if (GetTosValue().Get(BasicType::Bool)) {
+  auto object = std::dynamic_pointer_cast<BoolObject>(GetTosValue());
+  if (object == nullptr) {
+    throw std::runtime_error("Condition is not boolean type");
+  }
+
+  if (object->GetValue()) {
     statements_list = if_else_statement->GetIfStatements();
   } else {
     statements_list = if_else_statement->GetElseStatements();
@@ -132,7 +147,11 @@ void Interpreter::Visit(IfElseStatement *if_else_statement) {
 
 void Interpreter::Visit(IfStatement *if_statement) {
   if_statement->GetExpression()->Accept(this);
-  if (GetTosValue().Get(BasicType::Bool)) {
+  auto object = std::dynamic_pointer_cast<BoolObject>(GetTosValue());
+  if (object == nullptr) {
+    throw std::runtime_error("Condition is not boolean type");
+  }
+  if (object->GetValue()) {
     tree_->GoDown();
 
     if_statement->GetStatements()->Accept(this);
@@ -143,7 +162,11 @@ void Interpreter::Visit(IfStatement *if_statement) {
 
 void Interpreter::Visit(OutStatement *out_statement) {
   out_statement->GetExpression()->Accept(this);
-  std::cout << GetTosValue().Get(BasicType::Integer) << std::endl;
+  auto object = std::dynamic_pointer_cast<IntegerObject>(GetTosValue());
+  if (object == nullptr) {
+    throw std::runtime_error("Can't System.out.println non int object");
+  }
+  std::cout << object->GetValue() << std::endl;
 }
 
 void Interpreter::Visit(ScopeDeclStatement *scope_decl_statement) {
@@ -162,7 +185,13 @@ void Interpreter::Visit(StatementsList *statements_list) {
 void Interpreter::Visit(WhileStatement *while_statement) {
   while (1) {
     while_statement->GetExpression()->Accept(this);
-    if (!GetTosValue().Get(BasicType::Bool)) break;
+
+    auto object = std::dynamic_pointer_cast<BoolObject>(GetTosValue());
+    if (object == nullptr) {
+      throw std::runtime_error("Condition is not boolean type");
+    }
+
+    if (!object->GetValue()) break;
     tree_->GoDown();
     offset_.push(0);
     while_statement->GetStatementsList()->Accept(this);
@@ -170,14 +199,6 @@ void Interpreter::Visit(WhileStatement *while_statement) {
     tree_->GoUp();
   }
   tree_->GoNext();
-}
-
-BasicObject Interpreter::GetTosValue() {
-  return tos_value_;
-}
-
-void Interpreter::SetTosValue(BasicObject object) {
-  tos_value_ = std::move(object);
 }
 
 void Interpreter::GetResult(Program *program) {

@@ -22,6 +22,8 @@
 #include "Expression/NumberExpression.h"
 #include "Expression/UnarMinusExpression.h"
 
+#include "Lvalue/Lvalue.h"
+#include "Lvalue/ArrayLvalue.h"
 #include "Lvalue/SimpleLvalue.h"
 
 #include "Main/Main.h"
@@ -38,6 +40,8 @@
 #include "Statements/WhileStatement.h"
 
 #include "Types/ArrayObject.h"
-#include "Types/BasicObject.h"
+#include "Types/Bool.h"
 #include "Types/IdentObject.h"
+#include "Types/Integer.h"
 #include "Types/SimpleObject.h"
+#include "Types/UninitObject.h"

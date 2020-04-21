@@ -27,6 +27,7 @@ class NumberExpression;
 class UnarMinusExpression;
 
 class Lvalue;
+class ArrayLvalue;
 class SimpleLvalue;
 
 class Main;
@@ -45,6 +46,8 @@ class WhileStatement;
 
 class Object;
 class ArrayObject;
-class BasicObject;
+class BoolObject;
 class IdentObject;
+class IntegerObject;
 class SimpleObject;
+class UninitObject;
