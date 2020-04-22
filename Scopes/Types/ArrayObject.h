@@ -4,17 +4,24 @@
 #include "SimpleObject.h"
 #include "Expression/Expression.h"
 
+#include <memory>
+#include <vector>
+
 class ArrayObject : public Object {
  public:
-  ArrayObject(SimpleObject object, Expression *length);
-  explicit ArrayObject(SimpleObject object);
 
+  explicit ArrayObject(std::shared_ptr<Object> object);
+  ArrayObject(std::shared_ptr<Object> object, int length);
 
-  Expression *GetLength();
+  size_t GetLength();
+  std::shared_ptr<Object> GetIth(int i);
+  void SetIth(int i, std::shared_ptr<Object> object);
+  std::shared_ptr<Object> GetObject();
 
-  SimpleObject GetObject();
+  bool IsEqual(std::shared_ptr<Object> other) override;
 
  private:
-  Expression *length_;
-  SimpleObject simple_object_;
+  size_t length_;
+  std::shared_ptr<SimpleObject> object_;
+  std::vector<std::shared_ptr<Object>> elements_;
 };

@@ -19,16 +19,17 @@ class ClassesList;
 class VarDecl;
 
 class Expression;
+class ArrayGetExpression;
+class ArrayRvalueExpression;
 class BinaryCallExpression;
 class BoolExpression;
+class GetLengthExpression;
 class IdentExpression;
 class NotExpression;
 class NumberExpression;
 class UnarMinusExpression;
 
 class Lvalue;
-class ArrayLvalue;
-class SimpleLvalue;
 
 class Main;
 

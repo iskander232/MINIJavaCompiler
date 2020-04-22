@@ -73,24 +73,28 @@
     IF "if"
     ELSE "else"
     WHILE "while"
+    NEW "new"
+    LENGTH "length"
 ;
 
 %token <std::string> IDENTIFIER "identifier"
 %token <int> NUMBER "number"
 
 %nterm <ClassesList*> classes
-%nterm <Class*> class
+//%nterm <Class*> class
 %nterm <Program*> program
 %nterm<VarDecl*> declaration
 %nterm <VarDecl*> variable_declaration
-%nterm <ExpressionList*> exprs
+//%nterm <ExpressionList*> exprs
 %nterm <Expression*> expr
 %nterm <BinaryOperator*> binary_operator
 %nterm <StatementsList*> statements
 %nterm <Statement*> statement
 %nterm <Lvalue*> lvalue
 %nterm <Main*> main_class
-%nterm <Object*> type
+%nterm <std::shared_ptr<Object>> type
+%nterm <std::shared_ptr<Object>> simple_type
+%nterm <std::shared_ptr<Object>> array_type
 
 
 %precedence NEG
@@ -125,29 +129,39 @@ variable_declaration:
     ;
 
 type:
-    "int" {$$ = dynamic_cast<Object*>(new IntegerObject(0));}
-    | "boolean" {$$ = dynamic_cast<Object*>(new BoolObject(0));}
+    simple_type  {$$ = $1; }
+    | array_type {$$ = $1; }
+    ;
+
+simple_type:
+    "int"                   {$$ = std::dynamic_pointer_cast<Object>(std::make_shared<IntegerObject>(IntegerObject(0)));}
+    | "boolean"             {$$ = std::dynamic_pointer_cast<Object>(std::make_shared<BoolObject>(BoolObject(0)));}
+    | "identifier"          {$$ = std::dynamic_pointer_cast<Object>(std::make_shared<IdentObject>(IdentObject($1))); }
+    ;
+
+array_type:
+    simple_type "[" "]"     {$$ = std::dynamic_pointer_cast<Object>(std::make_shared<ArrayObject>(ArrayObject($1))); }
     ;
 
 statements:
     %empty                          {$$ = new StatementsList(); }
-    | statements statement         {$1->AddStatement($2); $$ = $1; }
+    | statements statement          {$1->AddStatement($2); $$ = $1; }
     ;
 
 statement:
-    "assert" "(" expr ")" ";"                                              {$$ = new AssertStatement($3); }
+    "assert" "(" expr ")" ";"                                               {$$ = new AssertStatement($3); }
     | declaration ";"                                                       {$$ = $1; }
     | "out" "(" expr ")" ";"                                                {$$ = new OutStatement($3); }
-    | lvalue "=" expr ";"                                                  {$$ = new AssignStatement($1, $3); }
-    | "{" statements "}"                                                {$$ = new ScopeDeclStatement($2); }
-    | "if"  "(" expr ")" "{" statements "}"                              {$$ = new IfStatement($3, $6); }
-    | "if"  "(" expr ")" "{" statements "}" "else" "{" statements "}"     {$$ = new IfElseStatement($3, $6, $10); }
-    | "while"  "(" expr ")" "{" statements "}"                           {$$ = new WhileStatement($3, $6); }
+    | lvalue "=" expr ";"                                                   {$$ = new AssignStatement($1, $3); }
+    | "{" statements "}"                                                    {$$ = new ScopeDeclStatement($2); }
+    | "if"  "(" expr ")" "{" statements "}"                                 {$$ = new IfStatement($3, $6); }
+    | "if"  "(" expr ")" "{" statements "}" "else" "{" statements "}"       {$$ = new IfElseStatement($3, $6, $10); }
+    | "while"  "(" expr ")" "{" statements "}"                              {$$ = new WhileStatement($3, $6); }
     ;
 
 lvalue:
-    type "identifier" {$$ = new SimpleLvalue(dynamic_cast<SimpleObject*>($1), $2); }
-    | "identifier"                    {$$ = new SimpleLvalue($1); }
+    type "identifier"    {$$ = new Lvalue($1, $2); }
+    | "identifier"              {$$ = new Lvalue($1); }
     ;
 
 expr:
@@ -159,6 +173,9 @@ expr:
     | "(" expr ")"                          {$$ = $2; }
     | "true"                                {$$ = new BoolExpression(true); }
     | "false"                               {$$ = new BoolExpression(false); }
+    | expr "[" expr "]"                     {$$ = new ArrayGetExpression($1, $3); }
+    | expr "." "length"                     {$$ = new GetLengthExpression($1); }
+    | "new" simple_type "[" expr "]"        {$$ = new ArrayRvalueExpression($2, $4); }
     ;
 
 binary_operator:

@@ -1,6 +1,7 @@
 #pragma once
 
+#include <memory>
 class Object {
  public:
-  virtual ~Object() = default;
+  virtual bool IsEqual(std::shared_ptr<Object> other) = 0;
 };

@@ -21,8 +21,11 @@ class Interpreter : public Visitor {
   void Visit(ProcOperator *proc_operator) override;
   void Visit(ClassesList *classes_list) override;
   void Visit(VarDecl *var_decl) override;
+  void Visit(ArrayGetExpression *array_get_expression) override;
+  void Visit(ArrayRvalueExpression *array_rvalue_expression) override;
   void Visit(BinaryCallExpression *binary_call_expression) override;
   void Visit(BoolExpression *bool_expression) override;
+  void Visit(GetLengthExpression *get_length_expression) override;
   void Visit(IdentExpression *ident_expression) override;
   void Visit(NotExpression *not_expression) override;
   void Visit(NumberExpression *number_expression) override;
@@ -44,6 +47,6 @@ class Interpreter : public Visitor {
   std::shared_ptr<Object> GetTosValue();
   void SetTosValue(std::shared_ptr<Object> object);
   std::shared_ptr<Object> tos_value_;
-  ScopeLayerTree* tree_;
+  ScopeLayerTree *tree_;
   std::stack<size_t> offset_;
 };

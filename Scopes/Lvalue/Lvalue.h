@@ -5,8 +5,14 @@
 
 #include <string>
 
-class Lvalue: public BaseElement{
+class Lvalue : public BaseElement {
  public:
-  virtual std::string GetName() = 0;
-  virtual Object* GetType() = 0;
+  Lvalue(std::string name);
+  Lvalue(std::shared_ptr<Object> type, std::string name);
+  std::string GetName();
+  void Accept(Visitor *visitor) override;
+  std::shared_ptr<Object> GetType();
+ private:
+  std::string name_;
+  std::shared_ptr<Object> type_;
 };

@@ -8,8 +8,8 @@ std::string VarDecl::GetName() {
   return name_;
 }
 
-Object* VarDecl::GetType() {
+std::shared_ptr<Object> VarDecl::GetType() {
   return type_;
 }
 
-VarDecl::VarDecl(Object *object, std::string name) : type_(object), name_(name) {}
+VarDecl::VarDecl(std::shared_ptr<Object> object, std::string name) : type_(object), name_(name) {}

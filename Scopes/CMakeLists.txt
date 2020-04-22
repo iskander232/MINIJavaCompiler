@@ -43,15 +43,17 @@ add_executable(
 
     Declarations/VarDecl.cpp
 
+    Expression/ArrayGetExpression.cpp
+    Expression/ArrayRvalueExpression.cpp
     Expression/BinaryCallExpression.cpp
     Expression/BoolExpression.cpp
+    Expression/GetLengthExpression.cpp
     Expression/IdentExpression.cpp
     Expression/NotExpression.cpp
     Expression/NumberExpression.cpp
     Expression/UnarMinusExpression.cpp
 
-    Lvalue/ArrayLvalue.cpp
-    Lvalue/SimpleLvalue.cpp
+    Lvalue/Lvalue.cpp
 
     Main/Main.cpp
 
@@ -78,6 +80,8 @@ add_executable(
     Types/Bool.cpp
     Types/IdentObject.cpp
     Types/Integer.cpp
+    Types/SimpleObject.cpp
+    Types/UninitObject.cpp
 )
 
 target_include_directories(

@@ -13,8 +13,11 @@ void TreeBuilder::Visit(MulOperator *mul_opearator) {}
 void TreeBuilder::Visit(OrOperator *or_operator) {}
 void TreeBuilder::Visit(PlusOperator *plus_operator) {}
 void TreeBuilder::Visit(ProcOperator *proc_operator) {}
+void TreeBuilder::Visit(ArrayGetExpression *array_get_expression) {}
+void TreeBuilder::Visit(ArrayRvalueExpression *array_rvalue_expression) {}
 void TreeBuilder::Visit(BinaryCallExpression *binary_call_expression) {}
 void TreeBuilder::Visit(BoolExpression *bool_expression) {}
+void TreeBuilder::Visit(GetLengthExpression *get_length_expression) {}
 void TreeBuilder::Visit(IdentExpression *ident_expression) {}
 void TreeBuilder::Visit(NotExpression *not_expression) {}
 void TreeBuilder::Visit(NumberExpression *number_expression) {}
@@ -27,11 +30,12 @@ void TreeBuilder::Visit(ClassesList *classes_list) {}
 
 
 void TreeBuilder::Visit(AssignStatement *assign_statement) {
-  Object *type = assign_statement->GetLvalue()->GetType();
-  if (!dynamic_cast<UninitObject *>(type)) {
+  Lvalue *lvalue = assign_statement->GetLvalue();
+  if (nullptr == std::dynamic_pointer_cast<UninitObject>(lvalue->GetType())) {
     tree_.GetCurrentLayer()->DeclareVariable(Symbol(assign_statement->GetLvalue()->GetName()));
   }
 }
+
 void TreeBuilder::Visit(VarDecl *var_decl) {
   tree_.GetCurrentLayer()->DeclareVariable(Symbol(var_decl->GetName()));
 }

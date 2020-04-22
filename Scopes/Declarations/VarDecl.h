@@ -7,11 +7,11 @@
 
 class VarDecl : public Statement {
  public:
-  VarDecl(Object *object, std::string name);
+  VarDecl(std::shared_ptr<Object>object, std::string name);
   std::string GetName();
-  Object *GetType();
+  std::shared_ptr<Object> GetType();
   void Accept(Visitor *visitor) override;
  private:
-  Object *type_;
+  std::shared_ptr<Object> type_;
   std::string name_;
 };

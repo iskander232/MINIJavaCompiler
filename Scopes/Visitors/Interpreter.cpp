@@ -35,6 +35,25 @@ void Interpreter::Visit(VarDecl *var_decl) {}
 
 ////////////////////////////////////////////////////////////////////////
 
+void Interpreter::Visit(ArrayGetExpression *array_get_expression) {
+  array_get_expression->GetArray()->Accept(this);
+  auto array = std::dynamic_pointer_cast<ArrayObject>(GetTosValue());
+  array_get_expression->GetIndex()->Accept(this);
+  auto index_int = std::dynamic_pointer_cast<IntegerObject>(GetTosValue());
+  if (nullptr == array || index_int == nullptr) {
+    throw std::runtime_error("exception in array get expression");
+  }
+  int index = index_int->GetValue();
+  SetTosValue(array->GetIth(index));
+}
+
+void Interpreter::Visit(ArrayRvalueExpression *array_rvalue_expression) {
+  array_rvalue_expression->GetLength()->Accept(this);
+  auto length = std::dynamic_pointer_cast<IntegerObject>(GetTosValue());
+  SetTosValue(std::dynamic_pointer_cast<ArrayObject>(std::make_shared<ArrayObject>(ArrayObject(array_rvalue_expression->GetType(),
+                                                                                  length->GetValue()))));
+}
+
 void Interpreter::Visit(BinaryCallExpression *binary_call_expression) {
   binary_call_expression->GetFirst()->Accept(this);
   auto first = GetTosValue();
@@ -50,6 +69,14 @@ void Interpreter::Visit(BoolExpression *bool_expression) {
   SetTosValue(bool_expression->GetValue());
 }
 
+void Interpreter::Visit(GetLengthExpression *get_length_expression) {
+  get_length_expression->GetArray()->Accept(this);
+  auto array = std::dynamic_pointer_cast<ArrayObject>(GetTosValue());
+  if (array == nullptr) {
+    throw std::runtime_error("get length from not arraty");
+  }
+  SetTosValue(std::dynamic_pointer_cast<Object>(std::make_shared<IntegerObject>(IntegerObject(array->GetLength()))));
+}
 void Interpreter::Visit(IdentExpression *ident_expression) {
   SetTosValue(tree_->GetCurrentLayer()->Get(Symbol(ident_expression->GetName())));
 }

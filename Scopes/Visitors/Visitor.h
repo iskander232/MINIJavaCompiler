@@ -17,7 +17,10 @@ class Visitor {
   virtual void Visit(ClassesList *classes_list) = 0;
   virtual void Visit(VarDecl *var_decl) = 0;
   virtual void Visit(BinaryCallExpression *binary_call_expression) = 0;
+  virtual void Visit(ArrayGetExpression* array_get_expression) = 0;
+  virtual void Visit(ArrayRvalueExpression* array_rvalue_expression) = 0;
   virtual void Visit(BoolExpression *bool_expression) = 0;
+  virtual void Visit(GetLengthExpression *get_length_expression) = 0;
   virtual void Visit(IdentExpression *ident_expression) = 0;
   virtual void Visit(NotExpression *not_expression) = 0;
   virtual void Visit(NumberExpression *number_expression) = 0;
