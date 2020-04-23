@@ -26,6 +26,9 @@
 #include "Expression/UnarMinusExpression.h"
 
 #include "Lvalue/Lvalue.h"
+#include "Lvalue/ArrayElementLvalue.h"
+#include "Lvalue/ArrayLvalue.h"
+#include "Lvalue/SimpleLvalue.h"
 
 #include "Main/Main.h"
 

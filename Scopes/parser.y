@@ -92,7 +92,6 @@
 %nterm <Statement*> statement
 %nterm <Lvalue*> lvalue
 %nterm <Main*> main_class
-%nterm <std::shared_ptr<Object>> type
 %nterm <std::shared_ptr<Object>> simple_type
 %nterm <std::shared_ptr<Object>> array_type
 
@@ -125,12 +124,8 @@ declaration:
     ;
 
 variable_declaration:
-    type "identifier"   {$$ = new VarDecl($1, $2); }
-    ;
-
-type:
-    simple_type  {$$ = $1; }
-    | array_type {$$ = $1; }
+    simple_type "identifier"   {$$ = new VarDecl($1, $2); }
+    | array_type "identifier"   {$$ = new VarDecl($1, $2); }
     ;
 
 simple_type:
@@ -160,8 +155,10 @@ statement:
     ;
 
 lvalue:
-    type "identifier"    {$$ = new Lvalue($1, $2); }
+    simple_type "identifier"    {$$ = new SimpleLvalue($1, $2); }
+    | array_type "identifier"   {$$ = new ArrayLvalue($1, $2); }
     | "identifier"              {$$ = new Lvalue($1); }
+    | "identifier" "[" expr "]" {$$ = new ArrayElementLvalue($1, $3); }
     ;
 
 expr:

@@ -7,12 +7,10 @@
 
 class Lvalue : public BaseElement {
  public:
-  Lvalue(std::string name);
-  Lvalue(std::shared_ptr<Object> type, std::string name);
+  explicit Lvalue(std::string name);
   std::string GetName();
   void Accept(Visitor *visitor) override;
-  std::shared_ptr<Object> GetType();
+  virtual std::shared_ptr<Object> GetType();
  private:
   std::string name_;
-  std::shared_ptr<Object> type_;
 };

@@ -31,6 +31,9 @@ class Interpreter : public Visitor {
   void Visit(NumberExpression *number_expression) override;
   void Visit(UnarMinusExpression *unar_minus_expression) override;
   void Visit(Lvalue *lvalue) override;
+  void Visit(ArrayElementLvalue *array_element_lvalue) override ;
+  void Visit(ArrayLvalue *array_lvalue) override ;
+  void Visit(SimpleLvalue *simple_lvalue) override ;
   void Visit(Main *main) override;
   void Visit(Program *program) override;
   void Visit(AssertStatement *assert_statement) override;

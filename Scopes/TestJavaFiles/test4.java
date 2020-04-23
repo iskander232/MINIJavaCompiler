@@ -1,10 +1,8 @@
 class test4 {
     public static void main() {
-       int[] x;
-       x = new int[7];
-       int y;
-       y = 12;
-       y = x.length;
-       System.out.println(y);
+       int[] x = new int[99];
+       System.out.println(x.length);
+       x[2] = 34;
+       System.out.println(x[2] + 1);
     }
 }

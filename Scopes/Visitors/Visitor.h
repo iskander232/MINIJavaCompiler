@@ -26,6 +26,9 @@ class Visitor {
   virtual void Visit(NumberExpression *number_expression) = 0;
   virtual void Visit(UnarMinusExpression *unar_minus_expression) = 0;
   virtual void Visit(Lvalue *lvalue) = 0;
+  virtual void Visit(ArrayElementLvalue* array_element_lvalue) = 0;
+  virtual void Visit(ArrayLvalue* array_lvalue) = 0;
+  virtual void Visit(SimpleLvalue* simple_lvalue) = 0;
   virtual void Visit(Main *main) = 0;
   virtual void Visit(Program *program) = 0;
   virtual void Visit(AssertStatement *assert_statement) = 0;

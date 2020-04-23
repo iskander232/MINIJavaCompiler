@@ -30,6 +30,9 @@ class NumberExpression;
 class UnarMinusExpression;
 
 class Lvalue;
+class ArrayElementLvalue;
+class ArrayLvalue;
+class SimpleLvalue;
 
 class Main;
 

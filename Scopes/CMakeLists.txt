@@ -54,6 +54,9 @@ add_executable(
     Expression/UnarMinusExpression.cpp
 
     Lvalue/Lvalue.cpp
+    Lvalue/ArrayElementLvalue.cpp
+    Lvalue/ArrayLvalue.cpp
+    Lvalue/SimpleLvalue.cpp
 
     Main/Main.cpp
 

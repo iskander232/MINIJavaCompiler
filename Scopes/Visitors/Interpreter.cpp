@@ -50,8 +50,8 @@ void Interpreter::Visit(ArrayGetExpression *array_get_expression) {
 void Interpreter::Visit(ArrayRvalueExpression *array_rvalue_expression) {
   array_rvalue_expression->GetLength()->Accept(this);
   auto length = std::dynamic_pointer_cast<IntegerObject>(GetTosValue());
-  SetTosValue(std::dynamic_pointer_cast<ArrayObject>(std::make_shared<ArrayObject>(ArrayObject(array_rvalue_expression->GetType(),
-                                                                                  length->GetValue()))));
+  auto new_array = std::make_shared<ArrayObject>(ArrayObject(array_rvalue_expression->GetType(), length->GetValue()));
+  SetTosValue(std::dynamic_pointer_cast<ArrayObject>(new_array));
 }
 
 void Interpreter::Visit(BinaryCallExpression *binary_call_expression) {
@@ -106,7 +106,52 @@ void Interpreter::Visit(UnarMinusExpression *unar_minus_expression) {
   SetTosValue(std::dynamic_pointer_cast<Object>(std::make_shared<IntegerObject>(IntegerObject(-object->GetValue()))));
 }
 
-void Interpreter::Visit(Lvalue *lvalue) {}
+void Interpreter::Visit(Lvalue *lvalue) {
+  auto new_value = GetTosValue();
+  auto last_name = tree_->GetCurrentLayer()->Get(Symbol(lvalue->GetName()));
+  if (new_value->IsEqual(last_name)) {
+    tree_->GetCurrentLayer()->Put(Symbol(lvalue->GetName()), new_value);
+  } else {
+    throw std::runtime_error("different types");
+  }
+}
+
+void Interpreter::Visit(ArrayElementLvalue *array_element_lvalue) {
+  auto new_value = GetTosValue();
+  array_element_lvalue->GetPos()->Accept(this);
+  auto array =
+      std::dynamic_pointer_cast<ArrayObject>(tree_->GetCurrentLayer()->Get(Symbol(array_element_lvalue->GetName())));
+  if (typeid(*new_value) == typeid(*array->GetObject())) {
+    auto last_value_ptr = tree_->GetCurrentLayer()->Get(Symbol(array_element_lvalue->GetName()));
+    auto pos_ptr = std::dynamic_pointer_cast<IntegerObject>(GetTosValue());
+    if (pos_ptr == nullptr) {
+      throw std::runtime_error("pos is not integer");
+    }
+    std::dynamic_pointer_cast<ArrayObject>(last_value_ptr)->SetIth(pos_ptr->GetValue(), new_value);
+  } else {
+    throw std::runtime_error("different types");
+  }
+}
+
+void Interpreter::Visit(ArrayLvalue *array_lvalue) {
+  auto my_array = std::dynamic_pointer_cast<ArrayObject>(array_lvalue->GetType());
+  auto new_array = std::dynamic_pointer_cast<ArrayObject>(GetTosValue());
+
+  if (typeid(*array_lvalue->GetType()) != typeid(*GetTosValue())) {
+    throw std::runtime_error("different types");
+  }
+  if (typeid(*my_array->GetObject()) != typeid(*new_array->GetObject())) {
+    throw std::runtime_error("different types");
+  }
+  tree_->GetCurrentLayer()->Put(Symbol(array_lvalue->GetName()), new_array);
+}
+
+void Interpreter::Visit(SimpleLvalue *simple_lvalue) {
+  if (typeid(*simple_lvalue->GetType()) != typeid(*GetTosValue())) {
+    throw std::runtime_error("different types");
+  }
+  tree_->GetCurrentLayer()->Put(Symbol(simple_lvalue->GetName()), GetTosValue());
+}
 
 void Interpreter::Visit(Main *main) {
   tree_->GoDown();
@@ -135,14 +180,7 @@ void Interpreter::Visit(AssertStatement *assert_statement) {
 
 void Interpreter::Visit(AssignStatement *assign_statement) {
   assign_statement->GetExpression()->Accept(this);
-  auto new_value = GetTosValue();
-  auto last_value = tree_->GetCurrentLayer()->Get(Symbol(assign_statement->GetLvalue()->GetName()));
-  if (!std::dynamic_pointer_cast<UninitObject>(last_value)) {
-    if (typeid(*new_value) != typeid(*last_value)) {
-      throw std::runtime_error("different types");
-    }
-  }
-  tree_->GetCurrentLayer()->Put(Symbol(assign_statement->GetLvalue()->GetName()), new_value);
+  assign_statement->GetLvalue()->Accept(this);
 }
 
 void Interpreter::Visit(IfElseStatement *if_else_statement) {

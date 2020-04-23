@@ -3,7 +3,7 @@
 #include "Visitor.h"
 #include "SymbolTable/ScopeLayerTree.h"
 
-class TreeBuilder: public Visitor{
+class TreeBuilder : public Visitor {
  public:
   TreeBuilder();
   void Visit(AndOperator *and_operator) override;
@@ -19,15 +19,18 @@ class TreeBuilder: public Visitor{
   void Visit(ClassesList *classes_list) override;
   void Visit(VarDecl *var_decl) override;
   void Visit(BinaryCallExpression *binary_call_expression) override;
-  void Visit(ArrayGetExpression* array_get_expression) override ;
-  void Visit(ArrayRvalueExpression* array_rvalue_expression) override ;
+  void Visit(ArrayGetExpression *array_get_expression) override;
+  void Visit(ArrayRvalueExpression *array_rvalue_expression) override;
   void Visit(BoolExpression *bool_expression) override;
-  void Visit(GetLengthExpression* get_length_expression) override ;
+  void Visit(GetLengthExpression *get_length_expression) override;
   void Visit(IdentExpression *ident_expression) override;
   void Visit(NotExpression *not_expression) override;
   void Visit(NumberExpression *number_expression) override;
   void Visit(UnarMinusExpression *unar_minus_expression) override;
   void Visit(Lvalue *lvalue) override;
+  void Visit(ArrayElementLvalue *array_element_lvalue) override ;
+  void Visit(ArrayLvalue *array_lvalue) override ;
+  void Visit(SimpleLvalue *simple_lvalue) override ;
   void Visit(Main *main) override;
   void Visit(Program *program) override;
   void Visit(AssertStatement *assert_statement) override;
@@ -39,7 +42,7 @@ class TreeBuilder: public Visitor{
   void Visit(StatementsList *statements_list) override;
   void Visit(WhileStatement *while_statement) override;
 
-  ScopeLayerTree* GetTree();
+  ScopeLayerTree *GetTree();
  private:
   ScopeLayerTree tree_;
 };
