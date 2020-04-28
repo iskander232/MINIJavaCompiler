@@ -1,4 +1,5 @@
 #include "MethodDecl.h"
+#include <Location/Location.h>
 
 MethodDecl::MethodDecl(std::shared_ptr<Object> type,
                        std::string name,
@@ -27,5 +28,6 @@ StatementsList * MethodDecl::GetStatements() {
 }
 
 void MethodDecl::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

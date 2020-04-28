@@ -1,4 +1,5 @@
 #include "ExprList.h"
+#include <Location/Location.h>
 
 #include <stdexcept>
 
@@ -23,5 +24,6 @@ Expression*  ExprList::GetIth(int i) {
 }
 
 void ExprList::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

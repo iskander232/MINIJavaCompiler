@@ -1,10 +1,12 @@
 #include "BinaryCallExpression.h"
+#include <Location/Location.h>
 
 BinaryCallExpression::BinaryCallExpression(Expression *first, BinaryOperator *binary_operator, Expression *second)
     : first_(first), binary_operator_(
     binary_operator), second_(second) {};
 
 void BinaryCallExpression::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }
 

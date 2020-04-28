@@ -1,4 +1,5 @@
 #include "IfElseStatement.h"
+#include <Location/Location.h>
 
 IfElseStatement::IfElseStatement(Expression *expression,
                                  StatementsList *if_statements_list,
@@ -20,5 +21,6 @@ StatementsList *IfElseStatement::GetElseStatements() {
 }
 
 void IfElseStatement::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

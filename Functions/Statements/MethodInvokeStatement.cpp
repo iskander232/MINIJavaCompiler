@@ -1,4 +1,5 @@
 #include "MethodInvokeStatement.h"
+#include <Location/Location.h>
 
 MethodInvokeStatement::MethodInvokeStatement(Expression *expr, std::string name, ExprList *exprList) :
     expression_(expr), name_(name), expr_list_(exprList) {}
@@ -16,5 +17,6 @@ ExprList * MethodInvokeStatement::GetExprList() {
 }
 
 void MethodInvokeStatement::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

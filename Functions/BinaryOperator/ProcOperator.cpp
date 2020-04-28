@@ -1,6 +1,7 @@
 #include "ProcOperator.h"
 
 #include "Types/Integer.h"
+#include <Location/Location.h>
 
 #include <stdexcept>
 
@@ -16,5 +17,6 @@ std::shared_ptr<Object> ProcOperator::eval(std::shared_ptr<Object> a, std::share
 }
 
 void ProcOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

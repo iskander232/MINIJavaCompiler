@@ -1,5 +1,6 @@
 #include "ArrayElementLvalue.h"
 #include "Types/UninitObject.h"
+#include <Location/Location.h>
 #include <stdexcept>
 
 ArrayElementLvalue::ArrayElementLvalue(std::string name, Expression *position) :
@@ -10,6 +11,7 @@ std::shared_ptr<Object> ArrayElementLvalue::GetType() {
 }
 
 void ArrayElementLvalue::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }
 

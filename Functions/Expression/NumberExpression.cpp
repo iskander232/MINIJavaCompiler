@@ -1,4 +1,5 @@
 #include "NumberExpression.h"
+#include <Location/Location.h>
 
 #include "Types/Integer.h"
 
@@ -9,6 +10,7 @@ std::shared_ptr<Object> NumberExpression::GetNumber() {
 }
 
 void NumberExpression::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }
 

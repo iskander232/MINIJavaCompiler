@@ -2,6 +2,7 @@
 
 #include "Types/Integer.h"
 #include "Types/Bool.h"
+#include <Location/Location.h>
 
 #include <stdexcept>
 
@@ -17,5 +18,6 @@ std::shared_ptr<Object> LessOperator::eval(std::shared_ptr<Object> a, std::share
 }
 
 void LessOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

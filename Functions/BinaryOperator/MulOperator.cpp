@@ -2,6 +2,7 @@
 
 #include "Types/Bool.h"
 #include "Types/Integer.h"
+#include <Location/Location.h>
 
 #include <stdexcept>
 
@@ -16,5 +17,6 @@ std::shared_ptr<Object> MulOperator::eval(std::shared_ptr<Object> a, std::shared
 }
 
 void MulOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

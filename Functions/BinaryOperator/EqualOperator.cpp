@@ -1,6 +1,7 @@
 #include "EqualOperator.h"
 #include "Types/Bool.h"
 #include "Types/Integer.h"
+#include <Location/Location.h>
 
 #include "stdexcept"
 std::shared_ptr<Object> EqualOperator::eval(std::shared_ptr<Object> a, std::shared_ptr<Object> b) const {
@@ -15,5 +16,6 @@ std::shared_ptr<Object> EqualOperator::eval(std::shared_ptr<Object> a, std::shar
 }
 
 void EqualOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

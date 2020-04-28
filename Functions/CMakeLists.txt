@@ -100,6 +100,8 @@ add_executable(
     Types/IdentObject.cpp
     Types/Integer.cpp
     Types/UninitObject.cpp
+
+    Location/Location.cpp
 )
 
 target_include_directories(

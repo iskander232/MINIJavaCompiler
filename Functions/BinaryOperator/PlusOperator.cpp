@@ -1,6 +1,7 @@
 #include "PlusOperator.h"
 
 #include "Types/Integer.h"
+#include <Location/Location.h>
 
 #include <iostream>
 
@@ -16,5 +17,6 @@ std::shared_ptr<Object> PlusOperator::eval(std::shared_ptr<Object> a, std::share
 }
 
 void PlusOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

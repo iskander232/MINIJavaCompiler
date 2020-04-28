@@ -1,4 +1,5 @@
 #include "DeclarationList.h"
+#include <Location/Location.h>
 
 #include <stdexcept>
 
@@ -22,5 +23,6 @@ Declaration *DeclarationList::GetIth(int i) {
 }
 
 void DeclarationList::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

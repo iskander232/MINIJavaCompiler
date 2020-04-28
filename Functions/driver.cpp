@@ -5,6 +5,7 @@
 #include "Visitors/TreeBuilder.h"
 
 #include <function-mechanism/FunctionStorage.h>
+#include <Location/Location.h>
 
 Driver::Driver() :
     trace_parsing(false),
@@ -22,28 +23,30 @@ int Driver::parse(const std::string &f) {
 }
 
 void Driver::Evaluate() {
-  TreeBuilder tree_builder;
-  tree_builder.Visit(program);
-  ScopeLayerTree *tree = tree_builder.GetTree();
-  auto functions = tree_builder.GetFunctions();
-  auto classes = tree_builder.GetClasses();
+  try {
+    TreeBuilder tree_builder;
+    tree_builder.Visit(program);
+    ScopeLayerTree *tree = tree_builder.GetTree();
+    auto functions = tree_builder.GetFunctions();
+    auto classes = tree_builder.GetClasses();
 
-  FunctionStorage &storage = FunctionStorage::GetInstance();
-  for (auto it : functions) {
-    storage.Set(it.first, it.second);
+    FunctionStorage &storage = FunctionStorage::GetInstance();
+    for (auto it : functions) {
+      storage.Set(it.first, it.second);
+    }
+    auto func_name = std::make_pair(Symbol(program->GetMain()->GetName()), Symbol("main"));
+
+    FunctionCallVisitor function_visitor(
+        tree->GetFunctionScopeByName(func_name),
+        tree->root_->GetFunc(func_name),
+        classes,
+        nullptr);
+
+    function_visitor.SetTree(tree);
+    function_visitor.Visit(program->GetMain()->GetStatementsList());
+  } catch (const std::runtime_error &e) {
+    std::cerr << Location::GetInstance().LastLoc() << " : " << e.what();
   }
-
-  auto func_name = std::make_pair(Symbol(program->GetMain()->GetName()), Symbol("main"));
-
-  FunctionCallVisitor function_visitor(
-      tree->GetFunctionScopeByName(func_name),
-      tree->root_->GetFunc(func_name),
-      classes,
-      nullptr);
-
-  function_visitor.SetTree(tree);
-
-  function_visitor.Visit(program->GetMain()->GetStatementsList());
 }
 
 void Driver::scan_begin() {

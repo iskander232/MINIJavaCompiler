@@ -1,7 +1,7 @@
 #include "AndOperator.h"
 
 #include "Types/Bool.h"
-
+#include <Location/Location.h>
 #include <stdexcept>
 
 std::shared_ptr<Object> AndOperator::eval(std::shared_ptr<Object> a, std::shared_ptr<Object> b) const {
@@ -16,5 +16,6 @@ std::shared_ptr<Object> AndOperator::eval(std::shared_ptr<Object> a, std::shared
 }
 
 void AndOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

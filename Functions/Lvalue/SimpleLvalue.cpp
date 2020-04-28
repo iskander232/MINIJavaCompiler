@@ -1,5 +1,6 @@
 #include "SimpleLvalue.h"
 #include "Types/SimpleObject.h"
+#include <Location/Location.h>
 #include <stdexcept>
 
 SimpleLvalue::SimpleLvalue(std::shared_ptr<Object> type, std::string name)
@@ -14,5 +15,6 @@ std::shared_ptr<Object> SimpleLvalue::GetType() {
 }
 
 void SimpleLvalue::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

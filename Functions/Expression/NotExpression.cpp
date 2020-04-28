@@ -1,4 +1,5 @@
 #include "NotExpression.h"
+#include <Location/Location.h>
 
 NotExpression::NotExpression(Expression *expression):expression_(expression) {};
 
@@ -10,5 +11,6 @@ Expression* NotExpression::GetExpression() {
 //}
 
 void NotExpression::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

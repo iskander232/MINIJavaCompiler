@@ -1,4 +1,5 @@
 #include "Lvalue.h"
+#include <Location/Location.h>
 
 #include "Types/UninitObject.h"
 
@@ -14,5 +15,6 @@ std::shared_ptr<Object> Lvalue::GetType() {
 }
 
 void Lvalue::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

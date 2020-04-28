@@ -1,6 +1,7 @@
 #include "MinusOperator.h"
 
 #include "Types/Integer.h"
+#include <Location/Location.h>
 #include <stdexcept>
 
 std::shared_ptr<Object> MinusOperator::eval(std::shared_ptr<Object> a, std::shared_ptr<Object> b) const {
@@ -15,5 +16,6 @@ std::shared_ptr<Object> MinusOperator::eval(std::shared_ptr<Object> a, std::shar
 }
 
 void MinusOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

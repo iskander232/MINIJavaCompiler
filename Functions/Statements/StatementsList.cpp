@@ -1,6 +1,8 @@
 #include "StatementsList.h"
+#include <Location/Location.h>
 
 void StatementsList::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }
 

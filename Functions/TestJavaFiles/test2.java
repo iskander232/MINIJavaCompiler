@@ -8,6 +8,7 @@ class test2 {
         A b = new A();
         b.set(14);
         a.print();  //a and b are different
+        int v = true;
     }
 }
 

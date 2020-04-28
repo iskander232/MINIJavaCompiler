@@ -1,6 +1,7 @@
 #include "OrOperator.h"
 
 #include "Types/Bool.h"
+#include <Location/Location.h>
 
 #include <stdexcept>
 
@@ -16,5 +17,6 @@ std::shared_ptr<Object> OrOperator::eval(std::shared_ptr<Object> a, std::shared_
 }
 
 void OrOperator::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

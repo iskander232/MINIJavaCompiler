@@ -1,4 +1,5 @@
 #include "InvokeExpression.h"
+#include <Location/Location.h>
 
 InvokeExpression::InvokeExpression(Expression *expression, std::string name, ExprList *expr_list) :
     expression_(expression), name_(name), expr_list_(expr_list) {}
@@ -16,5 +17,6 @@ ExprList *InvokeExpression::GetExprList() {
 }
 
 void InvokeExpression::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

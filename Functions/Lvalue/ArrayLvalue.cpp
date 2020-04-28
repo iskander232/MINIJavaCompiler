@@ -1,6 +1,7 @@
 #include "ArrayLvalue.h"
 
 #include "Types/ArrayObject.h"
+#include <Location/Location.h>
 
 #include <stdexcept>
 
@@ -17,5 +18,6 @@ std::shared_ptr<Object> ArrayLvalue::GetType() {
 }
 
 void ArrayLvalue::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }

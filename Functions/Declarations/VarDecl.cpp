@@ -1,6 +1,8 @@
 #include "VarDecl.h"
+#include <Location/Location.h>
 
 void VarDecl::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(dynamic_cast<BaseElement*>(this));
   visitor->Visit(this);
 }
 
