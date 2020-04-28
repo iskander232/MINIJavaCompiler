@@ -367,7 +367,7 @@ void FunctionCallVisitor::Visit(MethodInvokeStatement *method_invoke_statement) 
   }
   auto func_name = std::make_pair(Symbol(ident->name_), Symbol(method_invoke_statement->GetName()));
   auto func = current_layer_->GetFunc(func_name);
-  func->formals_->Accept(this);
+
   std::vector<std::shared_ptr<Object>> params;
   for (int i = 0; i < method_invoke_statement->GetExprList()->GetSize(); ++i) {
     params.push_back(Accept(method_invoke_statement->GetExprList()->GetIth(i)));
@@ -377,6 +377,7 @@ void FunctionCallVisitor::Visit(MethodInvokeStatement *method_invoke_statement) 
   }
 
   FunctionCallVisitor new_visitor(tree_->GetFunctionScopeByName(func_name), func, classes_list_, ident);
+  func->formals_->Accept(&new_visitor);
   new_visitor.SetParams(params);
 
   new_visitor.GetFrame().SetParentFrame(&frame);
