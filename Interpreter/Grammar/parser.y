@@ -8,7 +8,7 @@
 
 %code requires {
     #include <string>
-    #include "forward_declaration.h"
+    #include "include/visitors/forward_declaration.h"
 
     class Driver;
     class Scanner;
@@ -193,7 +193,7 @@ statements:
 
 statement:
     "assert" "(" expr ")" ";"                                               {$$ = new AssertStatement($3);  Location::GetInstance().SetLoc($$, driver.location);}
-    | declaration ";"                                                       {$$ = $1;  Location::GetInstance().SetLoc($$, driver.location);}
+    | declaration                                                           {$$ = $1;  Location::GetInstance().SetLoc($$, driver.location);}
     | "out" "(" expr ")" ";"                                                {$$ = new OutStatement($3);  Location::GetInstance().SetLoc($$, driver.location);}
     | lvalue "=" expr ";"                                                   {$$ = new AssignStatement($1, $3);  Location::GetInstance().SetLoc($$, driver.location);}
     | "{" statements "}"                                                    {$$ = new ScopeDeclStatement($2);  Location::GetInstance().SetLoc($$, driver.location);}

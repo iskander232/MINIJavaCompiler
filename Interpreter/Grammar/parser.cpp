@@ -43,15 +43,15 @@
 // Unqualified %code blocks.
 #line 21 "parser.y"
 
-    #include "include/driver.hh"
-    #include "Grammar/location.hh"
-    #include "Grammar/elements.h"
+    #include "driver.hh"
+    #include "location.hh"
+    #include "elements.h"
     #include "Location/Location.h"
     static yy::parser::symbol_type yylex(Scanner &scanner, Driver& driver) {
         return scanner.ScanToken();
     }
 
-#line 55 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 55 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
 
 
 #ifndef YY_
@@ -142,7 +142,7 @@
 #define YYRECOVERING()  (!!yyerrstatus_)
 
 namespace yy {
-#line 146 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 146 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
 
 
   /* Return YYSTR after stripping away unnecessary quotes and
@@ -647,139 +647,139 @@ namespace yy {
       case 42: // "identifier"
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < std::string > (); }
-#line 651 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 651 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 43: // "number"
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < int > (); }
-#line 657 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 657 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 46: // simple_type
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < std::shared_ptr<Object> > (); }
-#line 663 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 663 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 47: // array_type
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < std::shared_ptr<Object> > (); }
-#line 669 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 669 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 48: // binary_operator
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < BinaryOperator* > (); }
-#line 675 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 675 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 49: // class
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Class* > (); }
-#line 681 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 681 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 50: // classes
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < ClassesList* > (); }
-#line 687 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 687 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 51: // declarations
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < DeclarationList* > (); }
-#line 693 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 693 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 52: // expr
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Expression* > (); }
-#line 699 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 699 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 53: // expr_list
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < ExprList* > (); }
-#line 705 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 705 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 54: // empty_expr_list
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < ExprList* > (); }
-#line 711 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 711 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 55: // some_expr_list
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < ExprList* > (); }
-#line 717 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 717 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 56: // formals
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Formals* > (); }
-#line 723 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 723 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 57: // empty_formals
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Formals* > (); }
-#line 729 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 729 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 58: // some_formals
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Formals* > (); }
-#line 735 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 735 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 59: // lvalue
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Lvalue* > (); }
-#line 741 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 741 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 60: // main_class
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Main* > (); }
-#line 747 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 747 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 61: // method_declaration
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < MethodDecl* > (); }
-#line 753 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 753 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 62: // program
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Program* > (); }
-#line 759 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 759 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 63: // statement
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Statement* > (); }
-#line 765 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 765 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 64: // statements
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < StatementsList* > (); }
-#line 771 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 771 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 65: // declaration
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < Declaration* > (); }
-#line 777 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 777 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       case 66: // variable_declaration
 #line 118 "parser.y"
                  { yyo << yysym.value.template as < VarDecl* > (); }
-#line 783 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 783 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
         break;
 
       default:
@@ -1097,79 +1097,79 @@ namespace yy {
   case 2:
 #line 123 "parser.y"
                              {yylhs.value.as < Program* > () = new Program(yystack_[1].value.as < Main* > (), yystack_[0].value.as < ClassesList* > ()); driver.program = yylhs.value.as < Program* > (); Location::GetInstance().SetLoc(yylhs.value.as < Program* > (), driver.location);}
-#line 1101 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1101 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 3:
 #line 126 "parser.y"
                         {yylhs.value.as < ClassesList* > () = new ClassesList();  Location::GetInstance().SetLoc(yylhs.value.as < ClassesList* > (), driver.location);}
-#line 1107 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1107 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 4:
 #line 127 "parser.y"
                         {yystack_[1].value.as < ClassesList* > ()->AddClass(yystack_[0].value.as < Class* > ()); yylhs.value.as < ClassesList* > () = yystack_[1].value.as < ClassesList* > ();  Location::GetInstance().SetLoc(yylhs.value.as < ClassesList* > (), driver.location);}
-#line 1113 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1113 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 5:
 #line 131 "parser.y"
                                               {yylhs.value.as < Class* > () = new Class(yystack_[3].value.as < std::string > (), yystack_[1].value.as < DeclarationList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Class* > (), driver.location);}
-#line 1119 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1119 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 6:
 #line 135 "parser.y"
                                                                                               {yylhs.value.as < Main* > () = new Main(yystack_[11].value.as < std::string > (), yystack_[2].value.as < StatementsList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Main* > (), driver.location);}
-#line 1125 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1125 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 7:
 #line 139 "parser.y"
                                 {yylhs.value.as < Declaration* > () = yystack_[0].value.as < VarDecl* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Declaration* > (), driver.location);}
-#line 1131 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1131 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 8:
 #line 140 "parser.y"
                                 {yylhs.value.as < Declaration* > () = yystack_[0].value.as < MethodDecl* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Declaration* > (), driver.location);}
-#line 1137 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1137 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 9:
 #line 144 "parser.y"
                                             {yylhs.value.as < DeclarationList* > () = new DeclarationList();  Location::GetInstance().SetLoc(yylhs.value.as < DeclarationList* > (), driver.location);}
-#line 1143 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1143 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 10:
 #line 145 "parser.y"
                                             {yystack_[1].value.as < DeclarationList* > ()->AddDeclaration(yystack_[0].value.as < Declaration* > ()); yylhs.value.as < DeclarationList* > () = yystack_[1].value.as < DeclarationList* > ();  Location::GetInstance().SetLoc(yylhs.value.as < DeclarationList* > (), driver.location);}
-#line 1149 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1149 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 11:
 #line 149 "parser.y"
                                    {yylhs.value.as < VarDecl* > () = new VarDecl(yystack_[2].value.as < std::shared_ptr<Object> > (), yystack_[1].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < VarDecl* > (), driver.location);}
-#line 1155 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1155 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 12:
 #line 150 "parser.y"
                                    {yylhs.value.as < VarDecl* > () = new VarDecl(yystack_[2].value.as < std::shared_ptr<Object> > (), yystack_[1].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < VarDecl* > (), driver.location);}
-#line 1161 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1161 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 13:
 #line 154 "parser.y"
                                                                             {yylhs.value.as < MethodDecl* > () = new MethodDecl(yystack_[7].value.as < std::shared_ptr<Object> > (), yystack_[6].value.as < std::string > (), yystack_[4].value.as < Formals* > (), yystack_[1].value.as < StatementsList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < MethodDecl* > (), driver.location);}
-#line 1167 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1167 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 14:
 #line 155 "parser.y"
                                                                             {yylhs.value.as < MethodDecl* > () = new MethodDecl(yystack_[7].value.as < std::shared_ptr<Object> > (), yystack_[6].value.as < std::string > (), yystack_[4].value.as < Formals* > (), yystack_[1].value.as < StatementsList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < MethodDecl* > (), driver.location);}
-#line 1173 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1173 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 15:
@@ -1178,347 +1178,347 @@ namespace yy {
                     std::dynamic_pointer_cast<Object>(std::make_shared<UninitObject>(UninitObject())), yystack_[6].value.as < std::string > (), yystack_[4].value.as < Formals* > (), yystack_[1].value.as < StatementsList* > ());
                                                                                Location::GetInstance().SetLoc(yylhs.value.as < MethodDecl* > (), driver.location);
     }
-#line 1182 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1182 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 16:
 #line 163 "parser.y"
                     {yylhs.value.as < Formals* > () = yystack_[0].value.as < Formals* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Formals* > (), driver.location);}
-#line 1188 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1188 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 17:
 #line 164 "parser.y"
                     {yylhs.value.as < Formals* > () = yystack_[0].value.as < Formals* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Formals* > (), driver.location);}
-#line 1194 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1194 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 18:
 #line 168 "parser.y"
                     {yylhs.value.as < Formals* > () = new Formals();  Location::GetInstance().SetLoc(yylhs.value.as < Formals* > (), driver.location);}
-#line 1200 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1200 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 19:
 #line 172 "parser.y"
                                                     {yylhs.value.as < Formals* > () = new Formals(yystack_[1].value.as < std::shared_ptr<Object> > (), yystack_[0].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < Formals* > (), driver.location);}
-#line 1206 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1206 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 20:
 #line 173 "parser.y"
                                                     {yylhs.value.as < Formals* > () = new Formals(yystack_[1].value.as < std::shared_ptr<Object> > (), yystack_[0].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < Formals* > (), driver.location);}
-#line 1212 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1212 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 21:
 #line 174 "parser.y"
                                                     {yystack_[3].value.as < Formals* > ()->AddFormals(yystack_[1].value.as < std::shared_ptr<Object> > (), yystack_[0].value.as < std::string > ()); yylhs.value.as < Formals* > () = yystack_[3].value.as < Formals* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Formals* > (), driver.location);}
-#line 1218 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1218 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 22:
 #line 175 "parser.y"
                                                     {yystack_[3].value.as < Formals* > ()->AddFormals(yystack_[1].value.as < std::shared_ptr<Object> > (), yystack_[0].value.as < std::string > ()); yylhs.value.as < Formals* > () = yystack_[3].value.as < Formals* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Formals* > (), driver.location);}
-#line 1224 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1224 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 23:
 #line 180 "parser.y"
                             {yylhs.value.as < std::shared_ptr<Object> > () = std::dynamic_pointer_cast<Object>(std::make_shared<IntegerObject>(IntegerObject(0)));  }
-#line 1230 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1230 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 24:
 #line 181 "parser.y"
                             {yylhs.value.as < std::shared_ptr<Object> > () = std::dynamic_pointer_cast<Object>(std::make_shared<BoolObject>(BoolObject(0)));  }
-#line 1236 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1236 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 25:
 #line 182 "parser.y"
                             {yylhs.value.as < std::shared_ptr<Object> > () = std::dynamic_pointer_cast<Object>(std::make_shared<IdentObject>(IdentObject(yystack_[0].value.as < std::string > ())));  }
-#line 1242 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1242 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 26:
 #line 186 "parser.y"
                             {yylhs.value.as < std::shared_ptr<Object> > () = std::dynamic_pointer_cast<Object>(std::make_shared<ArrayObject>(ArrayObject(yystack_[2].value.as < std::shared_ptr<Object> > ()))); }
-#line 1248 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1248 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 27:
 #line 190 "parser.y"
                                     {yylhs.value.as < StatementsList* > () = new StatementsList();  Location::GetInstance().SetLoc(yylhs.value.as < StatementsList* > (), driver.location);}
-#line 1254 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1254 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 28:
 #line 191 "parser.y"
                                     {yystack_[1].value.as < StatementsList* > ()->AddStatement(yystack_[0].value.as < Statement* > ()); yylhs.value.as < StatementsList* > () = yystack_[1].value.as < StatementsList* > ();  Location::GetInstance().SetLoc(yylhs.value.as < StatementsList* > (), driver.location);}
-#line 1260 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1260 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 29:
 #line 195 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new AssertStatement(yystack_[2].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1266 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1266 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 30:
 #line 196 "parser.y"
-                                                                            {yylhs.value.as < Statement* > () = yystack_[1].value.as < Declaration* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1272 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+                                                                            {yylhs.value.as < Statement* > () = yystack_[0].value.as < Declaration* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
+#line 1272 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 31:
 #line 197 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new OutStatement(yystack_[2].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1278 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1278 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 32:
 #line 198 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new AssignStatement(yystack_[3].value.as < Lvalue* > (), yystack_[1].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1284 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1284 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 33:
 #line 199 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new ScopeDeclStatement(yystack_[1].value.as < StatementsList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1290 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1290 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 34:
 #line 200 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new IfStatement(yystack_[4].value.as < Expression* > (), yystack_[1].value.as < StatementsList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1296 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1296 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 35:
 #line 201 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new IfElseStatement(yystack_[8].value.as < Expression* > (), yystack_[5].value.as < StatementsList* > (), yystack_[1].value.as < StatementsList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1302 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1302 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 36:
 #line 202 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new WhileStatement(yystack_[4].value.as < Expression* > (), yystack_[1].value.as < StatementsList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1308 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1308 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 37:
 #line 203 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new ReturnStatement(yystack_[1].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1314 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1314 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 38:
 #line 204 "parser.y"
                                                                             {yylhs.value.as < Statement* > () = new MethodInvokeStatement(yystack_[6].value.as < Expression* > (), yystack_[4].value.as < std::string > (), yystack_[2].value.as < ExprList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Statement* > (), driver.location);}
-#line 1320 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1320 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 39:
 #line 208 "parser.y"
                                 {yylhs.value.as < Lvalue* > () = new SimpleLvalue(yystack_[1].value.as < std::shared_ptr<Object> > (), yystack_[0].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < Lvalue* > (), driver.location);}
-#line 1326 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1326 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 40:
 #line 209 "parser.y"
                                 {yylhs.value.as < Lvalue* > () = new ArrayLvalue(yystack_[1].value.as < std::shared_ptr<Object> > (), yystack_[0].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < Lvalue* > (), driver.location);}
-#line 1332 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1332 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 41:
 #line 210 "parser.y"
                                 {yylhs.value.as < Lvalue* > () = new Lvalue(yystack_[0].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < Lvalue* > (), driver.location);}
-#line 1338 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1338 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 42:
 #line 211 "parser.y"
                                 {yylhs.value.as < Lvalue* > () = new ArrayElementLvalue(yystack_[3].value.as < std::string > (), yystack_[1].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Lvalue* > (), driver.location);}
-#line 1344 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1344 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 43:
 #line 215 "parser.y"
                             {yylhs.value.as < ExprList* > () = yystack_[0].value.as < ExprList* > ();  Location::GetInstance().SetLoc(yylhs.value.as < ExprList* > (), driver.location);}
-#line 1350 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1350 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 44:
 #line 216 "parser.y"
                             {yylhs.value.as < ExprList* > () = yystack_[0].value.as < ExprList* > ();  Location::GetInstance().SetLoc(yylhs.value.as < ExprList* > (), driver.location);}
-#line 1356 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1356 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 45:
 #line 220 "parser.y"
                             {yylhs.value.as < ExprList* > () = new ExprList();  Location::GetInstance().SetLoc(yylhs.value.as < ExprList* > (), driver.location);}
-#line 1362 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1362 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 46:
 #line 224 "parser.y"
                                     {yylhs.value.as < ExprList* > () = new ExprList(yystack_[0].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < ExprList* > (), driver.location);}
-#line 1368 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1368 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 47:
 #line 225 "parser.y"
                                     {yystack_[2].value.as < ExprList* > ()->AddExpr(yystack_[0].value.as < Expression* > ()); yylhs.value.as < ExprList* > () = yystack_[2].value.as < ExprList* > ();  Location::GetInstance().SetLoc(yylhs.value.as < ExprList* > (), driver.location);}
-#line 1374 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1374 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 48:
 #line 229 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new BinaryCallExpression(yystack_[2].value.as < Expression* > (), yystack_[1].value.as < BinaryOperator* > (), yystack_[0].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1380 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1380 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 49:
 #line 230 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new IdentExpression(yystack_[0].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1386 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1386 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 50:
 #line 231 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new NumberExpression(yystack_[0].value.as < int > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1392 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1392 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 51:
 #line 232 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new UnarMinusExpression(yystack_[0].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1398 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1398 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 52:
 #line 233 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new NotExpression(yystack_[0].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1404 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1404 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 53:
 #line 234 "parser.y"
                                                 {yylhs.value.as < Expression* > () = yystack_[1].value.as < Expression* > ();  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1410 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1410 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 54:
 #line 235 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new BoolExpression(true);  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1416 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1416 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 55:
 #line 236 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new BoolExpression(false);  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1422 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1422 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 56:
 #line 237 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new ArrayGetExpression(yystack_[3].value.as < Expression* > (), yystack_[1].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1428 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1428 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 57:
 #line 238 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new GetLengthExpression(yystack_[2].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1434 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1434 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 58:
 #line 239 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new ArrayRvalueExpression(yystack_[3].value.as < std::shared_ptr<Object> > (), yystack_[1].value.as < Expression* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1440 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1440 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 59:
 #line 240 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new IdentCreateExpression(yystack_[2].value.as < std::string > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1446 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1446 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 60:
 #line 241 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new ThisExpression();  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1452 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1452 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 61:
 #line 242 "parser.y"
                                                 {yylhs.value.as < Expression* > () = new InvokeExpression(yystack_[5].value.as < Expression* > (), yystack_[3].value.as < std::string > (), yystack_[1].value.as < ExprList* > ());  Location::GetInstance().SetLoc(yylhs.value.as < Expression* > (), driver.location);}
-#line 1458 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1458 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 62:
 #line 246 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new AndOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1464 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1464 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 63:
 #line 247 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new OrOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1470 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1470 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 64:
 #line 248 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new LessOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1476 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1476 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 65:
 #line 249 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new MoreOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1482 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1482 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 66:
 #line 250 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new EqualOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1488 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1488 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 67:
 #line 251 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new PlusOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1494 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1494 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 68:
 #line 252 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new MinusOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1500 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1500 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 69:
 #line 253 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new MulOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1506 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1506 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 70:
 #line 254 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new DivOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1512 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1512 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
   case 71:
 #line 255 "parser.y"
             {yylhs.value.as < BinaryOperator* > () = new ProcOperator();  Location::GetInstance().SetLoc(yylhs.value.as < BinaryOperator* > (), driver.location);}
-#line 1518 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1518 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
     break;
 
 
-#line 1522 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 1522 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
 
             default:
               break;
@@ -1796,24 +1796,24 @@ namespace yy {
   const short
   parser::yypact_[] =
   {
-     -22,   -26,   -57,    21,    11,     5,   -57,    25,    -7,   -57,
-      28,    37,    32,   -57,    41,    -6,    56,   -57,    36,   -57,
-     -57,   -57,   -16,    30,   -57,   -57,   -57,    66,    44,   -15,
-      45,    69,    67,    68,    75,    78,    79,    80,   -57,   -57,
-     -57,   -57,    39,    39,    39,    92,    -8,    55,    82,   -57,
-      81,    88,    89,    42,    42,    42,   -57,    90,    96,   -57,
-     -57,    97,    98,    99,    46,    42,   -57,    -2,   -57,     3,
-      73,   561,   115,   -57,   105,   -57,   -57,   102,    39,   119,
-     121,   -57,   579,   579,   417,   127,   -57,    42,    42,    42,
-      42,   124,   122,   377,    42,    67,    68,   -57,   -57,   -57,
-     -57,   -57,   -57,   -57,   -57,   -57,   -57,    42,   -19,    42,
-      42,   -57,   -57,    13,   101,   -57,   -57,     8,   -57,   -57,
-     435,   453,   471,   489,   130,    42,   -57,   507,   525,   -57,
-     125,   579,   397,   162,   -57,   -57,   197,   232,   132,   126,
-     129,   131,   133,   -57,   543,   -57,   -57,    42,   -57,   -57,
-     -57,   -57,    42,   -57,   -57,   -57,   -57,   -57,   579,   137,
-     -57,   141,   138,   267,   302,   148,    42,   -57,   139,   -57,
-     -57,   579,   156,   -57,   337,   -57
+     -22,   -14,   -57,    33,    18,    25,   -57,    30,    15,   -57,
+      35,    51,    40,   -57,    44,    -6,    57,   -57,   -10,   -57,
+     -57,   -57,   -16,    32,   -57,   -57,   -57,    59,    46,   -15,
+      54,    84,    83,    86,    60,    92,    97,    99,   -57,   -57,
+     -57,   -57,    49,    49,    49,    52,    -8,    73,   102,   -57,
+      98,   105,   113,   315,   315,   315,   -57,   119,   124,   -57,
+     -57,   125,   126,   127,    71,   315,   -57,    -2,   -57,     3,
+     106,   539,   141,   -57,   -57,   -57,   -57,   130,    49,   132,
+     133,   -57,   557,   557,   395,    93,   -57,   315,   315,   315,
+     315,   136,   134,   355,   315,    83,    86,   -57,   -57,   -57,
+     -57,   -57,   -57,   -57,   -57,   -57,   -57,   315,     8,   315,
+     315,   -57,     4,   112,   -57,   -57,    10,   -57,   -57,   413,
+     431,   449,   467,   139,   315,   -57,   485,   503,   -57,   149,
+     557,   375,   128,   -57,   -57,   163,   198,   157,   151,   152,
+     159,   160,   -57,   521,   -57,   -57,   315,   -57,   -57,   -57,
+     -57,   315,   -57,   -57,   -57,   -57,   -57,   557,   140,   -57,
+     161,   166,   233,   268,   156,   315,   -57,   148,   -57,   -57,
+     557,   168,   -57,   303,   -57
   };
 
   const signed char
@@ -1826,32 +1826,32 @@ namespace yy {
       12,    27,    18,    18,    18,     0,     0,     0,     0,    16,
       17,     0,     0,     0,     0,     0,    27,     0,     0,    54,
       55,     0,     0,     0,     0,     0,    60,    49,    50,     0,
-       0,     0,     0,    28,     0,    19,    20,     0,     0,     0,
+       0,     0,     0,    28,    30,    19,    20,     0,     0,     0,
        0,    49,    51,    52,     0,     0,     6,     0,     0,     0,
        0,    25,     0,     0,     0,    39,    40,    68,    67,    69,
       70,    62,    63,    64,    65,    66,    71,     0,     0,     0,
-       0,    30,    27,     0,     0,    27,    27,     0,    53,    33,
-       0,     0,     0,     0,     0,     0,    37,     0,     0,    57,
-       0,    48,     0,     0,    21,    22,     0,     0,     0,     0,
-       0,     0,     0,    59,     0,    42,    56,    45,    32,    15,
-      13,    14,    45,    31,    29,    27,    27,    58,    46,     0,
-      43,    44,     0,     0,     0,    61,     0,    61,    34,    36,
-      38,    47,     0,    27,     0,    35
+       0,    27,     0,     0,    27,    27,     0,    53,    33,     0,
+       0,     0,     0,     0,     0,    37,     0,     0,    57,     0,
+      48,     0,     0,    21,    22,     0,     0,     0,     0,     0,
+       0,     0,    59,     0,    42,    56,    45,    32,    15,    13,
+      14,    45,    31,    29,    27,    27,    58,    46,     0,    43,
+      44,     0,     0,     0,    61,     0,    61,    34,    36,    38,
+      47,     0,    27,     0,    35
   };
 
   const short
   parser::yypgoto_[] =
   {
-     -57,   -13,    -5,   -57,   -57,   -57,   -57,   -46,    22,   -57,
+     -57,   -13,    -5,   -57,   -57,   -57,   -57,   -46,    37,   -57,
      -57,   -29,   -57,   -57,   -57,   -57,   -57,   -57,   -57,   -56,
-     140,   -57
+     171,   -57
   };
 
   const short
   parser::yydefgoto_[] =
   {
-      -1,    69,    70,   109,     9,     5,    15,    71,   159,   160,
-     161,    48,    49,    50,    72,     2,    24,     3,    73,    45,
+      -1,    69,    70,   109,     9,     5,    15,    71,   158,   159,
+     160,    48,    49,    50,    72,     2,    24,     3,    73,    45,
       74,    26
   };
 
@@ -1859,115 +1859,108 @@ namespace yy {
   parser::yytable_[] =
   {
       85,   -41,    22,    31,    31,    29,     1,    82,    83,    84,
-      23,    31,    17,    30,    51,    52,     4,    94,    18,    93,
-     129,     6,    31,   130,    19,    20,    32,    36,     7,    46,
-      46,    46,    31,     8,    75,    11,    21,    47,    47,    47,
-     -25,   120,   121,   122,   123,    95,    53,   129,   127,    10,
-     138,    92,    54,    12,    13,   134,   133,    55,    14,   136,
-     137,   128,    28,   131,   132,   113,    19,    20,    16,    19,
-      20,    27,    33,   114,    59,    60,    19,    20,    21,   144,
-      64,    21,    34,    66,    81,    68,    35,    37,    91,    38,
-      39,    40,    41,    42,    43,    44,    53,    76,    77,   163,
-     164,   158,    54,    78,    79,    80,   158,    55,    86,    56,
-      57,    87,    88,    89,    90,    96,    18,   174,   110,   112,
-     171,    58,    19,    20,    59,    60,    61,    62,   111,    63,
-      64,    53,    65,    66,    67,    68,   115,    54,   116,   124,
-     147,   125,    55,   135,    56,   119,   143,   152,   155,   153,
-     156,    18,   154,   165,   167,    25,    58,    19,    20,    59,
-      60,    61,    62,   166,    63,    64,    53,    65,    66,    67,
-      68,   170,    54,   173,   162,   172,     0,    55,     0,    56,
-     149,     0,     0,     0,     0,     0,    18,     0,     0,     0,
-       0,    58,    19,    20,    59,    60,    61,    62,     0,    63,
-      64,    53,    65,    66,    67,    68,     0,    54,     0,     0,
-       0,     0,    55,     0,    56,   150,     0,     0,     0,     0,
-       0,    18,     0,     0,     0,     0,    58,    19,    20,    59,
-      60,    61,    62,     0,    63,    64,    53,    65,    66,    67,
-      68,     0,    54,     0,     0,     0,     0,    55,     0,    56,
-     151,     0,     0,     0,     0,     0,    18,     0,     0,     0,
-       0,    58,    19,    20,    59,    60,    61,    62,     0,    63,
-      64,    53,    65,    66,    67,    68,     0,    54,     0,     0,
-       0,     0,    55,     0,    56,   168,     0,     0,     0,     0,
-       0,    18,     0,     0,     0,     0,    58,    19,    20,    59,
-      60,    61,    62,     0,    63,    64,    53,    65,    66,    67,
-      68,     0,    54,     0,     0,     0,     0,    55,     0,    56,
-     169,     0,     0,     0,     0,     0,    18,     0,     0,     0,
-       0,    58,    19,    20,    59,    60,    61,    62,     0,    63,
-      64,    53,    65,    66,    67,    68,     0,    54,     0,     0,
-       0,     0,    55,     0,    56,   175,     0,     0,     0,     0,
-       0,    18,     0,     0,     0,     0,    58,    19,    20,    59,
-      60,    61,    62,     0,    63,    64,     0,    65,    66,    67,
-      68,    97,    98,    99,   100,   101,   102,     0,   103,   104,
-     105,   106,     0,     0,     0,     0,   107,     0,   117,     0,
-     126,    97,    98,    99,   100,   101,   102,     0,   103,   104,
-     105,   106,     0,     0,     0,     0,   107,     0,   117,     0,
-     148,    97,    98,    99,   100,   101,   102,     0,   103,   104,
-     105,   106,     0,   118,     0,     0,   107,     0,   117,    97,
+      23,    31,    17,    30,    51,    52,    28,    94,    18,    93,
+      19,    20,    31,    31,    19,    20,    32,    36,     4,    46,
+      46,    46,    21,     6,    75,     7,    21,    47,    47,    47,
+     -25,   119,   120,   121,   122,    95,   133,   128,   126,   128,
+     129,    92,   137,     8,    10,   132,    53,    11,   135,   136,
+      12,   127,    54,   130,   131,   112,    14,    55,    13,    56,
+      57,    16,    27,   113,    33,    34,    18,    41,   143,    19,
+      20,    58,    19,    20,    59,    60,    61,    62,    35,    63,
+      64,    21,    65,    66,    67,    68,    37,    53,   162,   163,
+     157,    19,    20,    54,    38,   157,    39,    42,    55,    40,
+      56,   118,    43,    91,    44,    76,   173,    18,    77,   170,
+      78,    79,    58,    19,    20,    59,    60,    61,    62,    80,
+      63,    64,    53,    65,    66,    67,    68,    86,    54,    87,
+      88,    89,    90,    55,   110,    56,   148,   111,    96,   114,
+     115,   123,    18,   124,   134,   142,   164,    58,    19,    20,
+      59,    60,    61,    62,   146,    63,    64,    53,    65,    66,
+      67,    68,   151,    54,   152,   153,   154,   155,    55,   169,
+      56,   149,   166,   165,   171,   172,    25,    18,   161,     0,
+       0,     0,    58,    19,    20,    59,    60,    61,    62,     0,
+      63,    64,    53,    65,    66,    67,    68,     0,    54,     0,
+       0,     0,     0,    55,     0,    56,   150,     0,     0,     0,
+       0,     0,    18,     0,     0,     0,     0,    58,    19,    20,
+      59,    60,    61,    62,     0,    63,    64,    53,    65,    66,
+      67,    68,     0,    54,     0,     0,     0,     0,    55,     0,
+      56,   167,     0,     0,     0,     0,     0,    18,     0,     0,
+       0,     0,    58,    19,    20,    59,    60,    61,    62,     0,
+      63,    64,    53,    65,    66,    67,    68,     0,    54,     0,
+       0,     0,     0,    55,     0,    56,   168,     0,     0,     0,
+       0,     0,    18,     0,     0,     0,     0,    58,    19,    20,
+      59,    60,    61,    62,     0,    63,    64,    53,    65,    66,
+      67,    68,     0,    54,     0,     0,     0,     0,    55,    53,
+      56,   174,     0,     0,     0,    54,     0,    18,     0,     0,
+      55,     0,    58,    19,    20,    59,    60,    61,    62,     0,
+      63,    64,     0,    65,    66,    67,    68,    59,    60,     0,
+       0,     0,     0,    64,     0,     0,    66,    81,    68,    97,
       98,    99,   100,   101,   102,     0,   103,   104,   105,   106,
-       0,   139,     0,     0,   107,     0,   117,    97,    98,    99,
-     100,   101,   102,     0,   103,   104,   105,   106,     0,   140,
-       0,     0,   107,     0,   117,    97,    98,    99,   100,   101,
-     102,     0,   103,   104,   105,   106,     0,   141,     0,     0,
-     107,     0,   117,    97,    98,    99,   100,   101,   102,     0,
-     103,   104,   105,   106,     0,   142,     0,     0,   107,     0,
-     117,    97,    98,    99,   100,   101,   102,     0,   103,   104,
-     105,   106,     0,     0,     0,     0,   107,   145,   117,    97,
+       0,     0,     0,     0,   107,     0,   116,     0,   125,    97,
       98,    99,   100,   101,   102,     0,   103,   104,   105,   106,
-       0,     0,     0,     0,   107,   146,   117,    97,    98,    99,
+       0,     0,     0,     0,   107,     0,   116,     0,   147,    97,
+      98,    99,   100,   101,   102,     0,   103,   104,   105,   106,
+       0,   117,     0,     0,   107,     0,   116,    97,    98,    99,
+     100,   101,   102,     0,   103,   104,   105,   106,     0,   138,
+       0,     0,   107,     0,   116,    97,    98,    99,   100,   101,
+     102,     0,   103,   104,   105,   106,     0,   139,     0,     0,
+     107,     0,   116,    97,    98,    99,   100,   101,   102,     0,
+     103,   104,   105,   106,     0,   140,     0,     0,   107,     0,
+     116,    97,    98,    99,   100,   101,   102,     0,   103,   104,
+     105,   106,     0,   141,     0,     0,   107,     0,   116,    97,
+      98,    99,   100,   101,   102,     0,   103,   104,   105,   106,
+       0,     0,     0,     0,   107,   144,   116,    97,    98,    99,
      100,   101,   102,     0,   103,   104,   105,   106,     0,     0,
-       0,     0,   107,   157,   117,    97,    98,    99,   100,   101,
+       0,     0,   107,   145,   116,    97,    98,    99,   100,   101,
      102,     0,   103,   104,   105,   106,     0,     0,     0,     0,
-     107,     0,   108,    97,    98,    99,   100,   101,   102,     0,
+     107,   156,   116,    97,    98,    99,   100,   101,   102,     0,
      103,   104,   105,   106,     0,     0,     0,     0,   107,     0,
-     117
+     108,    97,    98,    99,   100,   101,   102,     0,   103,   104,
+     105,   106,     0,     0,     0,     0,   107,     0,   116
   };
 
   const short
   parser::yycheck_[] =
   {
       56,     3,    15,    19,    19,    18,    28,    53,    54,    55,
-      15,    19,    18,    18,    43,    44,    42,    19,    24,    65,
-      39,     0,    19,    42,    30,    31,    42,    42,    17,    42,
-      43,    44,    19,    28,    42,    42,    42,    42,    43,    44,
-      42,    87,    88,    89,    90,    42,     4,    39,    94,    24,
-      42,    64,    10,    25,    17,    42,   112,    15,    26,   115,
-     116,   107,    26,   109,   110,    78,    30,    31,    27,    30,
-      31,    15,    42,    78,    32,    33,    30,    31,    42,   125,
-      38,    42,    16,    41,    42,    43,    42,    42,    42,    20,
-      23,    23,    17,    15,    15,    15,     4,    42,    16,   155,
-     156,   147,    10,    22,    16,    16,   152,    15,    18,    17,
-      18,    15,    15,    15,    15,    42,    24,   173,     3,    17,
-     166,    29,    30,    31,    32,    33,    34,    35,    23,    37,
-      38,     4,    40,    41,    42,    43,    17,    10,    17,    15,
-      15,    19,    15,    42,    17,    18,    16,    15,    17,    23,
-      17,    24,    23,    16,    16,    15,    29,    30,    31,    32,
-      33,    34,    35,    22,    37,    38,     4,    40,    41,    42,
-      43,    23,    10,    17,   152,    36,    -1,    15,    -1,    17,
-      18,    -1,    -1,    -1,    -1,    -1,    24,    -1,    -1,    -1,
-      -1,    29,    30,    31,    32,    33,    34,    35,    -1,    37,
-      38,     4,    40,    41,    42,    43,    -1,    10,    -1,    -1,
-      -1,    -1,    15,    -1,    17,    18,    -1,    -1,    -1,    -1,
-      -1,    24,    -1,    -1,    -1,    -1,    29,    30,    31,    32,
-      33,    34,    35,    -1,    37,    38,     4,    40,    41,    42,
-      43,    -1,    10,    -1,    -1,    -1,    -1,    15,    -1,    17,
-      18,    -1,    -1,    -1,    -1,    -1,    24,    -1,    -1,    -1,
-      -1,    29,    30,    31,    32,    33,    34,    35,    -1,    37,
-      38,     4,    40,    41,    42,    43,    -1,    10,    -1,    -1,
-      -1,    -1,    15,    -1,    17,    18,    -1,    -1,    -1,    -1,
-      -1,    24,    -1,    -1,    -1,    -1,    29,    30,    31,    32,
-      33,    34,    35,    -1,    37,    38,     4,    40,    41,    42,
-      43,    -1,    10,    -1,    -1,    -1,    -1,    15,    -1,    17,
-      18,    -1,    -1,    -1,    -1,    -1,    24,    -1,    -1,    -1,
-      -1,    29,    30,    31,    32,    33,    34,    35,    -1,    37,
-      38,     4,    40,    41,    42,    43,    -1,    10,    -1,    -1,
-      -1,    -1,    15,    -1,    17,    18,    -1,    -1,    -1,    -1,
-      -1,    24,    -1,    -1,    -1,    -1,    29,    30,    31,    32,
-      33,    34,    35,    -1,    37,    38,    -1,    40,    41,    42,
-      43,     4,     5,     6,     7,     8,     9,    -1,    11,    12,
-      13,    14,    -1,    -1,    -1,    -1,    19,    -1,    21,    -1,
-      23,     4,     5,     6,     7,     8,     9,    -1,    11,    12,
-      13,    14,    -1,    -1,    -1,    -1,    19,    -1,    21,    -1,
-      23,     4,     5,     6,     7,     8,     9,    -1,    11,    12,
-      13,    14,    -1,    16,    -1,    -1,    19,    -1,    21,     4,
+      15,    19,    18,    18,    43,    44,    26,    19,    24,    65,
+      30,    31,    19,    19,    30,    31,    42,    42,    42,    42,
+      43,    44,    42,     0,    42,    17,    42,    42,    43,    44,
+      42,    87,    88,    89,    90,    42,    42,    39,    94,    39,
+      42,    64,    42,    28,    24,   111,     4,    42,   114,   115,
+      25,   107,    10,   109,   110,    78,    26,    15,    17,    17,
+      18,    27,    15,    78,    42,    16,    24,    17,   124,    30,
+      31,    29,    30,    31,    32,    33,    34,    35,    42,    37,
+      38,    42,    40,    41,    42,    43,    42,     4,   154,   155,
+     146,    30,    31,    10,    20,   151,    23,    15,    15,    23,
+      17,    18,    15,    42,    15,    42,   172,    24,    16,   165,
+      22,    16,    29,    30,    31,    32,    33,    34,    35,    16,
+      37,    38,     4,    40,    41,    42,    43,    18,    10,    15,
+      15,    15,    15,    15,     3,    17,    18,    17,    42,    17,
+      17,    15,    24,    19,    42,    16,    16,    29,    30,    31,
+      32,    33,    34,    35,    15,    37,    38,     4,    40,    41,
+      42,    43,    15,    10,    23,    23,    17,    17,    15,    23,
+      17,    18,    16,    22,    36,    17,    15,    24,   151,    -1,
+      -1,    -1,    29,    30,    31,    32,    33,    34,    35,    -1,
+      37,    38,     4,    40,    41,    42,    43,    -1,    10,    -1,
+      -1,    -1,    -1,    15,    -1,    17,    18,    -1,    -1,    -1,
+      -1,    -1,    24,    -1,    -1,    -1,    -1,    29,    30,    31,
+      32,    33,    34,    35,    -1,    37,    38,     4,    40,    41,
+      42,    43,    -1,    10,    -1,    -1,    -1,    -1,    15,    -1,
+      17,    18,    -1,    -1,    -1,    -1,    -1,    24,    -1,    -1,
+      -1,    -1,    29,    30,    31,    32,    33,    34,    35,    -1,
+      37,    38,     4,    40,    41,    42,    43,    -1,    10,    -1,
+      -1,    -1,    -1,    15,    -1,    17,    18,    -1,    -1,    -1,
+      -1,    -1,    24,    -1,    -1,    -1,    -1,    29,    30,    31,
+      32,    33,    34,    35,    -1,    37,    38,     4,    40,    41,
+      42,    43,    -1,    10,    -1,    -1,    -1,    -1,    15,     4,
+      17,    18,    -1,    -1,    -1,    10,    -1,    24,    -1,    -1,
+      15,    -1,    29,    30,    31,    32,    33,    34,    35,    -1,
+      37,    38,    -1,    40,    41,    42,    43,    32,    33,    -1,
+      -1,    -1,    -1,    38,    -1,    -1,    41,    42,    43,     4,
+       5,     6,     7,     8,     9,    -1,    11,    12,    13,    14,
+      -1,    -1,    -1,    -1,    19,    -1,    21,    -1,    23,     4,
+       5,     6,     7,     8,     9,    -1,    11,    12,    13,    14,
+      -1,    -1,    -1,    -1,    19,    -1,    21,    -1,    23,     4,
        5,     6,     7,     8,     9,    -1,    11,    12,    13,    14,
       -1,    16,    -1,    -1,    19,    -1,    21,     4,     5,     6,
        7,     8,     9,    -1,    11,    12,    13,    14,    -1,    16,
@@ -1976,15 +1969,16 @@ namespace yy {
       19,    -1,    21,     4,     5,     6,     7,     8,     9,    -1,
       11,    12,    13,    14,    -1,    16,    -1,    -1,    19,    -1,
       21,     4,     5,     6,     7,     8,     9,    -1,    11,    12,
-      13,    14,    -1,    -1,    -1,    -1,    19,    20,    21,     4,
+      13,    14,    -1,    16,    -1,    -1,    19,    -1,    21,     4,
        5,     6,     7,     8,     9,    -1,    11,    12,    13,    14,
       -1,    -1,    -1,    -1,    19,    20,    21,     4,     5,     6,
        7,     8,     9,    -1,    11,    12,    13,    14,    -1,    -1,
       -1,    -1,    19,    20,    21,     4,     5,     6,     7,     8,
        9,    -1,    11,    12,    13,    14,    -1,    -1,    -1,    -1,
-      19,    -1,    21,     4,     5,     6,     7,     8,     9,    -1,
+      19,    20,    21,     4,     5,     6,     7,     8,     9,    -1,
       11,    12,    13,    14,    -1,    -1,    -1,    -1,    19,    -1,
-      21
+      21,     4,     5,     6,     7,     8,     9,    -1,    11,    12,
+      13,    14,    -1,    -1,    -1,    -1,    19,    -1,    21
   };
 
   const signed char
@@ -2001,13 +1995,13 @@ namespace yy {
       16,    42,    52,    52,    52,    64,    18,    15,    15,    15,
       15,    42,    46,    52,    19,    42,    42,     4,     5,     6,
        7,     8,     9,    11,    12,    13,    14,    19,    21,    48,
-       3,    23,    17,    46,    47,    17,    17,    21,    16,    18,
-      52,    52,    52,    52,    15,    19,    23,    52,    52,    39,
-      42,    52,    52,    64,    42,    42,    64,    64,    42,    16,
-      16,    16,    16,    16,    52,    20,    20,    15,    23,    18,
-      18,    18,    15,    23,    23,    17,    17,    20,    52,    53,
-      54,    55,    53,    64,    64,    16,    22,    16,    18,    18,
-      23,    52,    36,    17,    64,    18
+       3,    17,    46,    47,    17,    17,    21,    16,    18,    52,
+      52,    52,    52,    15,    19,    23,    52,    52,    39,    42,
+      52,    52,    64,    42,    42,    64,    64,    42,    16,    16,
+      16,    16,    16,    52,    20,    20,    15,    23,    18,    18,
+      18,    15,    23,    23,    17,    17,    20,    52,    53,    54,
+      55,    53,    64,    64,    16,    22,    16,    18,    18,    23,
+      52,    36,    17,    64,    18
   };
 
   const signed char
@@ -2029,7 +2023,7 @@ namespace yy {
        0,     2,     2,     0,     2,     5,    13,     1,     1,     0,
        2,     3,     3,     9,     9,     9,     1,     1,     0,     2,
        2,     4,     4,     1,     1,     1,     3,     0,     2,     5,
-       2,     5,     4,     3,     7,    11,     7,     3,     7,     2,
+       1,     5,     4,     3,     7,    11,     7,     3,     7,     2,
        2,     1,     4,     1,     1,     0,     1,     3,     3,     1,
        1,     2,     2,     3,     1,     1,     4,     3,     5,     4,
        1,     6,     1,     1,     1,     1,     1,     1,     1,     1,
@@ -2102,7 +2096,7 @@ namespace yy {
 
 
 } // yy
-#line 2106 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.cpp"
+#line 2100 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.cpp"
 
 #line 259 "parser.y"
 

@@ -2,6 +2,7 @@
 #include <Location/Location.h>
 
 void ClassesList::Accept(Visitor *visitor) {
+  Location::GetInstance().SetElement(this);
   visitor->Visit(this);
   Location::GetInstance().SetPrevLoc();
 }

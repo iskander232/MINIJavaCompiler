@@ -32,7 +32,7 @@
 
 
 /**
- ** \file /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.hh
+ ** \file /Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.hh
  ** Define the yy::parser class.
  */
 
@@ -41,8 +41,8 @@
 // Undocumented macros, especially those whose name start with YY_,
 // are private implementation details.  Do not rely on them.
 
-#ifndef YY_YY_USERS_ISKANDERSAGITOV_DESKTOP_STUDY_COMPILERS_MINIJAVACOMPILER_FUNCTIONS_PARSER_HH_INCLUDED
-# define YY_YY_USERS_ISKANDERSAGITOV_DESKTOP_STUDY_COMPILERS_MINIJAVACOMPILER_FUNCTIONS_PARSER_HH_INCLUDED
+#ifndef YY_YY_USERS_ISKANDERSAGITOV_DESKTOP_STUDY_COMPILERS_MINIJAVACOMPILER_INTERPRETER_GRAMMAR_PARSER_HH_INCLUDED
+# define YY_YY_USERS_ISKANDERSAGITOV_DESKTOP_STUDY_COMPILERS_MINIJAVACOMPILER_INTERPRETER_GRAMMAR_PARSER_HH_INCLUDED
 // "%code requires" blocks.
 #line 9 "parser.y"
 
@@ -52,7 +52,7 @@
     class Driver;
     class Scanner;
 
-#line 56 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.hh"
+#line 56 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.hh"
 
 # include <cassert>
 # include <cstdlib> // std::abort
@@ -97,7 +97,7 @@
 #else
 # define YY_CONSTEXPR
 #endif
-# include "Grammar/location.hh"
+# include "location.hh"
 #include <typeinfo>
 #ifndef YY_ASSERT
 # include <cassert>
@@ -186,7 +186,7 @@
 #endif
 
 namespace yy {
-#line 190 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.hh"
+#line 190 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.hh"
 
 
 
@@ -2024,7 +2024,7 @@ switch (yytype)
     enum
     {
       yyeof_ = 0,
-      yylast_ = 600,     ///< Last index in yytable_.
+      yylast_ = 578,     ///< Last index in yytable_.
       yynnts_ = 22,  ///< Number of nonterminal symbols.
       yyfinal_ = 6, ///< Termination state number.
       yyntokens_ = 45  ///< Number of tokens.
@@ -2420,10 +2420,10 @@ switch (yytype)
   }
 
 } // yy
-#line 2424 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/parser.hh"
+#line 2424 "/Users/iskandersagitov/Desktop/Study/Compilers/MINIJavaCompiler/Interpreter/grammar/parser.hh"
 
 
 
 
 
-#endif // !YY_YY_USERS_ISKANDERSAGITOV_DESKTOP_STUDY_COMPILERS_MINIJAVACOMPILER_FUNCTIONS_PARSER_HH_INCLUDED
+#endif // !YY_YY_USERS_ISKANDERSAGITOV_DESKTOP_STUDY_COMPILERS_MINIJAVACOMPILER_INTERPRETER_GRAMMAR_PARSER_HH_INCLUDED
