@@ -7,7 +7,7 @@
 #include <function-mechanism/FunctionStorage.h>
 
 FunctionCallVisitor::FunctionCallVisitor(
-    ScopeLayer* function_scope, std::shared_ptr<FunctionObject> function,
+    ScopeLayer *function_scope, std::shared_ptr<FunctionObject> function,
     std::map<Symbol, std::shared_ptr<IdentObject>> classes_list, std::shared_ptr<IdentObject> current_class
 ) : root_layer(function_scope), frame(function), classes_list_(classes_list), current_class_(current_class) {
   current_layer_ = root_layer;
@@ -156,7 +156,10 @@ void FunctionCallVisitor::Visit(InvokeExpression *invoke_expression) {
     }
   }
   if (!func->ret_type_->IsEqual(frame.GetReturnValue())) {
-    throw std::runtime_error("ret value and expected ret value are different");
+    throw std::runtime_error(
+        "returned value " + frame.GetReturnValue()->GetName() +
+            " and expected ret value " + func->ret_type_->GetName()
+            + " are different");
   }
   tos_value_ = frame.GetReturnValue();
 }
@@ -393,7 +396,10 @@ void FunctionCallVisitor::Visit(MethodInvokeStatement *method_invoke_statement) 
     }
   }
   if (!func->ret_type_->IsEqual(frame.GetReturnValue())) {
-    throw std::runtime_error("ret value and expected ret value are different");
+    throw std::runtime_error(
+        "returned value " + frame.GetReturnValue()->GetName() +
+            " and expected ret value " + func->ret_type_->GetName()
+            + " are different");
   }
 }
 

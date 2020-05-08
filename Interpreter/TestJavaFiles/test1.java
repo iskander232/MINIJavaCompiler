@@ -14,6 +14,6 @@ class test1 {
           y = 14;
         }
        assert(y == 14);
-      // x = true; //exception int <- boolean
+       x = true; //exception int <- boolean
     }
 }

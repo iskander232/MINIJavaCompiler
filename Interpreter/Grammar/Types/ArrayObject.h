@@ -12,6 +12,7 @@ class ArrayObject : public Object {
 
   explicit ArrayObject(std::shared_ptr<Object> object);
   ArrayObject(std::shared_ptr<Object> object, int length);
+  std::string GetName() override ;
 
   size_t GetLength();
   std::shared_ptr<Object> GetIth(int i);

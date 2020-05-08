@@ -13,3 +13,7 @@ std::shared_ptr<Object> IntegerObject::GetCopy() {
 bool IntegerObject::IsEqual(std::shared_ptr<Object> other) {
   return nullptr != std::dynamic_pointer_cast<IntegerObject>(other);
 }
+
+std::string IntegerObject::GetName() {
+  return "Integer";
+}

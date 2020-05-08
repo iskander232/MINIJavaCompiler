@@ -5,6 +5,7 @@
 class BoolObject : public SimpleObject {
  public:
   explicit BoolObject(int value);
+  std::string GetName() override ;
   bool GetValue();
 
   bool IsEqual(std::shared_ptr<Object> other) override;

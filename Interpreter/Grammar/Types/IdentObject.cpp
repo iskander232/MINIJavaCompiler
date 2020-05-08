@@ -35,11 +35,15 @@ void IdentObject::SetValue(std::string value_name, std::shared_ptr<Object> new_o
     if (last_value->IsEqual(new_object)) {
       values_[value_name] = new_object;
     } else {
-      throw std::runtime_error("Try to set value with other type in class " + name_);
+      throw std::runtime_error("Try to set" + new_object->GetName() + " to " + GetName());
     }
   }
 }
 
 bool IdentObject::Has(std::string name) {
   return values_.find(name) != values_.end();
+}
+
+std::string IdentObject::GetName() {
+  return "Class named " + name_;
 }

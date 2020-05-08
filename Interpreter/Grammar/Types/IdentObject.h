@@ -11,6 +11,7 @@
 class IdentObject : public SimpleObject {
  public:
   explicit IdentObject(std::string name);
+  std::string GetName() override ;
 
   std::shared_ptr<Object> GetCopy() override;
   bool IsEqual(std::shared_ptr<Object> other) override;

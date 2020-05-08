@@ -17,7 +17,7 @@ void Frame::SetParams(const std::vector<std::shared_ptr<Object>> &values) {
   }
   for (int i = 0; i < params_.size(); ++i) {
     if (!params_[i]->IsEqual(values[i])) {
-      throw std::runtime_error("Try to set argument with other type");
+      throw std::runtime_error("Try to set " + params_[i]->GetName() + " to " + values[i]->GetName());
     }
     params_[i] = values[i];
   }
@@ -55,18 +55,22 @@ void Frame::Set(int index, std::shared_ptr<Object> value) {
       variables_.at(index) = value;
       return;
     }
+    throw std::runtime_error("Try to set " + variables_.at(index)->GetName() + " to " +
+    value->GetName());
   } else {
     if (params_.at(-index - 1)->IsEqual(value)) {
       params_.at(-index - 1) = value;
       return;
     }
+    throw std::runtime_error("Try to set " + params_.at(-index - 1)->GetName() + " to " +
+        value->GetName());
   }
-  throw std::runtime_error("Try to set other type value");
 }
 
 void Frame::SetReturnValue(std::shared_ptr<Object> value) {
   if (!return_value_->IsEqual(value)) {
-    throw std::runtime_error("Try set bad return value");
+    throw std::runtime_error("Try to set " + return_value_->GetName() + " to " +
+        value->GetName());
   }
   is_returned = true;
   return_value_ = value;

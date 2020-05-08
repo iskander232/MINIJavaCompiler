@@ -3,6 +3,7 @@
 class IntegerObject : public SimpleObject {
  public:
   explicit IntegerObject(int value);
+  std::string GetName() override ;
   int GetValue();
 
   std::shared_ptr<Object> GetCopy() override;

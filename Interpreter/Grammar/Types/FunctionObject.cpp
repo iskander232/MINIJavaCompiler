@@ -28,3 +28,7 @@ std::shared_ptr<Object> FunctionObject::GetCopy() {
 bool FunctionObject::IsEqual(std::shared_ptr<Object> other) {
   return std::dynamic_pointer_cast<FunctionObject>(other) != nullptr;
 }
+
+std::string FunctionObject::GetName() {
+  return "function";
+}

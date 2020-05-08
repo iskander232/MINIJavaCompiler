@@ -25,6 +25,10 @@ std::shared_ptr<Object> ArrayObject::GetObject() {
   return object_;
 }
 
+std::string ArrayObject::GetName() {
+  return "Array of " + object_->GetName();
+}
+
 std::shared_ptr<Object> ArrayObject::GetIth(int i) {
   if (i >= length_ || i < 0 || elements_.find(i) == elements_.end()) {
     throw std::runtime_error("Try to get element with bad index");
