@@ -2,7 +2,7 @@
 #include "Types/Object.h"
 #include "SymbolTable/ScopeLayerTree.h"
 
-#include <function-mechanism/Frame.h>
+#include "../../IRTree-building/function-mechanism/Frame.h"
 #include <function-mechanism/FunctionTable.h>
 
 #include <string>

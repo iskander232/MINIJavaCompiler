@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Types/FunctionObject.h>
+#include "../../Interpreter/Grammar/Types/FunctionObject.h"
 
 #include <stack>
 #include <memory>

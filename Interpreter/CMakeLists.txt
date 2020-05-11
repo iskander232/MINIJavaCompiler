@@ -6,7 +6,7 @@ set(GRAMMAR_PROJECT "${PROJECT_NAME}GrammarProject")
 set(
         SOURCES
         driver.cpp
-        function-mechanism/Frame.cpp
+        ../IRTree-building/function-mechanism/Frame.cpp
         function-mechanism/FunctionStorage.cpp
         function-mechanism/FunctionTable.cpp
 
