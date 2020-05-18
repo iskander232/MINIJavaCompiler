@@ -1,0 +1,43 @@
+SeqStatement:
+  LabelStatement: test2_____main
+  SeqStatement:
+    MoveStatement:
+      MemExpression: 
+        TempExpression: ::fp
+      MemExpression: 
+        TempExpression: ::fp
+    SeqStatement:
+      ExpStatement:
+        CallExpression: 
+          NameExpression: set
+          ExpressionList: 
+            MemExpression: 
+              TempExpression: ::fp
+            ConstExpression 12
+      SeqStatement:
+        ExpStatement:
+          CallExpression: 
+            NameExpression: set
+            ExpressionList: 
+              MemExpression: 
+                TempExpression: ::fp
+              ConstExpression 13
+        SeqStatement:
+          MoveStatement:
+            MemExpression: 
+              BinopExpression: PLUS
+                TempExpression: ::fp
+                ConstExpression 4
+            MemExpression: 
+              BinopExpression: PLUS
+                TempExpression: ::fp
+                ConstExpression 4
+          ExpStatement:
+            CallExpression: 
+              NameExpression: set
+              ExpressionList: 
+                MemExpression: 
+                  BinopExpression: PLUS
+                    TempExpression: ::fp
+                    ConstExpression 4
+                ConstExpression 14

@@ -24,6 +24,10 @@ if (CMAKE_HOST_SYSTEM_NAME MATCHES "Darwin")
     endif ()
 endif ()
 
+
+find_package(FLEX REQUIRED)
+find_package(BISON REQUIRED)
+
 set(PARSER_TARGET "Parser${PROJECT_NAME}")
 set(SCANNER_TARGET "Scanner${PROJECT_NAME}")
 set(TREE_TARGET "Tree${PROJECT_NAME}")

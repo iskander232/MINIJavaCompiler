@@ -22,7 +22,7 @@ set(
 
 )
 
-add_subdirectory(grammar)
+add_subdirectory(Grammar)
 
 add_executable(
         ${CURRENT_EXECUTABLE}

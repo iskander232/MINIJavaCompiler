@@ -1,0 +1,6 @@
+SeqStatement:
+  LabelStatement: my_class_____print
+  MoveStatement:
+    MemExpression: 
+      TempExpression: ::fp
+    ConstExpression 12
