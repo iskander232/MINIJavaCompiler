@@ -35,7 +35,7 @@ target_include_directories(
         ${CURRENT_EXECUTABLE} PRIVATE ${PROJECT_SOURCE_DIR}
 )
 target_include_directories(
-        ${CURRENT_EXECUTABLE} PRIVATE ${PROJECT_SOURCE_DIR}/include ${PROJECT_SOURCE_DIR}/grammar
+        ${CURRENT_EXECUTABLE} PRIVATE ${PROJECT_SOURCE_DIR}/include ${PROJECT_SOURCE_DIR}/Grammar
 )
 
 

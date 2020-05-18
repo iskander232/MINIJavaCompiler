@@ -6,34 +6,9 @@ SeqStatement:
         TempExpression: ::fp
       MemExpression: 
         TempExpression: ::fp
-    SeqStatement:
-      ExpStatement:
-        CallExpression: 
-          NameExpression: print
-          ExpressionList: 
-            MemExpression: 
-              TempExpression: ::fp
-      SeqStatement:
-        MoveStatement:
+    ExpStatement:
+      CallExpression: 
+        NameExpression: print
+        ExpressionList: 
           MemExpression: 
-            BinopExpression: PLUS
-              TempExpression: ::fp
-              ConstExpression 4
-          MemExpression: 
-            BinopExpression: PLUS
-              TempExpression: ::fp
-              ConstExpression 4
-        MoveStatement:
-          MemExpression: 
-            BinopExpression: PLUS
-              TempExpression: ::fp
-              ConstExpression 4
-          CallExpression: 
-            NameExpression: gcd
-            ExpressionList: 
-              MemExpression: 
-                BinopExpression: PLUS
-                  TempExpression: ::fp
-                  ConstExpression 4
-              ConstExpression 43256
-              ConstExpression 2138154
+            TempExpression: ::fp
