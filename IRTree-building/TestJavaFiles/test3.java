@@ -5,15 +5,8 @@ class test3 {
         x.print();
         GCD y;
         y = new GCD();
-        System.out.println(y.gcd(43256, 2138154));
-    }
-}
-
-class my_class{
-    int z;
-    public void print(){
-        z = 12;
-        System.out.println(z);
+        int z;
+        z = y.gcd(43256, 2138154);
     }
 }
 
@@ -23,5 +16,13 @@ class GCD{
             return b;
         }
         return this.gcd(b % a, a);
+    }
+}
+
+class my_class{
+    int z;
+    public void print(){
+        z = 12;
+        System.out.println(z);
     }
 }

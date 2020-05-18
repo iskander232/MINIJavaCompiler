@@ -508,7 +508,12 @@ void IrtreeBuildVisitor::Visit(MethodInvokeStatement *method_invoke_statement) {
         Accept(method_invoke_statement->GetExprList()->GetIth(i))->ToExpression());
   }
 
-  tos_value_ = nullptr;
+  tos_value_ = new IRT::ExpressionWrapper(
+      new IRT::CallExpression(
+          new IRT::NameExpression(IRT::Label(method_invoke_statement->GetName())),
+          irt_expressions
+      )
+  );
 }
 
 void IrtreeBuildVisitor::Visit(OutStatement *out_statement) {

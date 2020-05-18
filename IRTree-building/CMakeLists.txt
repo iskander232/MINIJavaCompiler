@@ -36,7 +36,7 @@ set(
 
 )
 
-add_subdirectory(grammar)
+add_subdirectory(Grammar)
 add_subdirectory(irtree)
 
 add_executable(

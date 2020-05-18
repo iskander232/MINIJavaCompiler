@@ -12,5 +12,5 @@ std::string UninitObject::GetName() {
 }
 
 int UninitObject::GetSize() {
-  return 1;
+  return 0;
 }
