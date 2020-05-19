@@ -1,15 +1,14 @@
 class test3 {
     public static void main() {
-        my_class x;
-        x = new my_class();
-        x.print();
+        A b;
+        b = new A();
+        int x;
+        x = b.nope(1) + b.nope(2);
     }
 }
 
-class my_class{
-    int z;
-    public void print(){
-        z = 12;
-        System.out.println(z);
+class A{
+    public int nope(int a){
+        return a;
     }
 }

@@ -7,6 +7,8 @@ class test2 {
         A b;
         b = new A();
         b.set(14);
+        int c;
+        System.out.println(b.get());
     }
 }
 
@@ -15,6 +17,9 @@ class A {
 
     public void set(int b){
         a = b;
+    }
+    public int get(){
+        return a;
     }
 
     public void print(){

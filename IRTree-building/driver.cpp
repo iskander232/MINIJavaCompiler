@@ -3,7 +3,9 @@
 
 #include "Visitors/FunctionCallVisitor.h"
 #include "Visitors/TreeBuilder.h"
-
+#include "irtree/visitors/DoubleCallEliminateVisitor.h"
+#include "irtree/visitors/MinusESEQ.h"
+#include "irtree/visitors/Linerisation.h"
 
 #include <Visitors/IrtreeBuildVisitor.h>
 #include <irtree/visitors/PrintVisitor.h>
@@ -57,8 +59,32 @@ void Driver::Evaluate() {
     IrtMapping methods = irt_build_visitor.GetTrees();
 
     for (auto func_view = methods.begin(); func_view != methods.end(); ++func_view) {
-      IRT::PrintVisitor print_visitor_irt( func_view->first + ".txt");
+      IRT::PrintVisitor print_visitor_irt(func_view->first + "_old_.txt");
       methods[func_view->first]->Accept(&print_visitor_irt);
+
+      IRT::DoubleCallEliminateVisitor call_eliminate_visitor;
+      methods[func_view->first]->Accept(&call_eliminate_visitor);
+
+      auto stmt_result = call_eliminate_visitor.GetTree();
+
+      IRT::PrintVisitor print_visitor_two(func_view->first + "_after_call_elimination_.txt");
+      stmt_result->Accept(&print_visitor_two);
+
+      IRT::MinusESEQ minus_eseq1;
+      methods[func_view->first]->Accept(&minus_eseq1);
+      stmt_result = minus_eseq1.GetTree();
+      IRT::MinusESEQ minus_eseq2;
+      stmt_result->Accept(&minus_eseq2);
+      stmt_result = minus_eseq2.GetTree();
+
+
+      IRT::Linerisation linerisation;
+      methods[func_view->first]->Accept(&linerisation);
+
+      stmt_result = linerisation.GetTree();
+
+      IRT::PrintVisitor print_visitor_four(func_view->first + "_after_all_.txt");
+      stmt_result->Accept(&print_visitor_four);
     }
   } catch (const std::runtime_error &e) {
     std::cerr << Location::GetInstance().LastLoc() << " : " << e.what();

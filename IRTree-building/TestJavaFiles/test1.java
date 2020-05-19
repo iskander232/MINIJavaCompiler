@@ -1,10 +1,11 @@
 class test1 {
     public static void main() {
-        int x;
+       int x;
+       int y;
        if (1 == 0){
        x = 1;
        } else {
-       x = 2;
+       y = 2;
        }
     }
 }
