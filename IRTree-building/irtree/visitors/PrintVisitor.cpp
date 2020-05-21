@@ -119,6 +119,7 @@ void PrintVisitor::PrintTabs() {
     stream_ << "  ";
   }
 }
+
 void PrintVisitor::Visit(EseqExpression *eseq_expression) {
   PrintTabs();
   stream_ << "EseqExpression:" << std::endl;

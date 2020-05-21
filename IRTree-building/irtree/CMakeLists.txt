@@ -1,4 +1,10 @@
 set(SOURCES
+        base_blocks/BaseBlock.h
+        base_blocks/BaseBlock.cpp
+        base_blocks/BlocksStorage.h
+        base_blocks/BlocksStaorage.cpp
+        base_blocks/Trace.h
+        base_blocks/Trace.cpp
         tree_wrapper/SubtreeWrapper.h
         nodes/expressions/Expression.h
         nodes/BaseElement.h

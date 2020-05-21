@@ -40,10 +40,10 @@ void Linerisation::Visit(SeqStatement *seq_statement) {
     auto seqf = dynamic_cast<SeqStatement *>(first);
     tos_value_.statement_ = new SeqStatement(
         Accept(seqf->first_statement_).statement_,
-        new SeqStatement(
+        Accept(new SeqStatement(
             Accept(seqf->second_statement_).statement_,
             Accept(second).statement_
-        )
+        )).statement_
     );
   } else {
     tos_value_.statement_ = new SeqStatement(

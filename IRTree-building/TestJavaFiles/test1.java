@@ -7,5 +7,6 @@ class test1 {
        } else {
        y = 2;
        }
+       y = 14;
     }
 }
