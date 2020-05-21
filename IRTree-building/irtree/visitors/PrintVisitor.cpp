@@ -58,7 +58,7 @@ void PrintVisitor::Visit(SeqStatement *seq_statement) {
 }
 void PrintVisitor::Visit(LabelStatement *label_statement) {
   PrintTabs();
-  stream_ << "LabelStatement: " << label_statement->label_.ToString() << std::endl;
+  stream_ << "\nLabelStatement: " << label_statement->label_.ToString() << std::endl;
 }
 void PrintVisitor::Visit(BinopExpression *binop_statement) {
   PrintTabs();

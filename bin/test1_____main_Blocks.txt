@@ -1,9 +1,11 @@
+
 LabelStatement: L0
 MoveStatement:
   MemExpression: 
     TempExpression: ::fp
   ConstExpression 1
 JumpStatement: L2
+
 LabelStatement: L1
 MoveStatement:
   MemExpression: 
@@ -12,8 +14,10 @@ MoveStatement:
       ConstExpression 4
   ConstExpression 2
 JumpStatement: L2
+
 LabelStatement: L2
 JumpStatement: ::done
+
 LabelStatement: test1_____main
 JumpConditionalStatement: EQ
 TrueLabel: L0
