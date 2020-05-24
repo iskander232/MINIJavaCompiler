@@ -17,5 +17,6 @@ class BlockStorage {
   std::vector<Trace> BuildTraces(std::string start);
   BaseBlock last_block_;
   std::map<std::string, BaseBlock> blocks_;
+  std::map<std::string, int> used_;
 };
 }

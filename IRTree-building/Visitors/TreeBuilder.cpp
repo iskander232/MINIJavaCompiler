@@ -23,7 +23,6 @@ void TreeBuilder::Visit(MulOperator *mul_opearator) {}
 void TreeBuilder::Visit(OrOperator *or_operator) {}
 void TreeBuilder::Visit(PlusOperator *plus_operator) {}
 void TreeBuilder::Visit(ProcOperator *proc_operator) {}
-void TreeBuilder::Visit(Lvalue *lvalue) {}
 void TreeBuilder::Visit(ArrayElementLvalue *array_element_lvalue) {}
 void TreeBuilder::Visit(ArrayGetExpression *array_get_expression) {}
 void TreeBuilder::Visit(ArrayRvalueExpression *array_rvalue_expression) {}
@@ -107,6 +106,14 @@ void TreeBuilder::Visit(SimpleLvalue *simple_lvalue) {
 void TreeBuilder::Visit(AssignStatement *assign_statement) {
   Lvalue *lvalue = assign_statement->GetLvalue();
   lvalue->Accept(this);
+}
+
+
+void TreeBuilder::Visit(Lvalue *lvalue) {
+  if (!std::dynamic_pointer_cast<UninitObject>(lvalue->GetType())) {
+    current_layer_->DeclareVariable(Symbol(lvalue->GetName()));
+    current_layer_->Put(Symbol(lvalue->GetName()), lvalue->GetType());
+  }
 }
 
 void TreeBuilder::Visit(VarDecl *var_decl) {

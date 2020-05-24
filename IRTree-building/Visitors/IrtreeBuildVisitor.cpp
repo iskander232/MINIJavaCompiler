@@ -350,14 +350,6 @@ void IrtreeBuildVisitor::Visit(UnarMinusExpression *unar_minus_expression) {
   tos_value_->SetObject(std::make_shared<IntegerObject>(IntegerObject(0)));
 }
 
-void IrtreeBuildVisitor::Visit(Lvalue *lvalue) {}
-
-void IrtreeBuildVisitor::Visit(ArrayElementLvalue *array_element_lvalue) {}
-
-void IrtreeBuildVisitor::Visit(ArrayLvalue *array_lvalue) {}
-
-void IrtreeBuildVisitor::Visit(SimpleLvalue *simple_lvalue) {}
-
 void IrtreeBuildVisitor::Visit(Main *main) {
   auto function = std::make_shared<FunctionObject>(
       FunctionObject(std::make_shared<UninitObject>(UninitObject()),
@@ -406,14 +398,61 @@ void IrtreeBuildVisitor::Visit(AssertStatement *assert_statement) {
 }
 
 void IrtreeBuildVisitor::Visit(AssignStatement *assign_statement) {
+
+  tos_value_ = Accept(assign_statement->GetExpression());
+
+  Accept(assign_statement->GetLvalue());
+}
+
+void IrtreeBuildVisitor::Visit(Lvalue *lvalue) {
   auto var_expression = current_frame_->GetAddress(
-      assign_statement->GetLvalue()->GetName())->ToExpression();
-  auto rvalue = Accept(assign_statement->GetExpression());
+      lvalue->GetName())->ToExpression();
+
+  tos_value_ = new IRT::StatementWrapper(
+      new IRT::MoveStatement(
+          var_expression,
+          tos_value_->ToExpression()));
+}
+
+void IrtreeBuildVisitor::Visit(ArrayElementLvalue *array_element_lvalue) {
+  auto rvalue = tos_value_->ToExpression();
+  auto var_expression = new IRT::BinopExpression(
+      IRT::BinaryOperatorType::PLUS,
+      current_frame_->GetAddress(
+          array_element_lvalue->GetName())->ToExpression(),
+      new IRT::BinopExpression(
+          IRT::BinaryOperatorType::MUL,
+          Accept(array_element_lvalue->GetPos())->ToExpression(),
+          new IRT::ConstExpression(
+              std::dynamic_pointer_cast<ArrayObject>(array_element_lvalue->GetType())->object_->GetSize())));
+
+  tos_value_ = new IRT::StatementWrapper(
+      new IRT::MoveStatement(
+          var_expression,
+          rvalue));
+
+}
+
+void IrtreeBuildVisitor::Visit(ArrayLvalue *array_lvalue) {
+  current_frame_->AddLocalVariable(
+      array_lvalue->GetName(), array_lvalue->GetType()->GetSize(), array_lvalue->GetType());
 
   tos_value_ = new IRT::StatementWrapper(new IRT::MoveStatement(
-      var_expression,
-      rvalue->ToExpression())
-  );
+      current_frame_->GetAddress(
+          array_lvalue->GetName())->ToExpression(),
+      tos_value_->ToExpression()
+  ));
+}
+
+void IrtreeBuildVisitor::Visit(SimpleLvalue *simple_lvalue) {
+  current_frame_->AddLocalVariable(
+      simple_lvalue->GetName(), simple_lvalue->GetType()->GetSize(), simple_lvalue->GetType());
+
+  tos_value_ = new IRT::StatementWrapper(new IRT::MoveStatement(
+      current_frame_->GetAddress(
+          simple_lvalue->GetName())->ToExpression(),
+      tos_value_->ToExpression()
+  ));
 }
 
 void IrtreeBuildVisitor::Visit(IfElseStatement *if_else_statement) {
@@ -574,34 +613,22 @@ void IrtreeBuildVisitor::Visit(WhileStatement *while_statement) {
   IRT::Label end_label;
   IRT::Label end_while_label;
 
-  IRT::Statement *rule = new IRT::LabelStatement(end_while_label);
-
-  rule = new IRT::SeqStatement(
-      BoolConditional->ToConditional(begin_label, end_while_label),
-      rule
-  );
-  rule = new IRT::SeqStatement(
-      new IRT::LabelStatement(end_label),
-      rule
-  );
-  rule = new IRT::SeqStatement(
+  std::vector<IRT::Statement *> stmt_vetor = {
       new IRT::JumpStatement(end_label),
-      rule
-  );
-  rule = new IRT::SeqStatement(
-      Accept(while_statement->GetStatementsList())->ToStatement(),
-      rule
-  );
-
-  rule = new IRT::SeqStatement(
       new IRT::LabelStatement(begin_label),
-      rule
-  );
+      Accept(while_statement->GetStatementsList())->ToStatement(),
+      new IRT::LabelStatement(end_label),
+      Accept(while_statement->GetExpression())->ToConditional(begin_label, end_while_label),
+      new IRT::LabelStatement(end_while_label)
+  };
+  auto rule = stmt_vetor[0];
+  for (int i = 1; i < stmt_vetor.size(); ++i) {
+    rule = new IRT::SeqStatement(
+        rule,
+        stmt_vetor[i]
+    );
+  }
 
-  rule = new IRT::SeqStatement(
-      new IRT::JumpStatement(end_label),
-      rule
-  );
   tos_value_ = new IRT::StatementWrapper(rule);
 }
 

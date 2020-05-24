@@ -1,0 +1,10 @@
+
+LabelStatement: A_____set
+MoveStatement:
+  MemExpression: 
+    TempExpression: ::fp
+  MemExpression: 
+    BinopExpression: PLUS
+      TempExpression: ::fp
+      ConstExpression 4
+JumpStatement: ::done

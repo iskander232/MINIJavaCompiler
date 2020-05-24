@@ -1,0 +1,19 @@
+SeqStatement:
+  
+LabelStatement: test3_____main
+  SeqStatement:
+    MoveStatement:
+      MemExpression: 
+        BinopExpression: PLUS
+          TempExpression: ::fp
+          ConstExpression 4
+      MemExpression: 
+        TempExpression: ::fp
+    ExpStatement:
+      CallExpression: 
+        NameExpression: print
+        ExpressionList: 
+          MemExpression: 
+            BinopExpression: PLUS
+              TempExpression: ::fp
+              ConstExpression 4

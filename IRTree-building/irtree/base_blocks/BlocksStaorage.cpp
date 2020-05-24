@@ -17,12 +17,19 @@ BlockStorage::BlockStorage(Statement *statement) {
 
   auto cur_seq = dynamic_cast<SeqStatement *>(statement);
   last_block_ = BaseBlock(dynamic_cast<LabelStatement *>(cur_seq->first_statement_)->label_);
+
+  auto cur = cur_seq->second_statement_;
   cur_seq = dynamic_cast<SeqStatement *>(cur_seq->second_statement_);
   while (cur_seq) {
     AddStatement(cur_seq->first_statement_);
+
+    cur = cur_seq->second_statement_;
     cur_seq = dynamic_cast<SeqStatement *>(cur_seq->second_statement_);
   }
 
+  if (cur) {
+    AddStatement(cur);
+  }
 }
 
 void BlockStorage::AddStatement(Statement *statement) {
@@ -53,6 +60,9 @@ BaseBlock BlockStorage::GetBlock(std::string name) {
 
 void BlockStorage::Finish() {
   AddStatement(new JumpStatement(Label("::done")));
+  for (auto f: blocks_) {
+    used_[f.first] = 5;
+  }
 }
 
 std::vector<Trace> BlockStorage::BuildTraces(std::string start) {
@@ -64,18 +74,24 @@ std::vector<Trace> BlockStorage::BuildTraces(std::string start) {
   std::vector<Trace> result;
   while (blocks_.find(start) != blocks_.end() && start != "::done") {
     auto block = blocks_[start];
+
     last_trace.AddBlock(block);
 
+    if (used_[start] == 0) {
+      break;
+    } else {
+      used_[start]--;
+    }
     auto jump_stmt = dynamic_cast<JumpStatement *>(block.GetJumpStatement());
     if (jump_stmt) {
       start = jump_stmt->label_.ToString();
     } else {
       auto cjump_stmt = dynamic_cast<JumpConditionalStatement *>(block.GetJumpStatement());
-
       auto traces = BuildTraces(cjump_stmt->label_true_.ToString());
       for (Trace t: traces) {
         result.push_back(t);
       }
+
       start = cjump_stmt->label_false_.ToString();
     }
   }

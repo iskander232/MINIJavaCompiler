@@ -2,11 +2,7 @@ SeqStatement:
   
 LabelStatement: test1_____main
   SeqStatement:
-    JumpConditionalStatement: EQ
-    TrueLabel: L0
-    FalseLabel: L1
-      ConstExpression 1
-      ConstExpression 0
+    JumpStatement: L1
     SeqStatement:
       
 LabelStatement: L0
@@ -14,25 +10,19 @@ LabelStatement: L0
         MoveStatement:
           MemExpression: 
             TempExpression: ::fp
-          ConstExpression 1
+          BinopExpression: DIV
+            MemExpression: 
+              TempExpression: ::fp
+            ConstExpression 2
         SeqStatement:
-          JumpStatement: L2
-          SeqStatement:
-            
+          
 LabelStatement: L1
-            SeqStatement:
-              MoveStatement:
-                MemExpression: 
-                  BinopExpression: PLUS
-                    TempExpression: ::fp
-                    ConstExpression 4
-                ConstExpression 2
-              SeqStatement:
-                
+          SeqStatement:
+            JumpConditionalStatement: GT
+            TrueLabel: L0
+            FalseLabel: L2
+              MemExpression: 
+                TempExpression: ::fp
+              ConstExpression 0
+            
 LabelStatement: L2
-                MoveStatement:
-                  MemExpression: 
-                    BinopExpression: PLUS
-                      TempExpression: ::fp
-                      ConstExpression 4
-                  ConstExpression 14
